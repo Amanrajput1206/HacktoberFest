@@ -54,6 +54,41 @@ def test_local_repo_full_flow(client, repo, monkeypatch):
     assert run["dev_name"] == "Alice" and run["has_kt"] and not run["readonly"]
 
 
+def _run_with_three_files(client, repo):
+    repo.commit("Alice", {"pkg/__init__.py": "", "pkg/core.py": CORE, "pkg/a.py": "x = 1\n", "pkg/b.py": "y = 2\n"})
+    name = _wait(client, client.post("/api/runs", json={"source": str(repo.path)}).json())["run"]
+    _wait(client, client.post(f"/api/runs/{name}/analyze", json={"who": "Alice"}).json())
+    return name
+
+
+def test_max_files_keeps_the_most_important_and_skips_empty(client, repo, monkeypatch):
+    name = _run_with_three_files(client, repo)
+    monkeypatch.setattr(llm, "chat_json", _fake_chat)
+    one = _wait(client, client.post(f"/api/runs/{name}/kt", json={"model": "fake", "max_files": 1}).json())
+    assert one["state"] == "done" and one["total"] == 1
+    every = _wait(client, client.post(f"/api/runs/{name}/kt", json={"model": "fake", "max_files": None}).json())
+    assert every["total"] == 3  # the empty __init__.py is never sent to the model
+
+
+def test_kt_job_can_be_stopped_and_resumed(client, repo, monkeypatch):
+    name = _run_with_three_files(client, repo)
+
+    def slow_chat(system, user, model):
+        time.sleep(0.3)
+        return _fake_chat(system, user, model)
+
+    monkeypatch.setattr(llm, "chat_json", slow_chat)
+    job = client.post(f"/api/runs/{name}/kt", json={"model": "fake", "max_files": None}).json()
+    assert client.post(f"/api/jobs/{job['id']}/cancel").status_code == 200
+    stopped = _wait(client, job)
+    assert stopped["state"] == "cancelled" and stopped["done"] == 1
+    assert client.get(f"/api/runs/{name}/kt").status_code == 404  # no half-written plan
+    assert client.get("/api/jobs/current").json() is None  # the lock is free again
+
+    resumed = _wait(client, client.post(f"/api/runs/{name}/kt", json={"model": "fake", "max_files": None}).json())
+    assert resumed["state"] == "done" and client.get(f"/api/runs/{name}/kt").status_code == 200
+
+
 def test_bad_sources_and_names_are_rejected(client, tmp_path):
     assert client.post("/api/runs", json={"source": "https://gitlab.com/a/b"}).status_code == 400
     assert client.post("/api/runs", json={"source": str(tmp_path)}).status_code == 400  # not a git repo

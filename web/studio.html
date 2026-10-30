@@ -40,6 +40,8 @@
   .job .step { font-weight: 600; }
   .job.error { border-color: var(--bad); }
   .job.error .step { color: var(--bad); }
+  .job .head { display: flex; gap: 12px; align-items: center; justify-content: space-between; }
+  .job button.stop-job { padding: 4px 12px; font-size: 13px; border-color: var(--bad); color: var(--bad); }
   .progress { height: 8px; border-radius: 4px; background: var(--line); overflow: hidden; margin-top: 8px; }
   .progress div { height: 100%; background: var(--accent); width: 0; transition: width 0.3s; }
   .progress.indeterminate div { width: 30%; animation: slide 1.2s infinite ease-in-out; }
@@ -133,10 +135,16 @@
   <section id="kt-section" hidden>
     <h2>Knowledge-transfer plan</h2>
     <div class="bar-row" id="gen-row">
-      <select id="model"></select>
+      <select id="model" aria-label="Model"></select>
+      <select id="max-files" aria-label="Files per module">
+        <option value="5" selected>Top 5 files per module (fastest)</option>
+        <option value="10">Top 10 files per module</option>
+        <option value="">All files</option>
+      </select>
       <button id="generate" class="primary">Generate KT</button>
       <span id="ollama-note" class="muted"></span>
     </div>
+    <p id="estimate" class="hint"></p>
     <div id="kt-job"></div>
     <p id="kt-meta" class="muted"></p>
     <div class="tabs" id="kt-tabs" role="tablist"></div>
@@ -175,8 +183,10 @@ function jobBox(el, job) {
   const pctDone = job.total ? (job.done / job.total) * 100 : 0;
   const indeterminate = job.state === "running" && !job.total;
   const other = job.run !== state.run ? `<span class="muted">${esc(job.kind)} job on ${esc(job.run)}: </span>` : "";
+  const stop = job.kind === "kt" && job.state === "running"
+    ? `<button class="stop-job" data-id="${esc(job.id)}" ${job.cancel ? "disabled" : ""}>${job.cancel ? "Stopping…" : "Stop"}</button>` : "";
   el.innerHTML = `<div class="job${job.state === "error" ? " error" : ""}">
-      <div class="step">${other}${esc(job.state === "error" ? job.error : job.step || "Starting…")}</div>
+      <div class="head"><div class="step">${other}${esc(job.state === "error" ? job.error : job.step || "Starting…")}</div>${stop}</div>
       ${job.state === "running" || job.total ? `<div class="progress${indeterminate ? " indeterminate" : ""}"><div style="width:${pctDone}%"></div></div>` : ""}
       <details><summary>Log</summary><pre>${esc(job.log.join("\n"))}</pre></details></div>`;
 }
@@ -231,6 +241,7 @@ async function openRun(name) {
   try { a = await api(`/api/runs/${encodeURIComponent(name)}/analysis`); }
   catch (e) { $("new").hidden = false; return; }
   const devs = Object.fromEntries(a.developers.map((d) => [d.id, d]));
+  state.analysis = a;
   renderPeople(a);
   if (!a.departure) return;
   renderImpact(a, devs);
@@ -303,6 +314,16 @@ function renderGenerate() {
   $("generate").dataset.off = o.available ? "0" : "1";
   $("generate").disabled = !o.available || state.busy;
   $("ollama-note").textContent = o.available ? "Runs locally on this machine's GPU." : "Ollama not found on this machine, so saved plans only.";
+  renderEstimate();
+}
+
+function renderEstimate() {
+  // Files per module are sorted by importance; empty files are skipped (same rule as the server).
+  const max = $("max-files").value ? +$("max-files").value : Infinity;
+  const n = (state.analysis?.modules || []).reduce((sum, m) => sum + Math.min(m.files.filter((f) => f.loc > 0).length, max), 0);
+  const all = (state.analysis?.modules || []).reduce((sum, m) => sum + m.files.filter((f) => f.loc > 0).length, 0);
+  const mins = Math.max(1, Math.round((n * 15) / 60));
+  $("estimate").textContent = `≈ ${n} of ${all} files, about ${mins} min (~15 s per file; files already generated come from the cache).`;
 }
 
 function renderKt(kt) {
@@ -345,10 +366,21 @@ $("module-rows").onclick = (e) => {
   if (tr) { const row = $(`files-${tr.dataset.i}`); row.hidden = !row.hidden; }
 };
 
+$("max-files").onchange = renderEstimate;
+
 $("generate").onclick = async () => {
-  const job = await runJob($("kt-job"), () => api(`/api/runs/${encodeURIComponent(state.run)}/kt`, { model: $("model").value }));
+  const max_files = $("max-files").value ? +$("max-files").value : null;
+  const job = await runJob($("kt-job"), () => api(`/api/runs/${encodeURIComponent(state.run)}/kt`, { model: $("model").value, max_files }));
   if (job?.state === "done") await loadRuns(state.run);
 };
+
+document.addEventListener("click", async (e) => {
+  const b = e.target.closest("button.stop-job");
+  if (!b) return;
+  b.disabled = true;
+  b.textContent = "Stopping…";
+  try { await api(`/api/jobs/${b.dataset.id}/cancel`, {}); } catch { /* already finished */ }
+});
 
 (async () => {
   try { state.ollama = await api("/api/ollama"); } catch { /* shown as unavailable */ }

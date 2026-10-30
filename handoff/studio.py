@@ -42,17 +42,32 @@ class Job:
     id: str
     kind: str
     run: str
-    state: str = "running"  # running | done | error
+    state: str = "running"  # running | done | error | cancelled
     step: str = ""
     done: int = 0
     total: int = 0
     log: list[str] = field(default_factory=list)
     error: str | None = None
     result: dict | None = None
+    cancel: bool = False  # set by POST /api/jobs/{id}/cancel; KT jobs stop after the current file
 
     def say(self, msg: str):
         self.step = msg
         self.log.append(msg)
+
+
+class Cancelled(Exception):
+    pass
+
+
+def trim_for_kt(analysis: dict, max_files: int | None) -> dict:
+    """The analysis with only the top `max_files` non-empty files per module (files are sorted by importance)."""
+    modules = []
+    for m in analysis["modules"]:
+        files = [f for f in m["files"] if f.get("loc", 1) > 0][:max_files]
+        if files:
+            modules.append({**m, "files": files})
+    return {**analysis, "modules": modules}
 
 
 class Source(BaseModel):
@@ -65,6 +80,7 @@ class Who(BaseModel):
 
 class Model(BaseModel):
     model: str = llm.DEFAULT_MODEL
+    max_files: int | None = 5  # per module; None means all
 
 
 def _slug(text: str) -> str:
@@ -124,6 +140,9 @@ def create_studio(runs_dir: Path = DEFAULT_RUNS_DIR, demo_dirs: dict[str, Path] 
             try:
                 job.result = work(job)
                 job.state = "done"
+            except Cancelled:
+                job.say(f"Stopped after {job.done} of {job.total} files. They are cached: Generate again to resume.")
+                job.state = "cancelled"
             except Exception as e:  # shown in the UI instead of a stack trace
                 job.error = f"{type(e).__name__}: {e}"
                 job.state = "error"
@@ -216,14 +235,19 @@ def create_studio(runs_dir: Path = DEFAULT_RUNS_DIR, demo_dirs: dict[str, Path] 
         if not analysis or not analysis.get("departure"):
             raise HTTPException(400, "Pick who is leaving first")
 
+        trimmed = trim_for_kt(analysis, body.max_files)
+
         def work(job: Job):
             def progress(done: int, total: int, file: str):
                 job.done, job.total = done, total
                 job.say(f"{done} / {total} files · {file}")
+                if job.cancel:
+                    raise Cancelled()
 
-            job.total = sum(len(m["files"]) for m in analysis["modules"])
-            job.say(f"Writing notes for {job.total} files with {body.model}…")
-            llm.generate_kt(repo_of(path), analysis, analysis["departure"]["dev"], path, body.model, progress=progress)
+            job.total = sum(len(m["files"]) for m in trimmed["modules"])
+            limit = f"top {body.max_files} per module" if body.max_files else "all"
+            job.say(f"Writing notes for {job.total} files ({limit}) with {body.model}…")
+            llm.generate_kt(repo_of(path), trimmed, analysis["departure"]["dev"], path, body.model, progress=progress)
             done = _read(path / "kt.json")
             job.say(f"Done: {done['claims_verified']} / {done['claims_total']} claims verified")
             return {"claims_verified": done["claims_verified"], "claims_total": done["claims_total"]}
@@ -241,6 +265,17 @@ def create_studio(runs_dir: Path = DEFAULT_RUNS_DIR, demo_dirs: dict[str, Path] 
         if job_id not in jobs:
             raise HTTPException(404, "No such job")
         return asdict(jobs[job_id])
+
+    @app.post("/api/jobs/{job_id}/cancel")
+    def cancel_job(job_id: str):
+        job = jobs.get(job_id)
+        if not job or job.state != "running":
+            raise HTTPException(404, "No running job with that id")
+        if job.kind != "kt":
+            raise HTTPException(400, "Only KT generation can be stopped")
+        job.cancel = True
+        job.say("Stopping after the current file…")
+        return asdict(job)
 
     @app.get("/api/runs/{name}/analysis")
     def get_analysis(name: str):
