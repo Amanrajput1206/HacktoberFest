@@ -25,7 +25,7 @@ Companion to [handoff.md](handoff.md) (the design) and [considerations.md](consi
 | Owner | Files |
 |---|---|
 | **Aman** | `pyproject.toml`, `.gitattributes`, `.gitignore`, `handoff/__init__.py`, `handoff/cli.py`, `handoff/miner.py`, `handoff/doa.py`, `handoff/impact.py`, `handoff/api.py`, `tests/conftest.py`, `tests/test_miner.py`, `tests/test_doa.py`, `tests/test_impact.py`, `tests/test_api.py`, `tests/__init__.py`, `examples/analysis.sample.json`, `examples/<demo-repo>/analysis.json`, `docs/plans/*` |
-| **Avi** | `handoff/pack.py`, `handoff/llm.py`, `handoff/validate.py`, `handoff/render.py`, `web/` (everything), `tests/test_pack.py`, `tests/test_validate.py`, `examples/kt.sample.json`, `examples/<demo-repo>/kt.json`, `examples/<demo-repo>/KT-*.md`, `examples/<demo-repo>/cache/` |
+| **Avi** | `handoff/pack.py`, `handoff/llm.py`, `handoff/validate.py`, `handoff/render.py`, `web/` (everything), `tests/test_pack.py`, `tests/test_validate.py`, `tests/test_llm.py`, `examples/kt.sample.json`, `examples/<demo-repo>/kt.json`, `examples/<demo-repo>/KT-*.md`, `examples/<demo-repo>/cache/` |
 | **Shared: `README.md` only** | Each person edits **only between their own markers**, such as `<!-- AVI:START demo -->` … `<!-- AVI:END demo -->`. Avi owns the `demo` and `generation` sections; Aman owns `intro`, `analysis` and `footer`. |
 
 - **Need a change in the other person's file?** For example, a new dependency in `pyproject.toml`, a new `.gitignore` entry, or an edit to these docs: message them and the owner makes it.
