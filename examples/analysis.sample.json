@@ -1,0 +1,101 @@
+{
+  "repo": "example/sample-repo",
+  "head": "0123456789abcdef0123456789abcdef01234567",
+  "head_date": "2026-10-01T12:00:00+00:00",
+  "generated_at": "2026-10-31T00:45:00+00:00",
+  "developers": [
+    {
+      "id": "d1",
+      "names": ["Jane Doe"],
+      "emails": ["jane@example.com", "12345+janedoe@users.noreply.github.com"],
+      "commits": 412,
+      "files_authored": 42,
+      "last_commit": "2026-09-28T10:00:00+00:00"
+    },
+    {
+      "id": "d2",
+      "names": ["Alice Smith"],
+      "emails": ["alice@example.com"],
+      "commits": 130,
+      "files_authored": 15,
+      "last_commit": "2026-09-30T16:20:00+00:00"
+    },
+    {
+      "id": "d3",
+      "names": ["Bob Kumar"],
+      "emails": ["bob@example.com"],
+      "commits": 58,
+      "files_authored": 6,
+      "last_commit": "2024-02-11T09:00:00+00:00"
+    }
+  ],
+  "truck_factor": {
+    "value": 2,
+    "removed": ["d1", "d2"],
+    "coverage": 0.83
+  },
+  "departure": {
+    "dev": "d1",
+    "at_risk_files": 42,
+    "orphaned_files": 31,
+    "coverage_before": 0.83,
+    "coverage_after": 0.33,
+    "truck_factor_after": 1
+  },
+  "modules": [
+    {
+      "path": "src/core/",
+      "risk": 2.31,
+      "orphaned_files": 3,
+      "at_risk_files": 4,
+      "successor": { "dev": "d2", "doa_sum": 1.24 },
+      "files": [
+        {
+          "path": "src/core/session.py",
+          "loc": 812,
+          "fan_in": 14,
+          "orphaned": true,
+          "importance": 0.91,
+          "authors": ["d1"],
+          "doa_n": { "d1": 1.0, "d2": 0.42 }
+        },
+        {
+          "path": "src/core/pool.py",
+          "loc": 340,
+          "fan_in": 6,
+          "orphaned": true,
+          "importance": 0.55,
+          "authors": ["d1"],
+          "doa_n": { "d1": 1.0, "d3": 0.38 }
+        },
+        {
+          "path": "src/core/retry.py",
+          "loc": 120,
+          "fan_in": 3,
+          "orphaned": false,
+          "importance": 0.27,
+          "authors": ["d1", "d2"],
+          "doa_n": { "d1": 1.0, "d2": 0.82 }
+        }
+      ]
+    },
+    {
+      "path": "src/auth/",
+      "risk": 1.12,
+      "orphaned_files": 2,
+      "at_risk_files": 2,
+      "successor": null,
+      "files": [
+        {
+          "path": "src/auth/tokens.py",
+          "loc": 260,
+          "fan_in": 5,
+          "orphaned": true,
+          "importance": 0.62,
+          "authors": ["d1"],
+          "doa_n": { "d1": 1.0 }
+        }
+      ]
+    }
+  ]
+}

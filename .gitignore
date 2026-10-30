@@ -15,6 +15,14 @@ __pycache__/
 venv/
 dist/
 build/
+*.egg-info/
+.pytest_cache/
+
+# Ad-hoc run outputs (curated demo outputs live in examples/)
+/analysis.json
+/kt.json
+/KT-*.md
+/issues/
 
 # Local model weights
 *.gguf

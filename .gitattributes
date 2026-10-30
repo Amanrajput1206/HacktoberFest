@@ -1,0 +1,7 @@
+# Normalise line endings so Windows and other machines never produce whole-file diffs
+* text=auto eol=lf
+
+*.pdf binary
+*.png binary
+*.jpg binary
+*.gif binary

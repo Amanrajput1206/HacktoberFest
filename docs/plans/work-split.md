@@ -26,13 +26,21 @@ Companion to [handoff.md](handoff.md) (the design) and [considerations.md](consi
 |---|---|
 | **Aman** | `pyproject.toml`, `.gitattributes`, `.gitignore`, `handoff/__init__.py`, `handoff/cli.py`, `handoff/miner.py`, `handoff/doa.py`, `handoff/impact.py`, `handoff/api.py`, `tests/conftest.py`, `tests/test_miner.py`, `tests/test_doa.py`, `tests/test_impact.py`, `examples/analysis.sample.json`, `examples/<demo-repo>/analysis.json`, `docs/plans/*` |
 | **Avi** | `handoff/pack.py`, `handoff/llm.py`, `handoff/validate.py`, `handoff/render.py`, `web/` (everything), `tests/test_pack.py`, `tests/test_validate.py`, `examples/kt.sample.json`, `examples/<demo-repo>/kt.json`, `examples/<demo-repo>/KT-*.md`, `examples/<demo-repo>/cache/` |
-| **Shared: `README.md` only** | Each person edits **only between their own markers**. Aman adds the markers at Sync 1:<br>`<!-- AMAN:START -->` … `<!-- AMAN:END -->` and `<!-- AVI:START -->` … `<!-- AVI:END -->` |
+| **Shared: `README.md` only** | Each person edits **only between their own markers**, such as `<!-- AVI:START demo -->` … `<!-- AVI:END demo -->`. Avi owns the `demo` and `generation` sections; Aman owns `intro`, `analysis` and `footer`. |
 
 - **Need a change in the other person's file?** For example, a new dependency in `pyproject.toml`, a new `.gitignore` entry, or an edit to these docs: message them and the owner makes it.
 - **`cli.py` stays thin:** the `kt` command just calls Avi's `llm.generate_kt(...)` (§3), so Avi never needs to edit `cli.py`.
 
 ## 3. Interfaces between our halves
 Agreed at **Sync 1 (00:30)**. Changing anything in this section requires messaging the other person **and** getting an OK first. The change is committed together with an update to this section.
+
+**The canonical `analysis.json` example is [`examples/analysis.sample.json`](../../examples/analysis.sample.json).** It follows handoff.md §6 plus a few additive fields:
+- `head_date`: the HEAD commit's date, which is the reference point for all "last 12 months" windows.
+- `developers[].commits`
+- `modules[].orphaned_files` and `modules[].at_risk_files`
+- `successor`: may be `null`, meaning no successor.
+
+Build against the sample.
 
 ### Aman provides
 ```python
