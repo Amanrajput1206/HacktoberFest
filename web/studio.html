@@ -51,7 +51,8 @@
   .who .ids { color: var(--muted); font-size: 13px; }
   .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; margin-top: 16px; }
   .stat { border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px; }
-  .stat .label { color: var(--muted); font-size: 13px; }
+  .stat .label { font-weight: 650; font-size: 15px; }
+  .stat .sub { color: var(--muted); font-size: 13px; line-height: 1.35; min-height: 2.7em; }
   .stat .value { font-size: 28px; font-weight: 650; margin-top: 2px; font-variant-numeric: tabular-nums; }
   .stat .value small { font-size: 15px; color: var(--muted); font-weight: 500; }
   .stat.hot .value { color: var(--accent); }
@@ -256,8 +257,9 @@ function renderPeople(a) {
   $("people").hidden = false;
 }
 
-function stat(label, value, hot) {
-  return `<div class="stat${hot ? " hot" : ""}"><div class="label">${label}</div><div class="value">${value}</div></div>`;
+function stat(label, sub, value, hot) {
+  return `<div class="stat${hot ? " hot" : ""}"><div class="label">${label}</div><div class="sub">${sub}</div>
+      <div class="value">${value}</div></div>`;
 }
 
 function renderImpact(a, devs) {
@@ -266,10 +268,10 @@ function renderImpact(a, devs) {
   const others = [...dev.names.slice(1), ...dev.emails];
   $("dev-ids").textContent = `${dep.dev} · ${dev.commits ?? "?"} commits` + (others.length ? ` · merged identities: ${others.join(", ")}` : "");
   $("stats").innerHTML = [
-    stat("Files that lose their only expert", dep.orphaned_files, true),
-    stat("Files where they are an author", dep.at_risk_files),
-    stat("File coverage", `${pct(dep.coverage_before)} <small>→</small> ${pct(dep.coverage_after)}`, true),
-    stat("Truck factor", `${a.truck_factor.value} <small>→</small> ${dep.truck_factor_after}`, true),
+    stat("Orphaned", "Files that lose their only expert", dep.orphaned_files, true),
+    stat("At risk", "Files where they are an author", dep.at_risk_files),
+    stat("File coverage", "Files that still have an expert", `${pct(dep.coverage_before)} <small>→</small> ${pct(dep.coverage_after)}`, true),
+    stat("Truck factor", "People who can leave before half the code has no expert", `${a.truck_factor.value} <small>→</small> ${dep.truck_factor_after}`, true),
   ].join("");
   $("impact").hidden = false;
 }
