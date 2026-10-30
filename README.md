@@ -19,7 +19,30 @@ TBD (screenshot, GIF or video link)
 <!-- AMAN:START analysis -->
 ## How the analysis works
 
-TBD: Degree-of-Authorship model, truck factor, departure impact, ranking.
+The analysis is deterministic: no LLM decides what matters.
+
+1. **Mine history.** One `git log --no-merges -M --name-status` pass. Paths are resolved to their name at HEAD, so history survives renames. Only source files that still exist at HEAD count. Bot accounts (dependabot, renovate, …) and bulk commits (more than 100 files, e.g. reformats) are never credited, but their renames are still tracked.
+2. **Merge identities.** `.mailmap` first, then the same email, the same name, or a GitHub noreply handle that matches another identity's email or name.
+3. **Score authorship** with the Degree-of-Authorship model (Fritz et al.; Avelino et al.):
+
+   ```
+   DOA(d, f) = 3.293 + 1.098·FA + 0.164·DL − 0.321·ln(1 + AC)
+   ```
+
+   - FA = d created f
+   - DL = d's commits to f
+   - AC = everyone else's commits to f
+   - d is an **author** of f when DOA ≥ 3.293 and DOA is above 75% of the file's top score.
+4. **Departure impact** for one developer X:
+   - **Files:** *at risk* = X is an author; *orphaned* = X is the only author.
+   - **Coverage and truck factor:** compared with and without X. The truck factor is how many top authors must leave before fewer than half the files have an author.
+5. **Rank** at-risk files by `0.4·LOC + 0.4·fan-in + 0.2·X's commits in the last 12 months` (each normalised).
+   - **Fan-in** counts the other files that statically import the file (Python).
+   - **"Last 12 months"** is measured back from the repo's latest commit, not from today.
+   - **Modules** are directories, scored by the importance of their orphaned files plus half the importance of their at-risk files.
+   - **The successor** is the active developer (committed in that 12-month window) with the highest summed authorship over the module.
+
+**Example:** on [psf/requests](https://github.com/psf/requests), if Kenneth Reitz leaves, 13 files are orphaned, including `models.py`, `sessions.py` and `utils.py`. File coverage drops from 100% to 65%, and the truck factor drops from 3 to 2. See [examples/requests/analysis.json](examples/requests/analysis.json).
 
 ## Setup
 
@@ -63,7 +86,8 @@ As the event rules require, we disclose every AI tool we used:
 ## Credits
 
 - Degree-of-Authorship model: Fritz et al.; truck-factor algorithm: Avelino et al.
-- TBD: libraries and demo repository.
+- Demo data: Git history of [psf/requests](https://github.com/psf/requests) (Apache-2.0). Its code is not included in this repo.
+- Libraries: [Typer](https://github.com/fastapi/typer), [FastAPI](https://github.com/fastapi/fastapi), [Uvicorn](https://github.com/encode/uvicorn), [ollama-python](https://github.com/ollama/ollama-python), [pytest](https://github.com/pytest-dev/pytest).
 
 ## Contributing
 
