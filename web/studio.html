@@ -99,6 +99,7 @@
     <div class="bar-row">
       <label for="runs" class="muted">Run</label>
       <select id="runs" class="runs"><option>Loading…</option></select>
+      <button id="delete-run" title="Delete this run's clone and results">Delete run</button>
       <button id="new-toggle" class="primary">New run</button>
     </div>
   </header>
@@ -165,9 +166,9 @@ const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "
 const pct = (x) => `${Math.round((x ?? 0) * 100)}%`;
 const state = { run: null, runs: [], ollama: { available: false, models: [] }, busy: false };
 
-async function api(path, body) {
-  const r = await fetch(path, body === undefined ? {} : {
-    method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) });
+async function api(path, body, method) {
+  const r = await fetch(path, body === undefined ? { method: method || "GET" } : {
+    method: method || "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) });
   const data = await r.json().catch(() => ({}));
   if (!r.ok) throw Object.assign(new Error(data.detail || r.statusText), { status: r.status });
   return data;
@@ -242,6 +243,8 @@ function current() { return state.runs.find((r) => r.name === state.run) || {}; 
 
 async function openRun(name) {
   state.run = name;
+  $("delete-run").disabled = !name || Boolean(current().readonly);
+  $("delete-run").title = current().readonly ? "The demo run can't be deleted" : "Delete this run's clone and results";
   ["people", "impact", "modules", "kt-section"].forEach((id) => { $(id).hidden = true; });
   ["analyze-job", "kt-job"].forEach((id) => { $(id).innerHTML = ""; });
   let a;
@@ -390,6 +393,22 @@ $("module-rows").onclick = (e) => {
 };
 
 $("max-files").onchange = renderEstimate;
+
+$("delete-run").onclick = async () => {
+  const run = current();
+  if (!run.name || run.readonly) return;
+  const local = run.source && !/^https:\/\/github\.com\//.test(run.source);
+  const msg = `Delete the run "${run.repo || run.name}"?\n\nThis removes its ${local ? "" : "clone, "}analysis, KT plan and cache.`
+    + (local ? `\nYour local repository (${run.source}) is not touched.` : "");
+  if (!confirm(msg)) return;
+  try {
+    await api(`/api/runs/${encodeURIComponent(run.name)}`, undefined, "DELETE");
+    state.run = null;
+    await loadRuns();
+  } catch (e) {
+    alert(`Could not delete: ${e.message}`);
+  }
+};
 
 $("generate").onclick = async () => {
   const max_files = $("max-files").value ? +$("max-files").value : null;

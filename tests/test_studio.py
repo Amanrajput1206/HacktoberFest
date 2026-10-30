@@ -1,3 +1,5 @@
+import os
+import stat
 import threading
 import time
 
@@ -89,6 +91,31 @@ def test_kt_job_can_be_stopped_and_resumed(client, repo, monkeypatch):
     assert resumed["state"] == "done" and client.get(f"/api/runs/{name}/kt").status_code == 200
 
 
+def test_delete_run_keeps_the_local_repo(client, repo, tmp_path):
+    repo.commit("Alice", {"a.py": "x = 1\n"})
+    name = _wait(client, client.post("/api/runs", json={"source": str(repo.path)}).json())["run"]
+    run_dir = tmp_path / "runs" / name
+    locked = run_dir / "repo-like.pack"
+    locked.write_text("x")
+    os.chmod(locked, stat.S_IREAD)  # like Git's read-only pack files on Windows
+
+    assert client.delete(f"/api/runs/{name}").json() == {"deleted": name}
+    assert not run_dir.exists()
+    assert (repo.path / ".git").exists() and (repo.path / "a.py").exists()
+    assert name not in [r["name"] for r in client.get("/api/runs").json()]
+    assert client.delete(f"/api/runs/{name}").status_code == 404
+
+
+def test_delete_is_refused_while_its_job_runs(client, repo, monkeypatch):
+    repo.commit("Alice", {"a.py": "x = 1\n"})
+    gate = threading.Event()
+    monkeypatch.setattr(studio, "run_analysis", lambda *a, **k: gate.wait(5) and {"developers": []})
+    job = client.post("/api/runs", json={"source": str(repo.path)}).json()
+    assert client.delete(f"/api/runs/{job['run']}").status_code == 409
+    gate.set()
+    _wait(client, job)
+
+
 def test_bad_sources_and_names_are_rejected(client, tmp_path):
     assert client.post("/api/runs", json={"source": "https://gitlab.com/a/b"}).status_code == 400
     assert client.post("/api/runs", json={"source": str(tmp_path)}).status_code == 400  # not a git repo
@@ -118,6 +145,7 @@ def test_demo_run_is_read_only(tmp_path):
     assert [r["name"] for r in c.get("/api/runs").json()] == ["demo"]
     assert c.get("/api/runs/demo/analysis").status_code == 200
     assert c.post("/api/runs/demo/analyze", json={"who": "x"}).status_code == 403
+    assert c.delete("/api/runs/demo").status_code == 403 and demo.exists()
 
 
 def test_ollama_missing_is_reported(client, monkeypatch):

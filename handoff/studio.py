@@ -12,8 +12,12 @@ since there is one GPU; the page polls /api/jobs/{id} for progress.
 
 import argparse
 import json
+import os
 import re
+import shutil
+import stat
 import subprocess
+import sys
 import threading
 import uuid
 import webbrowser
@@ -253,6 +257,20 @@ def create_studio(runs_dir: Path = DEFAULT_RUNS_DIR, demo_dirs: dict[str, Path] 
             return {"claims_verified": done["claims_verified"], "claims_total": done["claims_total"]}
 
         return asdict(start("kt", name, work))
+
+    @app.delete("/api/runs/{name}")
+    def delete_run(name: str):
+        """Remove a run's folder (clone, analysis, KT, cache). A local repo it pointed at is never touched."""
+        path = writable(name)
+        if any(j.run == name and j.state == "running" for j in jobs.values()):
+            raise HTTPException(409, "A job is running on this run; stop it or wait for it to finish")
+
+        def force(func, p, _exc):  # Git marks pack files read-only, which blocks deletion on Windows
+            os.chmod(p, stat.S_IWRITE)
+            func(p)
+
+        shutil.rmtree(path, **({"onexc": force} if sys.version_info >= (3, 12) else {"onerror": force}))
+        return {"deleted": name}
 
     @app.get("/api/jobs/current")
     def current_job():
