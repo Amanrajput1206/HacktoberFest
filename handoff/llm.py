@@ -52,19 +52,29 @@ Rules:
 - 3-5 tasks, each naming a specific file or function from the notes."""
 
 
+TIMEOUT = 180  # seconds per call; a normal file takes 5-30 s, so this only trips when Ollama hangs
+
+
 def _client():
     import ollama
 
-    return ollama
+    return ollama.Client(timeout=TIMEOUT)
 
 
 def chat_json(system: str, user: str, model: str = DEFAULT_MODEL) -> dict:
-    resp = _client().chat(
+    import httpx
+
+    request = dict(
         model=model,
         messages=[{"role": "system", "content": system}, {"role": "user", "content": user}],
         format="json",
         options=OPTIONS,
     )
+    try:
+        resp = _client().chat(**request)
+    except httpx.TimeoutException:  # one retry, then let the caller see the error instead of hanging
+        _log(f"  model call timed out after {TIMEOUT}s, retrying once")
+        resp = _client().chat(**request)
     content = resp["message"]["content"]
     try:
         data = json.loads(content)

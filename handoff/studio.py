@@ -230,6 +230,12 @@ def create_studio(runs_dir: Path = DEFAULT_RUNS_DIR, demo_dirs: dict[str, Path] 
 
         return asdict(start("kt", name, work))
 
+    @app.get("/api/jobs/current")
+    def current_job():
+        """The running job, if any, so a reloaded page can reattach to it."""
+        running = [j for j in jobs.values() if j.state == "running"]
+        return asdict(running[-1]) if running else None
+
     @app.get("/api/jobs/{job_id}")
     def job_status(job_id: str):
         if job_id not in jobs:

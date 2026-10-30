@@ -173,8 +173,9 @@ function setBusy(busy) {
 function jobBox(el, job) {
   const pctDone = job.total ? (job.done / job.total) * 100 : 0;
   const indeterminate = job.state === "running" && !job.total;
+  const other = job.run !== state.run ? `<span class="muted">${esc(job.kind)} job on ${esc(job.run)}: </span>` : "";
   el.innerHTML = `<div class="job${job.state === "error" ? " error" : ""}">
-      <div class="step">${esc(job.state === "error" ? job.error : job.step || "Starting…")}</div>
+      <div class="step">${other}${esc(job.state === "error" ? job.error : job.step || "Starting…")}</div>
       ${job.state === "running" || job.total ? `<div class="progress${indeterminate ? " indeterminate" : ""}"><div style="width:${pctDone}%"></div></div>` : ""}
       <details><summary>Log</summary><pre>${esc(job.log.join("\n"))}</pre></details></div>`;
 }
@@ -182,7 +183,13 @@ function jobBox(el, job) {
 async function runJob(el, start) {
   setBusy(true);
   try {
-    let job = await start();
+    let job;
+    try { job = await start(); }
+    catch (e) {  // busy: follow the job that is already running instead of just failing
+      if (e.status !== 409) throw e;
+      job = await api("/api/jobs/current");
+      if (!job) throw e;
+    }
     while (job.state === "running") {
       jobBox(el, job);
       await new Promise((r) => setTimeout(r, 1000));
@@ -343,8 +350,20 @@ $("generate").onclick = async () => {
 
 (async () => {
   try { state.ollama = await api("/api/ollama"); } catch { /* shown as unavailable */ }
+  let running = null;
+  try { running = await api("/api/jobs/current"); } catch { /* none */ }
   try { await loadRuns(); }
   catch (e) { $("runs").innerHTML = `<option>Could not load runs: ${esc(e.message)}</option>`; }
+  if (running) {  // the page was reloaded mid-job: show its progress again
+    if (running.run !== state.run && state.runs.some((r) => r.name === running.run)) {
+      $("runs").value = running.run;
+      await openRun(running.run);
+    }
+    if (running.kind === "create") $("new").hidden = false;
+    const box = $({ create: "create-job", analyze: "analyze-job", kt: "kt-job" }[running.kind]);
+    const job = await runJob(box, async () => running);
+    if (job?.state === "done") await loadRuns(running.run);
+  }
 })();
 </script>
 </body>

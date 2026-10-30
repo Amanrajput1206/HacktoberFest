@@ -69,8 +69,10 @@ def test_one_job_at_a_time(client, repo, monkeypatch):
     first = client.post("/api/runs", json={"source": str(repo.path)})
     assert first.status_code == 200
     assert client.post("/api/runs", json={"source": str(repo.path)}).status_code == 409
+    assert client.get("/api/jobs/current").json()["id"] == first.json()["id"]  # a reloaded page can reattach
     gate.set()
     _wait(client, first.json())
+    assert client.get("/api/jobs/current").json() is None
 
 
 def test_demo_run_is_read_only(tmp_path):

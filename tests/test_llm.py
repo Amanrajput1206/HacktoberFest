@@ -42,6 +42,7 @@ def test_generate_kt_validates_renders_and_caches(repo, tmp_path, monkeypatch):
     assert kt["markdown"] == md and [m["path"] for m in kt["modules"]] == [m["path"] for m in analysis["modules"]]
 
     n_calls = len(calls)
+    assert llm._client()._client.timeout.read == llm.TIMEOUT  # a hung Ollama can't block a job forever
     seen = []
     llm.generate_kt(repo.path, analysis, "d1", out, model="fake", progress=lambda *a: seen.append(a))
     assert len(calls) == n_calls  # second run comes entirely from the cache
