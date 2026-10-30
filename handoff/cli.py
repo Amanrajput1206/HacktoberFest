@@ -1,7 +1,13 @@
 import json
+import sys
 from pathlib import Path
 
 import typer
+
+# Windows consoles default to a legacy code page; contributor names are often non-ASCII.
+for stream in (sys.stdout, sys.stderr):
+    if hasattr(stream, "reconfigure"):
+        stream.reconfigure(encoding="utf-8", errors="replace")
 
 app = typer.Typer(
     help="Find the code a departing maintainer is the last expert on, and plan the handoff.",
