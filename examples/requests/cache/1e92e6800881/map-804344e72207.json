@@ -1,0 +1,40 @@
+{
+  "path": "src/requests/__init__.py",
+  "raw": {
+    "purpose": "This file is the entry point for the Requests HTTP library, providing basic HTTP methods like GET and POST. It also includes utility functions for checking compatibility and handling imports.",
+    "key_entry_points": [
+      {
+        "name": "requests.get",
+        "cite": "src/requests/__init__.py:14"
+      },
+      {
+        "name": "requests.post",
+        "cite": "src/requests/__init__.py:21"
+      },
+      {
+        "name": "check_compatibility",
+        "cite": "src/requests/__init__.py:60"
+      }
+    ],
+    "invariants": [
+      {
+        "claim": "The library must be compatible with urllib3, chardet, and charset_normalizer.",
+        "cite": "src/requests/__init__.py:60"
+      }
+    ],
+    "gotchas": [
+      {
+        "claim": "Compatibility checks for urllib3, chardet, and charset_normalizer must be updated as these libraries evolve.",
+        "cite": "commit:18c8924f14"
+      },
+      {
+        "claim": "Python 2.5 compatibility issues were resolved in multiple commits.",
+        "cite": "commit:5072399f7a"
+      }
+    ],
+    "open_questions": [
+      "What is the current status of Python 2.5 support and what are the plans for dropping it?",
+      "How should the compatibility checks be updated to accommodate future versions of urllib3, chardet, and charset_normalizer?"
+    ]
+  }
+}

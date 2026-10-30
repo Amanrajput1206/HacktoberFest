@@ -1,0 +1,28 @@
+{
+  "path": "docs/_themes/flask_theme_support.py",
+  "raw": {
+    "purpose": "This file defines a custom Pygments style named 'FlaskyStyle' which is used for syntax highlighting in the Flask documentation theme. It extends the base Pygments Style class and specifies token types and their corresponding colors.",
+    "key_entry_points": [
+      {
+        "name": "FlaskyStyle",
+        "cite": "docs/_themes/flask_theme_support.py:7"
+      }
+    ],
+    "invariants": [
+      {
+        "claim": "The style should not change the color of the 'Keyword' token type.",
+        "cite": "docs/_themes/flask_theme_support.py:10"
+      }
+    ],
+    "gotchas": [
+      {
+        "claim": "The 'FlaskyStyle' class was added in commit 3e45e4ba51, but there are no tests to verify its correctness.",
+        "cite": "commit:3e45e4ba51"
+      }
+    ],
+    "open_questions": [
+      "What specific color values are used for each token type in the 'FlaskyStyle' class?",
+      "Are there any dependencies on other files or libraries that need to be considered when modifying this style?"
+    ]
+  }
+}

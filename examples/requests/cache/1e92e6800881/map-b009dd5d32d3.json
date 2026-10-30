@@ -1,0 +1,52 @@
+{
+  "path": "src/requests/auth.py",
+  "raw": {
+    "purpose": "This file contains authentication handlers for Requests, including Basic, Proxy, and Digest authentication mechanisms.",
+    "key_entry_points": [
+      {
+        "name": "AuthBase",
+        "cite": "src/requests/auth.py:78"
+      },
+      {
+        "name": "HTTPBasicAuth",
+        "cite": "src/requests/auth.py:86"
+      },
+      {
+        "name": "HTTPProxyAuth",
+        "cite": "src/requests/auth.py:117"
+      },
+      {
+        "name": "HTTPDigestAuth",
+        "cite": "src/requests/auth.py:125"
+      },
+      {
+        "name": "_basic_auth_str",
+        "cite": "src/requests/auth.py:34"
+      }
+    ],
+    "invariants": [
+      {
+        "claim": "All authentication handlers must be callable and modify the request object accordingly.",
+        "cite": "src/requests/auth.py:85"
+      }
+    ],
+    "gotchas": [
+      {
+        "claim": "HTTPDigestAuth's handle_401 method needs to be implemented properly to handle 401 responses.",
+        "cite": "src/requests/auth.py:274"
+      },
+      {
+        "claim": "HTTPDigestAuth's build_digest_header method should handle the 'auth-int' scheme.",
+        "cite": "src/requests/auth.py:247"
+      },
+      {
+        "claim": "HTTPDigestAuth's build_digest_header method should consider encoding partial digests.",
+        "cite": "src/requests/auth.py:252"
+      }
+    ],
+    "open_questions": [
+      "What is the purpose of the 'auth-int' scheme in HTTP Digest Authentication?",
+      "How should partial digests be encoded in HTTP Digest Authentication?"
+    ]
+  }
+}

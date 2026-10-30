@@ -1,0 +1,29 @@
+{
+  "path": "src/requests/status_codes.py",
+  "raw": {
+    "purpose": "This file defines a mapping of HTTP status codes to their names, providing a convenient way to access these codes either as dictionary items or attributes. It is used throughout the requests library to check and handle HTTP responses.",
+    "key_entry_points": [
+      {
+        "name": "codes",
+        "cite": "src/requests/status_codes.py:23"
+      }
+    ],
+    "invariants": [
+      {
+        "claim": "Status codes are case-insensitive and can be accessed using either their numerical value or their names.",
+        "cite": "src/requests/status_codes.py:16"
+      }
+    ],
+    "gotchas": [
+      {
+        "claim": "The status code 200 has multiple names, including '\\o/' and '✓', which can lead to unexpected behavior if not handled carefully.",
+        "cite": "src/requests/status_codes.py:29"
+      }
+    ],
+    "open_questions": [
+      "What is the purpose of the `_init()` function and why is it necessary?",
+      "Are there any potential issues with the case-insensitivity of status code names?",
+      "How should the library handle status codes that have multiple names?"
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "summary": "The `src/requests/` module contains the core functionality of the Requests library, including HTTP request methods, utility functions, and data structures. Each file serves a specific purpose, from handling HTTP requests and responses to providing compatibility and utility functions.",
+  "questions": [
+    "What is the purpose of the `RequestEncodingMixin` and `RequestHooksMixin` classes, and how should they be used?",
+    "What are the implications of the changes made in commit:6d3d5e59c9 and commit:6c41633cfd?",
+    "What is the expected behavior of the `dict_to_sequence` function when the input is not a dictionary or iterable of tuples?",
+    "What is the reason behind the complex logic in `_resolve_char_detection` for detecting the major version of `urllib3`?",
+    "What is the purpose of the 'auth-int' scheme in HTTP Digest Authentication?",
+    "What are the implications of removing the `requests.packages` namespace for backward compatibility?",
+    "What are the implications of changing the default CA bundle provided by certifi?"
+  ],
+  "tasks": [
+    "Write a docstring for the `RequestEncodingMixin` class in `src/requests/models.py` to explain its purpose and usage.",
+    "Add a test case for the `dict_to_sequence` function in `src/requests/utils.py` to handle edge cases.",
+    "Pair with the successor on the `_resolve_char_detection` function in `src/requests/compat.py` to understand its complex logic and ensure compatibility with Python 2.",
+    "Update the compatibility checks in `src/requests/__init__.py` to accommodate future versions of urllib3, chardet, and charset_normalizer.",
+    "Refactor the `where` function in `src/requests/certs.py` to improve its readability and maintainability."
+  ]
+}

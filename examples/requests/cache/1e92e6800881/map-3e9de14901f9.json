@@ -1,0 +1,27 @@
+{
+  "path": "src/requests/adapters.py",
+  "raw": {
+    "purpose": "This file contains the transport adapters that Requests uses to define and maintain connections. It provides a general-case interface for Requests sessions to contact HTTP and HTTPS URLs.",
+    "key_entry_points": [
+      {
+        "name": "HTTPAdapter",
+        "cite": "src/requests/adapters.py:201"
+      }
+    ],
+    "invariants": [
+      {
+        "claim": "The `send` method must handle both streaming and non-streaming requests.",
+        "cite": "src/requests/adapters.py:130"
+      }
+    ],
+    "gotchas": [
+      {
+        "claim": "The `get_connection` method is deprecated and should be replaced with `get_connection_with_tls_context`.",
+        "cite": "src/requests/adapters.py:512"
+      }
+    ],
+    "open_questions": [
+      "What is the purpose of the `proxy_manager_for` method and when should it be used?"
+    ]
+  }
+}

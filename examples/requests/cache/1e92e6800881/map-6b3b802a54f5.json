@@ -1,0 +1,28 @@
+{
+  "path": "src/requests/packages.py",
+  "raw": {
+    "purpose": "This file is responsible for making older packages available under the `requests.packages` namespace for backward compatibility. It imports and reassigns modules to ensure that the identities are preserved.",
+    "key_entry_points": [
+      {
+        "name": "import and reassign modules",
+        "cite": "src/requests/packages.py:8"
+      }
+    ],
+    "invariants": [
+      {
+        "claim": "Do not remove or rename the `requests.packages` namespace as it is used by existing code.",
+        "cite": "src/requests/packages.py:1"
+      }
+    ],
+    "gotchas": [
+      {
+        "claim": "The traversal of `sys.modules` to reassign packages can break if a module is not properly imported.",
+        "cite": "src/requests/packages.py:12"
+      }
+    ],
+    "open_questions": [
+      "What are the implications of removing the `requests.packages` namespace for backward compatibility?",
+      "Are there any potential issues with the current approach of reassigning modules in `sys.modules`?"
+    ]
+  }
+}

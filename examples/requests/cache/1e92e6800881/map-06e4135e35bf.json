@@ -1,0 +1,40 @@
+{
+  "path": "src/requests/structures.py",
+  "raw": {
+    "purpose": "This file contains data structures that power the Requests library, specifically `CaseInsensitiveDict` and `LookupDict`. These structures are used to handle HTTP headers and other data in a case-insensitive manner, which is crucial for HTTP requests.",
+    "key_entry_points": [
+      {
+        "name": "CaseInsensitiveDict",
+        "cite": "src/requests/structures.py:20"
+      },
+      {
+        "name": "LookupDict",
+        "cite": "src/requests/structures.py:91"
+      }
+    ],
+    "invariants": [
+      {
+        "claim": "Keys in CaseInsensitiveDict are stored in lowercase for case-insensitive lookups.",
+        "cite": "src/requests/structures.py:60"
+      },
+      {
+        "claim": "LookupDict allows attribute access for keys.",
+        "cite": "src/requests/structures.py:108"
+      }
+    ],
+    "gotchas": [
+      {
+        "claim": "CaseInsensitiveDict's `__getitem__` method returns the value associated with the lowercase key.",
+        "cite": "src/requests/structures.py:67"
+      },
+      {
+        "claim": "LookupDict's `__getitem__` method allows fall-through, returning `None` if the key is not found.",
+        "cite": "src/requests/structures.py:120"
+      }
+    ],
+    "open_questions": [
+      "Why was `CaseInsensitiveDict` refactored to look like a normal dict in commit c15a8f8a3d?",
+      "What specific issues did the 'CHUNKED REQUESTS!' commit (ef8563ab36) address?"
+    ]
+  }
+}

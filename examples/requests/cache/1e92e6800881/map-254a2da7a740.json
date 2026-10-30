@@ -1,0 +1,32 @@
+{
+  "path": "docs/conf.py",
+  "raw": {
+    "purpose": "This file contains the configuration for building the Requests documentation using Sphinx. It sets up the paths, imports necessary modules, and configures various options for the documentation build process.",
+    "key_entry_points": [
+      {
+        "name": "sys.path.insert(0, os.path.abspath(\"..\"))",
+        "cite": "docs/conf.py:24"
+      },
+      {
+        "name": "sys.path.insert(0, os.path.abspath(\"_themes\"))",
+        "cite": "docs/conf.py:25"
+      }
+    ],
+    "invariants": [
+      {
+        "claim": "The copyright year should be updated annually.",
+        "cite": "commit:a345b776fb"
+      }
+    ],
+    "gotchas": [
+      {
+        "claim": "RTD (Read the Docs) had issues with the initial configuration.",
+        "cite": "commit:e102c1b4ca"
+      }
+    ],
+    "open_questions": [
+      "What specific issues did RTD have with the initial configuration?",
+      "Why was the Requests path inserted twice?"
+    ]
+  }
+}

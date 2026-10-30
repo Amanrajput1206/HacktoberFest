@@ -1,0 +1,67 @@
+{
+  "path": "src/requests/sessions.py",
+  "raw": {
+    "purpose": "This file contains the implementation of the `Session` class in the Requests library, which manages and persists settings across requests, including cookies, authentication, and proxies.",
+    "key_entry_points": [
+      {
+        "name": "Session",
+        "cite": "src/requests/sessions.py:395"
+      },
+      {
+        "name": "request",
+        "cite": "src/requests/sessions.py:557"
+      },
+      {
+        "name": "get",
+        "cite": "src/requests/sessions.py:655"
+      },
+      {
+        "name": "post",
+        "cite": "src/requests/sessions.py:695"
+      },
+      {
+        "name": "send",
+        "cite": "src/requests/sessions.py:752"
+      }
+    ],
+    "invariants": [
+      {
+        "claim": "Settings on a request take precedence over those in the session.",
+        "cite": "src/requests/sessions.py:77"
+      },
+      {
+        "claim": "Hooks are merged properly to avoid breaking session hooks.",
+        "cite": "src/requests/sessions.py:111"
+      }
+    ],
+    "gotchas": [
+      {
+        "claim": "Redirects can cause issues with authentication and proxy settings.",
+        "cite": "src/requests/sessions.py:154"
+      },
+      {
+        "claim": "Fix for Python 3 compatibility was needed.",
+        "cite": "commit:8c2a36140b"
+      },
+      {
+        "claim": "Reverting a fix for issue #1280 caused problems.",
+        "cite": "commit:54ed5ed469"
+      },
+      {
+        "claim": "Syntax errors were fixed in the past.",
+        "cite": "commit:75703d57e6"
+      },
+      {
+        "claim": "Reverting a change to add a `max_retries` argument caused issues.",
+        "cite": "commit:23d8522285"
+      }
+    ],
+    "open_questions": [
+      "What specific issues did the revert of the fix for issue #1280 cause?",
+      "Why was there a need to fix Python 3 compatibility?",
+      "What was the root cause of the syntax error that was fixed?",
+      "What was the purpose of the change that was reverted to add a `max_retries` argument?",
+      "How does the `Session` class handle cookies when merging settings?"
+    ]
+  }
+}

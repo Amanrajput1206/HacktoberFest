@@ -1,0 +1,22 @@
+{
+  "path": "src/requests/certs.py",
+  "raw": {
+    "purpose": "This file provides the default CA certificate bundle for the requests library, using the certifi package. It ensures that requests uses a trusted CA bundle for secure HTTPS connections.",
+    "key_entry_points": [
+      {
+        "name": "where",
+        "cite": "src/requests/certs.py:15"
+      }
+    ],
+    "invariants": [
+      {
+        "claim": "The default CA bundle is provided by the certifi package.",
+        "cite": "src/requests/certs.py:15"
+      }
+    ],
+    "gotchas": [],
+    "open_questions": [
+      "What are the implications of changing the default CA bundle provided by certifi?"
+    ]
+  }
+}

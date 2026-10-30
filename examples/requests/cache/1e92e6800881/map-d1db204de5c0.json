@@ -1,0 +1,27 @@
+{
+  "path": "src/requests/compat.py",
+  "raw": {
+    "purpose": "This file is a compatibility module for handling import issues between Python 2 and Python 3. It remains for backwards compatibility until the next major version of the project.",
+    "key_entry_points": [
+      {
+        "name": "_resolve_char_detection",
+        "cite": "src/requests/compat.py:36"
+      }
+    ],
+    "invariants": [
+      {
+        "claim": "Do not remove or rename the `_resolve_char_detection` function without considering its impact on the project's compatibility with Python 2.",
+        "cite": "src/requests/compat.py:36"
+      }
+    ],
+    "gotchas": [
+      {
+        "claim": "The function `_resolve_char_detection` has been modified multiple times to fix import issues with `chardet`. Be cautious when making changes to avoid breaking compatibility.",
+        "cite": "commit:8a2014e265, commit:2eb63be19a, commit:0af19a05ce"
+      }
+    ],
+    "open_questions": [
+      "What is the reason behind the complex logic in `_resolve_char_detection` for detecting the major version of `urllib3`?"
+    ]
+  }
+}
