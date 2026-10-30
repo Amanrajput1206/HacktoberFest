@@ -2,7 +2,8 @@
 
 A cite is `path:line`, `path:start-end` or `commit:sha` (a prefix of 7+ hex chars).
 A claim with several cites (`a.py:3, commit:abc1234`) is kept only if every one
-checks out. Uncited claims are dropped too.
+checks out. Uncited claims are dropped too. An entry point must also name
+something that appears on (or just below) the line it cites.
 """
 
 import re
@@ -12,19 +13,35 @@ LINE_RE = re.compile(r"^(?P<path>[^\s:]+):L?(?P<start>\d+)(?:\s*-\s*L?(?P<end>\d
 COMMIT_RE = re.compile(r"^commit:(?P<sha>[0-9a-f]{7,40})$", re.I)
 
 
-def evidence(pack: dict) -> tuple[dict[str, set[int]], set[str]]:
-    """Line numbers shown per path, and the commit shas shown, in a contextpack (or one file of it)."""
-    lines: dict[str, set[int]] = {}
+def evidence(pack: dict) -> tuple[dict[str, dict[int, str]], set[str]]:
+    """Source text shown per path and line, and the commit shas shown, in a contextpack (or one file of it)."""
+    lines: dict[str, dict[int, str]] = {}
     shas: set[str] = set()
     for fp in pack.get("files", [pack]):
-        shown = lines.setdefault(fp["path"], set())
+        shown = lines.setdefault(fp["path"], {})
         for chunk in fp.get("outline", []):
-            shown.update(range(chunk["start"], chunk["end"] + 1))
-        shown.update(m["line"] for m in fp.get("markers", []))
+            for row in chunk["text"].splitlines():
+                num, _, text = row.partition(": ")
+                if num.isdigit():
+                    shown[int(num)] = text
+            for n in range(chunk["start"], chunk["end"] + 1):
+                shown.setdefault(n, "")
+        shown.update({m["line"]: m["text"] for m in fp.get("markers", [])})
         for c in fp.get("callers", []):
-            lines.setdefault(c["path"], set()).add(c["line"])
+            lines.setdefault(c["path"], {})[c["line"]] = c["text"]
         shas.update(c["sha"].lower() for c in fp.get("commits", []) + fp.get("risky_commits", []))
     return lines, shas
+
+
+def names_line(name: str, cite: str, lines: dict[str, dict[int, str]]) -> bool:
+    """True if the entry point's identifier appears on the cited line or the 3 lines after it (decorators)."""
+    ident = re.findall(r"[A-Za-z_][A-Za-z0-9_]*", name or "")
+    m = LINE_RE.match(cite.strip().strip("`'\"").removeprefix("./"))
+    if not ident or not m:
+        return False
+    shown = lines.get(m["path"], {})
+    start = int(m["start"])
+    return any(re.search(rf"\b{re.escape(ident[-1])}\b", shown.get(n, "")) for n in range(start, start + 4))
 
 
 def check_cite(cite: str, lines: dict[str, set[int]], shas: set[str]) -> bool:
@@ -55,7 +72,10 @@ def validate(notes: dict, pack: dict) -> tuple[dict, int, int]:
     for key in CITED:
         good = []
         for item in notes.get(key) or []:
-            if isinstance(item, dict) and check_cite(str(item.get("cite", "")), lines, shas):
+            ok = isinstance(item, dict) and check_cite(str(item.get("cite", "")), lines, shas)
+            if ok and key == "key_entry_points":
+                ok = names_line(str(item.get("name", "")), str(item["cite"]), lines)
+            if ok:
                 good.append(item)
             else:
                 dropped += 1

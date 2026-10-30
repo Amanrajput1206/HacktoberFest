@@ -38,6 +38,14 @@ def test_ranges_and_multiple_cites_must_all_be_shown():
     assert [c["claim"] for c in kept["invariants"]] == ["c0", "c2"]
 
 
+def test_entry_point_must_name_the_cited_line():
+    pack = {"path": "a.py", "outline": [{"start": 1, "end": 4, "text": '1: """Docs."""\n2: @cache\n3: def connect(host):\n4:     """Open."""'}]}
+    notes = {"key_entry_points": [{"name": "connect", "cite": "a.py:3"}, {"name": "connect()", "cite": "a.py:2"},
+                                  {"name": "Session", "cite": "a.py:1"}]}
+    kept, n_kept, n_dropped = validate(notes, pack)
+    assert [i["cite"] for i in kept["key_entry_points"]] == ["a.py:3", "a.py:2"] and n_dropped == 1
+
+
 def test_uncited_and_malformed_claims_are_dropped():
     notes = {
         "purpose": "kept as is",
