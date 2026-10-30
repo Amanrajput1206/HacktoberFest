@@ -1,0 +1,79 @@
+{
+  "path": "src/requests/utils.py",
+  "raw": {
+    "purpose": "This file contains utility functions that are used within the Requests library and are also useful for external consumption. It provides various helper functions for handling HTTP requests, parsing headers, managing cookies, and more.",
+    "key_entry_points": [
+      {
+        "name": "dict_to_sequence",
+        "cite": "src/requests/utils.py:149"
+      },
+      {
+        "name": "get_netrc_auth",
+        "cite": "src/requests/utils.py:231"
+      },
+      {
+        "name": "guess_filename",
+        "cite": "src/requests/utils.py:283"
+      },
+      {
+        "name": "extract_zipped_paths",
+        "cite": "src/requests/utils.py:290"
+      },
+      {
+        "name": "atomic_open",
+        "cite": "src/requests/utils.py:328"
+      }
+    ],
+    "invariants": [
+      {
+        "claim": "Functions should handle edge cases gracefully and provide sensible defaults.",
+        "cite": "src/requests/utils.py:149"
+      },
+      {
+        "claim": "All functions should be thread-safe.",
+        "cite": "src/requests/utils.py:149"
+      },
+      {
+        "claim": "Functions should not modify input data unless explicitly stated.",
+        "cite": "src/requests/utils.py:149"
+      },
+      {
+        "claim": "All functions should have comprehensive docstrings.",
+        "cite": "src/requests/utils.py:149"
+      },
+      {
+        "claim": "Functions should be compatible with both Python 2 and Python 3.",
+        "cite": "src/requests/utils.py:149"
+      }
+    ],
+    "gotchas": [
+      {
+        "claim": "The `dict_to_sequence` function assumes that the input is a dictionary or iterable of tuples.",
+        "cite": "src/requests/utils.py:149"
+      },
+      {
+        "claim": "The `get_netrc_auth` function may raise an exception if the netrc file is not found.",
+        "cite": "src/requests/utils.py:231"
+      },
+      {
+        "claim": "The `extract_zipped_paths` function may raise an exception if the path is not a zip file.",
+        "cite": "src/requests/utils.py:290"
+      },
+      {
+        "claim": "The `atomic_open` function may raise an exception if the file cannot be opened.",
+        "cite": "src/requests/utils.py:328"
+      },
+      {
+        "claim": "The `from_key_val_list` function may raise an exception if the input is not a dictionary or iterable of tuples.",
+        "cite": "src/requests/utils.py:342"
+      }
+    ],
+    "open_questions": [
+      "What is the expected behavior of the `dict_to_sequence` function when the input is not a dictionary or iterable of tuples?",
+      "What is the expected behavior of the `get_netrc_auth` function when the netrc file is not found?",
+      "What is the expected behavior of the `extract_zipped_paths` function when the path is not a zip file?",
+      "What is the expected behavior of the `atomic_open` function when the file cannot be opened?",
+      "What is the expected behavior of the `from_key_val_list` function when the input is not a dictionary or iterable of tuples?"
+    ]
+  }
+}

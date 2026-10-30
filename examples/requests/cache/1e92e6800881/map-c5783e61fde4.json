@@ -1,0 +1,48 @@
+{
+  "path": "src/requests/exceptions.py",
+  "raw": {
+    "purpose": "This file contains the set of exceptions used by the Requests library to handle various error conditions that may occur during HTTP requests. It provides a structured way to handle exceptions in a consistent manner throughout the library.",
+    "key_entry_points": [
+      {
+        "name": "RequestException",
+        "cite": "src/requests/exceptions.py:20"
+      },
+      {
+        "name": "HTTPError",
+        "cite": "src/requests/exceptions.py:62"
+      },
+      {
+        "name": "ConnectionError",
+        "cite": "src/requests/exceptions.py:67"
+      },
+      {
+        "name": "Timeout",
+        "cite": "src/requests/exceptions.py:78"
+      },
+      {
+        "name": "JSONDecodeError",
+        "cite": "src/requests/exceptions.py:42"
+      }
+    ],
+    "invariants": [
+      {
+        "claim": "All exceptions should inherit from RequestException to ensure consistent error handling.",
+        "cite": "src/requests/exceptions.py:20"
+      }
+    ],
+    "gotchas": [
+      {
+        "claim": "The __reduce__ method in JSONDecodeError must be overridden to preserve the error message from the underlying JSONDecodeError.",
+        "cite": "src/requests/exceptions.py:55"
+      },
+      {
+        "claim": "The ConnectTimeout and ReadTimeout exceptions should be caught together as they both indicate a timeout.",
+        "cite": "src/requests/exceptions.py:85"
+      }
+    ],
+    "open_questions": [
+      "What is the purpose of the ascii arts commit (commit:b58433fb74)?",
+      "Why was the AuthenticationError and invalidmethod removed in commit:2d38f51834?"
+    ]
+  }
+}

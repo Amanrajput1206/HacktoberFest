@@ -1,0 +1,28 @@
+{
+  "path": "setup.py",
+  "raw": {
+    "purpose": "This file is the primary entry point for setting up the Requests package using setuptools. It ensures that the correct Python version is used and defines the package metadata.",
+    "key_entry_points": [
+      {
+        "name": "setup",
+        "cite": "setup.py:7"
+      }
+    ],
+    "invariants": [
+      {
+        "claim": "The script must check for Python 3.10 or later to avoid compatibility issues.",
+        "cite": "setup.py:3"
+      }
+    ],
+    "gotchas": [
+      {
+        "claim": "A previous attempt to automatically detect the CA Cert path was reverted due to user hacks.",
+        "cite": "commit:488a51d619"
+      }
+    ],
+    "open_questions": [
+      "Why is there a specific check for Python 3.10 and what are the implications if this changes?",
+      "What are the reasons behind the various commits and why were some reverted?"
+    ]
+  }
+}

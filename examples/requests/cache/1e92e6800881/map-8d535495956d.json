@@ -1,0 +1,48 @@
+{
+  "path": "src/requests/api.py",
+  "raw": {
+    "purpose": "This file contains the implementation of the Requests API, providing functions for sending HTTP requests of various types (GET, POST, PUT, DELETE, etc.). It serves as the primary interface for interacting with the Requests library.",
+    "key_entry_points": [
+      {
+        "name": "request",
+        "cite": "src/requests/api.py:24"
+      },
+      {
+        "name": "get",
+        "cite": "src/requests/api.py:74"
+      },
+      {
+        "name": "post",
+        "cite": "src/requests/api.py:117"
+      },
+      {
+        "name": "put",
+        "cite": "src/requests/api.py:138"
+      },
+      {
+        "name": "delete",
+        "cite": "src/requests/api.py:171"
+      }
+    ],
+    "invariants": [
+      {
+        "claim": "All request methods must return a Response object.",
+        "cite": "src/requests/api.py:24"
+      }
+    ],
+    "gotchas": [
+      {
+        "claim": "The 'max_retries' argument was removed in commit 23d8522285.",
+        "cite": "commit:23d8522285"
+      },
+      {
+        "claim": "The 'allow_redirects' parameter for the HEAD method was set to False by default in commit 106.",
+        "cite": "src/requests/api.py:106"
+      }
+    ],
+    "open_questions": [
+      "What was the reason for removing the 'max_retries' argument?",
+      "What specific issues did the 'allow_redirects' change for HEAD method address?"
+    ]
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "path": "src/requests/models.py",
+  "raw": {
+    "purpose": "This file contains the primary objects that power the Requests library, including Request, PreparedRequest, and Response classes, which are essential for making HTTP requests and handling responses.",
+    "key_entry_points": [
+      {
+        "name": "Request",
+        "cite": "src/requests/models.py:284"
+      },
+      {
+        "name": "PreparedRequest",
+        "cite": "src/requests/models.py:407"
+      },
+      {
+        "name": "Response",
+        "cite": "src/requests/models.py:732"
+      }
+    ],
+    "invariants": [
+      {
+        "claim": "The `Request` and `PreparedRequest` classes should not be instantiated manually; they should be created using the `requests.request` or `requests.Session` methods.",
+        "cite": "src/requests/models.py:324"
+      }
+    ],
+    "gotchas": [
+      {
+        "claim": "The `Response.text` property should not be accessed after the `Response.close` method has been called, as it may raise an error.",
+        "cite": "commit:6271046a27 Revert \"Cache the value of the `Response.text` property\""
+      },
+      {
+        "claim": "The `Response.raise_for_status` method should be called after the response has been received to handle HTTP errors.",
+        "cite": "src/requests/models.py:1144"
+      }
+    ],
+    "open_questions": [
+      "What is the purpose of the `RequestEncodingMixin` and `RequestHooksMixin` classes, and how should they be used?",
+      "What are the implications of the changes made in commit:6d3d5e59c9 and commit:6c41633cfd?",
+      "How should the `Response.raise_for_status` method be used in conjunction with other methods to handle HTTP errors effectively?"
+    ]
+  }
+}
