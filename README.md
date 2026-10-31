@@ -41,6 +41,8 @@ flowchart LR
 <!-- AVI:START demo -->
 ## Demo
 
+**Live demo:** **[handoff-mu-mauve.vercel.app](https://handoff-mu-mauve.vercel.app/)**. Switch between psf/requests, pallets/click and fastapi/typer with the **Repo** picker, or open one directly with a link like [`?repo=typer`](https://handoff-mu-mauve.vercel.app/?repo=typer).
+
 ![Handoff showing what psf/requests loses if Kenneth Reitz leaves](docs/images/demo.png)
 
 On [psf/requests](https://github.com/psf/requests) (515 developers), if **Kenneth Reitz** leaves:
@@ -61,7 +63,7 @@ The generated plan is also in [examples/requests/KT-d1.md](examples/requests/KT-
 
 | | What you get | Needs |
 |---|---|---|
-| **1. Hosted demo (Vercel)** | Saved results for several sample repos, with a **Repo** picker to switch between them | A browser |
+| **1. [Hosted demo (Vercel)](https://handoff-mu-mauve.vercel.app/)** | Saved results for several sample repos, with a **Repo** picker to switch between them | A browser |
 | **2. Saved results, locally** | The same page on your machine | Python |
 | **3. Live generation, locally** | Analyse **any** repo and generate a new KT plan | Python + [Ollama](https://ollama.com) |
 
