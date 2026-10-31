@@ -8,6 +8,7 @@ import hashlib
 import json
 import sys
 import time
+from collections.abc import Callable
 from pathlib import Path
 
 from handoff import render
@@ -51,19 +52,29 @@ Rules:
 - 3-5 tasks, each naming a specific file or function from the notes."""
 
 
+TIMEOUT = 180  # seconds per call; a normal file takes 5-30 s, so this only trips when Ollama hangs
+
+
 def _client():
     import ollama
 
-    return ollama
+    return ollama.Client(timeout=TIMEOUT)
 
 
 def chat_json(system: str, user: str, model: str = DEFAULT_MODEL) -> dict:
-    resp = _client().chat(
+    import httpx
+
+    request = dict(
         model=model,
         messages=[{"role": "system", "content": system}, {"role": "user", "content": user}],
         format="json",
         options=OPTIONS,
     )
+    try:
+        resp = _client().chat(**request)
+    except httpx.TimeoutException:  # one retry, then let the caller see the error instead of hanging
+        _log(f"  model call timed out after {TIMEOUT}s, retrying once")
+        resp = _client().chat(**request)
     content = resp["message"]["content"]
     try:
         data = json.loads(content)
@@ -130,8 +141,12 @@ def _log(msg: str):
     print(msg, file=sys.stderr, flush=True)
 
 
-def generate_kt(repo: Path, analysis: dict, dev_id: str, out_dir: Path, model: str = DEFAULT_MODEL) -> Path:
-    """Writes KT-<dev>.md and kt.json to out_dir and returns the .md path. Cached by (HEAD sha, dev_id, model, prompt version)."""
+def generate_kt(repo: Path, analysis: dict, dev_id: str, out_dir: Path, model: str = DEFAULT_MODEL,
+                progress: Callable[[int, int, str], None] | None = None) -> Path:
+    """Writes KT-<dev>.md and kt.json to out_dir and returns the .md path. Cached by (HEAD sha, dev_id, model, prompt version).
+
+    `progress(done, total, path)` is called after each file, for UIs that show a progress bar.
+    """
     repo, out_dir = Path(repo), Path(out_dir)
     head = git(repo, "rev-parse", "HEAD").strip()
     if head != analysis["head"]:
@@ -145,6 +160,7 @@ def generate_kt(repo: Path, analysis: dict, dev_id: str, out_dir: Path, model: s
     commits = mine(repo)
     sections, kt_modules = [], []
     total = verified = 0
+    n_files, done = sum(len(m["files"]) for m in modules), 0
     for module in modules:
         file_notes, m_total, m_verified = [], 0, 0
         pack = build_pack(repo, analysis, dev_id, module, commits)
@@ -160,6 +176,9 @@ def generate_kt(repo: Path, analysis: dict, dev_id: str, out_dir: Path, model: s
             file_notes.append({"path": fp["path"], **kept})
             m_total += n_kept + n_dropped
             m_verified += n_kept
+            done += 1
+            if progress:
+                progress(done, n_files, fp["path"])
 
         succ = module.get("successor")
         succ_name = render._name(analysis, succ["dev"]) if succ else "none"

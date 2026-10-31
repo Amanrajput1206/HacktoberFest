@@ -1,0 +1,446 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Handoff Studio</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.1.6/purify.min.js"></script>
+<style>
+  :root {
+    --bg: #f7f7f5; --panel: #ffffff; --text: #1d1d1b; --muted: #6b6b66; --line: #e3e2dd;
+    --accent: #c2410c; --accent-soft: #fff1e8; --good: #15803d; --bad: #b91c1c;
+    --mono: ui-monospace, SFMono-Regular, Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #141413; --panel: #1d1d1b; --text: #ecebe6; --muted: #a09f99; --line: #33322f;
+      --accent: #fb923c; --accent-soft: #2a1d14; --good: #4ade80; --bad: #f87171;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 15px/1.55 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  main { max-width: 1080px; margin: 0 auto; padding: 24px 16px 64px; }
+  header { display: flex; flex-wrap: wrap; gap: 12px 20px; align-items: center; justify-content: space-between; }
+  header h1 { margin: 0; font-size: 24px; letter-spacing: -0.01em; }
+  header h1 span { color: var(--muted); font-weight: 500; }
+  .bar-row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+  code, .mono { font-family: var(--mono); font-size: 0.92em; }
+  section { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 20px; margin-top: 20px; }
+  h2 { margin: 0 0 12px; font-size: 18px; }
+  button, select, input { font: inherit; font-size: 14px; }
+  button { padding: 7px 14px; border-radius: 8px; border: 1px solid var(--line); background: var(--panel); color: var(--text); cursor: pointer; }
+  button.primary { background: var(--accent); border-color: var(--accent); color: #fff; font-weight: 600; }
+  button:disabled { opacity: 0.5; cursor: not-allowed; }
+  select, input { padding: 7px 10px; border-radius: 8px; border: 1px solid var(--line); background: var(--panel); color: var(--text); }
+  input.source { flex: 1 1 320px; min-width: 0; font-family: var(--mono); }
+  select.runs { max-width: 100%; }
+  .hint { color: var(--muted); font-size: 13px; margin: 8px 0 0; }
+  .job { margin-top: 14px; border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; }
+  .job .step { font-weight: 600; }
+  .job.error { border-color: var(--bad); }
+  .job.error .step { color: var(--bad); }
+  .job .head { display: flex; gap: 12px; align-items: center; justify-content: space-between; }
+  .job button.stop-job { padding: 4px 12px; font-size: 13px; border-color: var(--bad); color: var(--bad); }
+  .progress { height: 8px; border-radius: 4px; background: var(--line); overflow: hidden; margin-top: 8px; }
+  .progress div { height: 100%; background: var(--accent); width: 0; transition: width 0.3s; }
+  .progress.indeterminate div { width: 30%; animation: slide 1.2s infinite ease-in-out; }
+  @keyframes slide { from { margin-left: -30%; } to { margin-left: 100%; } }
+  details { margin-top: 8px; font-size: 13px; color: var(--muted); }
+  details pre { white-space: pre-wrap; font-family: var(--mono); margin: 6px 0 0; max-height: 200px; overflow: auto; }
+  .who { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: baseline; }
+  .who strong { font-size: 20px; }
+  .who .ids { color: var(--muted); font-size: 13px; }
+  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; margin-top: 16px; }
+  .stat { border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px; }
+  .stat .label { font-weight: 650; font-size: 15px; }
+  .stat .sub { color: var(--muted); font-size: 13px; line-height: 1.35; min-height: 2.7em; }
+  .stat .value { font-size: 28px; font-weight: 650; margin-top: 2px; font-variant-numeric: tabular-nums; }
+  .stat .value small { font-size: 15px; color: var(--muted); font-weight: 500; }
+  .stat.hot .value { color: var(--accent); }
+  table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+  th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); vertical-align: middle; }
+  th { font-size: 12px; text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted); font-weight: 600; }
+  td.num, th.num { text-align: right; }
+  tr.selected td { background: var(--accent-soft); }
+  tr.module { cursor: pointer; }
+  tr.module:hover { background: var(--accent-soft); }
+  tr.files td { padding: 0 10px 12px 28px; }
+  .bar { height: 6px; border-radius: 3px; background: var(--accent); min-width: 2px; }
+  .pill { display: inline-block; padding: 1px 8px; border-radius: 999px; font-size: 12px; font-weight: 600; }
+  .pill.orphan { background: var(--accent-soft); color: var(--accent); }
+  .pill.none { color: var(--bad); }
+  .dev { white-space: nowrap; }
+  .dev::before { content: ""; display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px;
+    vertical-align: 1px; background: var(--good); }
+  .dev.inactive { color: var(--muted); }
+  .dev.inactive::before { background: transparent; box-shadow: inset 0 0 0 1.5px var(--muted); }
+  .legend { display: inline-flex; flex-wrap: wrap; gap: 4px 14px; font-size: 13px; }
+  .scroll { overflow-x: auto; }
+  .tabs { display: flex; flex-wrap: wrap; gap: 6px; margin: 14px 0; }
+  .tabs button { font-size: 13px; padding: 5px 12px; border-radius: 999px; }
+  .tabs button[aria-selected="true"] { background: var(--text); color: var(--bg); border-color: var(--text); }
+  .verified { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; }
+  .verified .meter { width: 120px; height: 8px; border-radius: 4px; background: var(--line); overflow: hidden; }
+  .verified .meter div { height: 100%; background: var(--good); }
+  .kt { max-width: 78ch; }
+  .kt h1 { font-size: 22px; } .kt h2 { font-size: 19px; margin-top: 28px; } .kt h3 { font-size: 15px; margin: 20px 0 6px; }
+  .kt a { color: var(--accent); }
+  .kt li { margin: 3px 0; }
+  .kt ul:has(input[type=checkbox]) { list-style: none; padding-left: 4px; }
+  .muted { color: var(--muted); }
+  .error { color: var(--bad); }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>Handoff <span>Studio</span></h1>
+    <div class="bar-row">
+      <label for="runs" class="muted">Run</label>
+      <select id="runs" class="runs"><option>Loading…</option></select>
+      <button id="delete-run" title="Delete this run's clone and results">Delete run</button>
+      <button id="new-toggle" class="primary">New run</button>
+    </div>
+  </header>
+
+  <section id="new" hidden>
+    <h2>Analyze a repository</h2>
+    <div class="bar-row">
+      <input id="source" class="source" placeholder="https://github.com/owner/repo  or  C:\path\to\local\repo" autocomplete="off">
+      <button id="create" class="primary">Clone &amp; analyze</button>
+    </div>
+    <p class="hint">Mid-sized Python repos (1–5k commits) work best. The full history is cloned, so big repos take a while.</p>
+    <div id="create-job"></div>
+  </section>
+
+  <section id="people" hidden>
+    <h2>Who is leaving?</h2>
+    <p class="muted" id="repo-line" style="margin-top:-6px"></p>
+    <div class="scroll"><table>
+      <thead><tr><th>Developer</th><th class="num">Commits</th><th class="num">Files authored</th><th>Last commit</th><th></th></tr></thead>
+      <tbody id="people-rows"></tbody>
+    </table></div>
+    <div id="analyze-job"></div>
+  </section>
+
+  <section id="impact" hidden>
+    <h2>If this person leaves</h2>
+    <div class="who"><strong id="dev-name"></strong><span class="ids mono" id="dev-ids"></span></div>
+    <div class="stats" id="stats"></div>
+  </section>
+
+  <section id="modules" hidden>
+    <h2>Code that loses its experts, ranked</h2>
+    <p class="muted" style="margin-top:-6px">Click a module to see its files.
+      <span class="legend"><span class="dev active">active (committed in the last 12 months)</span><span class="dev inactive">inactive</span></span></p>
+    <div class="scroll"><table>
+      <thead><tr><th>Module</th><th class="num">Risk</th><th></th><th class="num">Orphaned / at risk</th><th>Successor</th></tr></thead>
+      <tbody id="module-rows"></tbody>
+    </table></div>
+  </section>
+
+  <section id="kt-section" hidden>
+    <h2>Knowledge-transfer plan</h2>
+    <div class="bar-row" id="gen-row">
+      <select id="model" aria-label="Model"></select>
+      <select id="max-files" aria-label="Files per module">
+        <option value="5" selected>Top 5 files per module (fastest)</option>
+        <option value="10">Top 10 files per module</option>
+        <option value="">All files</option>
+      </select>
+      <button id="generate" class="primary">Generate KT</button>
+      <span id="ollama-note" class="muted"></span>
+    </div>
+    <p id="estimate" class="hint"></p>
+    <div id="kt-job"></div>
+    <p id="kt-meta" class="muted"></p>
+    <div class="tabs" id="kt-tabs" role="tablist"></div>
+    <article class="kt" id="kt"></article>
+  </section>
+</main>
+
+<script>
+const $ = (id) => document.getElementById(id);
+const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const pct = (x) => `${Math.round((x ?? 0) * 100)}%`;
+const state = { run: null, runs: [], ollama: { available: false, models: [] }, busy: false };
+
+async function api(path, body, method) {
+  const r = await fetch(path, body === undefined ? { method: method || "GET" } : {
+    method: method || "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) });
+  const data = await r.json().catch(() => ({}));
+  if (!r.ok) throw Object.assign(new Error(data.detail || r.statusText), { status: r.status });
+  return data;
+}
+
+function md(text) {
+  const div = document.createElement("div");
+  div.innerHTML = DOMPurify.sanitize(marked.parse(text || ""));
+  div.querySelectorAll("a[href^='http']").forEach((a) => { a.target = "_blank"; a.rel = "noopener"; });
+  return div.innerHTML;
+}
+
+function setBusy(busy) {
+  state.busy = busy;
+  document.querySelectorAll("button.act, #create, #generate").forEach((b) => { b.disabled = busy || b.dataset.off === "1"; });
+}
+
+// ---- jobs -------------------------------------------------------------
+function jobBox(el, job) {
+  const pctDone = job.total ? (job.done / job.total) * 100 : 0;
+  const indeterminate = job.state === "running" && !job.total;
+  const other = job.run !== state.run ? `<span class="muted">${esc(job.kind)} job on ${esc(job.run)}: </span>` : "";
+  const stop = job.kind === "kt" && job.state === "running"
+    ? `<button class="stop-job" data-id="${esc(job.id)}" ${job.cancel ? "disabled" : ""}>${job.cancel ? "Stopping…" : "Stop"}</button>` : "";
+  el.innerHTML = `<div class="job${job.state === "error" ? " error" : ""}">
+      <div class="head"><div class="step">${other}${esc(job.state === "error" ? job.error : job.step || "Starting…")}</div>${stop}</div>
+      ${job.state === "running" || job.total ? `<div class="progress${indeterminate ? " indeterminate" : ""}"><div style="width:${pctDone}%"></div></div>` : ""}
+      <details><summary>Log</summary><pre>${esc(job.log.join("\n"))}</pre></details></div>`;
+}
+
+async function runJob(el, start) {
+  setBusy(true);
+  try {
+    let job;
+    try { job = await start(); }
+    catch (e) {  // busy: follow the job that is already running instead of just failing
+      if (e.status !== 409) throw e;
+      job = await api("/api/jobs/current");
+      if (!job) throw e;
+    }
+    while (job.state === "running") {
+      jobBox(el, job);
+      await new Promise((r) => setTimeout(r, 1000));
+      job = await api(`/api/jobs/${job.id}`);
+    }
+    jobBox(el, job);
+    return job;
+  } catch (e) {
+    el.innerHTML = `<div class="job error"><div class="step">${esc(e.message)}</div></div>`;
+    return null;
+  } finally {
+    setBusy(false);
+  }
+}
+
+// ---- runs -------------------------------------------------------------
+async function loadRuns(select) {
+  state.runs = await api("/api/runs");
+  $("runs").innerHTML = state.runs.length
+    ? state.runs.map((r) => {
+        const who = r.dev_name ? ` · ${r.dev_name} leaves` : "";
+        const kt = r.has_kt ? ` · KT ${r.claims_verified}/${r.claims_total}` : "";
+        return `<option value="${esc(r.name)}">${esc(r.repo || r.name)}${r.readonly ? " (demo)" : ""}${esc(who)}${esc(kt)}</option>`;
+      }).join("")
+    : `<option value="">No runs yet</option>`;
+  const pick = select || state.run || state.runs[0]?.name;
+  if (pick) { $("runs").value = pick; await openRun(pick); }
+  else $("new").hidden = false;
+}
+
+function current() { return state.runs.find((r) => r.name === state.run) || {}; }
+
+async function openRun(name) {
+  state.run = name;
+  $("delete-run").disabled = !name || Boolean(current().readonly);
+  $("delete-run").title = current().readonly ? "The demo run can't be deleted" : "Delete this run's clone and results";
+  ["people", "impact", "modules", "kt-section"].forEach((id) => { $(id).hidden = true; });
+  ["analyze-job", "kt-job"].forEach((id) => { $(id).innerHTML = ""; });
+  let a;
+  try { a = await api(`/api/runs/${encodeURIComponent(name)}/analysis`); }
+  catch (e) { $("new").hidden = false; return; }
+  const devs = Object.fromEntries(a.developers.map((d) => [d.id, d]));
+  state.analysis = a;
+  renderPeople(a);
+  if (!a.departure) return;
+  renderImpact(a, devs);
+  renderModules(a, devs);
+  $("kt-section").hidden = false;
+  renderGenerate();
+  try { renderKt(await api(`/api/runs/${encodeURIComponent(name)}/kt`)); }
+  catch { $("kt-meta").textContent = "Not generated yet."; $("kt-tabs").innerHTML = ""; $("kt").innerHTML = ""; }
+}
+
+// ---- views ------------------------------------------------------------
+function renderPeople(a) {
+  const ro = current().readonly;
+  const isActive = activity(a);
+  const leaving = a.departure?.dev;
+  $("repo-line").innerHTML = `<a href="https://github.com/${esc(a.repo)}" target="_blank" rel="noopener">${esc(a.repo)}</a>
+      at <code>${esc(a.head.slice(0, 8))}</code> · ${a.developers.length} developers · truck factor ${a.truck_factor.value}`
+      + (ro ? ` · <span class="muted">demo run (read-only)</span>` : "");
+  $("people-rows").innerHTML = a.top_developers.map((d) => `<tr${d.id === leaving ? ' class="selected"' : ""}>
+      <td>${devTag(d.name, d.last_commit, isActive)} <span class="muted mono">${esc(d.id)}</span></td>
+      <td class="num">${d.commits ?? ""}</td><td class="num">${d.files_authored}</td>
+      <td class="muted">${esc((d.last_commit || "").slice(0, 10))}</td>
+      <td class="num"><button class="act" data-dev="${esc(d.id)}" data-off="${ro ? 1 : 0}" ${ro || state.busy ? "disabled" : ""}>
+        ${d.id === leaving ? "Selected" : "Simulate leaving"}</button></td></tr>`).join("");
+  $("people").hidden = false;
+}
+
+// Same rule as the successor logic: active = committed in the 12 months before the repo's latest commit.
+function activity(a) {
+  const ref = new Date(a.head_date || a.developers.map((d) => d.last_commit || "").sort().pop());
+  const cutoff = ref.getTime() - 365 * 864e5;
+  return (last) => Boolean(last) && new Date(last).getTime() >= cutoff;
+}
+
+function devTag(name, last, isActive) {
+  const active = isActive(last);
+  return `<span class="dev ${active ? "active" : "inactive"}"
+      title="Last commit ${esc((last || "unknown").slice(0, 10))} (${active ? "active" : "inactive"})">${esc(name)}</span>`;
+}
+
+function stat(label, sub, value, hot) {
+  return `<div class="stat${hot ? " hot" : ""}"><div class="label">${label}</div><div class="sub">${sub}</div>
+      <div class="value">${value}</div></div>`;
+}
+
+function renderImpact(a, devs) {
+  const dep = a.departure, dev = devs[dep.dev];
+  $("dev-name").textContent = dev.names[0];
+  const others = [...dev.names.slice(1), ...dev.emails];
+  $("dev-ids").textContent = `${dep.dev} · ${dev.commits ?? "?"} commits` + (others.length ? ` · merged identities: ${others.join(", ")}` : "");
+  $("stats").innerHTML = [
+    stat("Orphaned", "Files that lose their only expert", dep.orphaned_files, true),
+    stat("At risk", "Files where they are an author", dep.at_risk_files),
+    stat("File coverage", "Files that still have an expert", `${pct(dep.coverage_before)} <small>→</small> ${pct(dep.coverage_after)}`, true),
+    stat("Truck factor", "People who can leave before half the code has no expert", `${a.truck_factor.value} <small>→</small> ${dep.truck_factor_after}`, true),
+  ].join("");
+  $("impact").hidden = false;
+}
+
+function renderModules(a, devs) {
+  const isActive = activity(a);
+  const tag = (id) => devTag(devs[id]?.names[0] ?? id, devs[id]?.last_commit, isActive);
+  const top = Math.max(...a.modules.map((m) => m.risk), 0) || 1;
+  $("module-rows").innerHTML = a.modules.map((m, i) => {
+    const succ = m.successor ? tag(m.successor.dev) : `<span class="pill none">none</span>`;
+    const files = m.files.map((f) => `<tr>
+        <td class="mono">${esc(f.path)} ${f.orphaned ? '<span class="pill orphan">orphaned</span>' : ""}</td>
+        <td class="num">${f.importance.toFixed(2)}</td><td class="num">${f.loc}</td><td class="num">${f.fan_in}</td>
+        <td>${f.authors.map(tag).join(", ")}</td></tr>`).join("");
+    return `<tr class="module" data-i="${i}">
+        <td class="mono">${esc(m.path)}</td><td class="num">${m.risk.toFixed(2)}</td>
+        <td style="width:28%"><div class="bar" style="width:${(m.risk / top) * 100}%"></div></td>
+        <td class="num">${m.orphaned_files ?? "?"} / ${m.at_risk_files ?? m.files.length}</td><td>${succ}</td></tr>
+      <tr class="files" id="files-${i}" hidden><td colspan="5"><table>
+        <thead><tr><th>File</th><th class="num">Importance</th><th class="num">LOC</th><th class="num">Fan-in</th><th>Authors</th></tr></thead>
+        <tbody>${files}</tbody></table></td></tr>`;
+  }).join("") || `<tr><td colspan="5" class="muted">No at-risk modules.</td></tr>`;
+  $("modules").hidden = false;
+}
+
+function renderGenerate() {
+  const ro = current().readonly, o = state.ollama;
+  $("gen-row").hidden = ro;
+  const models = o.models.length ? o.models : [o.default || "qwen2.5-coder:7b"];
+  $("model").innerHTML = models.map((m) => `<option${m === o.default ? " selected" : ""}>${esc(m)}</option>`).join("");
+  $("generate").dataset.off = o.available ? "0" : "1";
+  $("generate").disabled = !o.available || state.busy;
+  $("ollama-note").textContent = o.available ? "Runs locally on this machine's GPU." : "Ollama not found on this machine, so saved plans only.";
+  renderEstimate();
+}
+
+function renderEstimate() {
+  // Files per module are sorted by importance; empty files are skipped (same rule as the server).
+  const max = $("max-files").value ? +$("max-files").value : Infinity;
+  const n = (state.analysis?.modules || []).reduce((sum, m) => sum + Math.min(m.files.filter((f) => f.loc > 0).length, max), 0);
+  const all = (state.analysis?.modules || []).reduce((sum, m) => sum + m.files.filter((f) => f.loc > 0).length, 0);
+  const mins = Math.max(1, Math.round((n * 15) / 60));
+  $("estimate").textContent = `≈ ${n} of ${all} files, about ${mins} min (~15 s per file; files already generated come from the cache).`;
+}
+
+function renderKt(kt) {
+  const rate = kt.claims_total ? kt.claims_verified / kt.claims_total : 0;
+  $("kt-meta").innerHTML = `<span class="verified">${kt.claims_verified} / ${kt.claims_total} claims verified
+      <span class="meter"><div style="width:${rate * 100}%"></div></span></span>
+      · model <code>${esc(kt.model)}</code> · prompt ${esc(kt.prompt_version)}`;
+  const views = [{ label: "Full plan", markdown: kt.markdown }, ...kt.modules.map((m) => ({
+    label: `${m.path} (${m.claims_verified}/${m.claims_total})`, markdown: m.markdown }))];
+  const show = (i) => {
+    $("kt").innerHTML = md(views[i].markdown);
+    [...$("kt-tabs").children].forEach((b, j) => b.setAttribute("aria-selected", String(i === j)));
+  };
+  $("kt-tabs").innerHTML = views.map((v, i) => `<button role="tab" data-i="${i}">${esc(v.label)}</button>`).join("");
+  $("kt-tabs").onclick = (e) => { const b = e.target.closest("button"); if (b) show(+b.dataset.i); };
+  show(0);
+}
+
+// ---- actions ----------------------------------------------------------
+$("runs").onchange = (e) => { if (e.target.value) openRun(e.target.value); };
+$("new-toggle").onclick = () => { $("new").hidden = !$("new").hidden; if (!$("new").hidden) $("source").focus(); };
+$("source").onkeydown = (e) => { if (e.key === "Enter") $("create").click(); };
+
+$("create").onclick = async () => {
+  const source = $("source").value.trim();
+  if (!source) return $("source").focus();
+  const job = await runJob($("create-job"), () => api("/api/runs", { source }));
+  if (job?.state === "done") { $("new").hidden = true; $("create-job").innerHTML = ""; await loadRuns(job.run); }
+};
+
+$("people-rows").onclick = async (e) => {
+  const b = e.target.closest("button[data-dev]");
+  if (!b || b.disabled) return;
+  const job = await runJob($("analyze-job"), () => api(`/api/runs/${encodeURIComponent(state.run)}/analyze`, { who: b.dataset.dev }));
+  if (job?.state === "done") await loadRuns(state.run);
+};
+
+$("module-rows").onclick = (e) => {
+  const tr = e.target.closest("tr.module");
+  if (tr) { const row = $(`files-${tr.dataset.i}`); row.hidden = !row.hidden; }
+};
+
+$("max-files").onchange = renderEstimate;
+
+$("delete-run").onclick = async () => {
+  const run = current();
+  if (!run.name || run.readonly) return;
+  const local = run.source && !/^https:\/\/github\.com\//.test(run.source);
+  const msg = `Delete the run "${run.repo || run.name}"?\n\nThis removes its ${local ? "" : "clone, "}analysis, KT plan and cache.`
+    + (local ? `\nYour local repository (${run.source}) is not touched.` : "");
+  if (!confirm(msg)) return;
+  try {
+    await api(`/api/runs/${encodeURIComponent(run.name)}`, undefined, "DELETE");
+    state.run = null;
+    await loadRuns();
+  } catch (e) {
+    alert(`Could not delete: ${e.message}`);
+  }
+};
+
+$("generate").onclick = async () => {
+  const max_files = $("max-files").value ? +$("max-files").value : null;
+  const job = await runJob($("kt-job"), () => api(`/api/runs/${encodeURIComponent(state.run)}/kt`, { model: $("model").value, max_files }));
+  if (job?.state === "done") await loadRuns(state.run);
+};
+
+document.addEventListener("click", async (e) => {
+  const b = e.target.closest("button.stop-job");
+  if (!b) return;
+  b.disabled = true;
+  b.textContent = "Stopping…";
+  try { await api(`/api/jobs/${b.dataset.id}/cancel`, {}); } catch { /* already finished */ }
+});
+
+(async () => {
+  try { state.ollama = await api("/api/ollama"); } catch { /* shown as unavailable */ }
+  let running = null;
+  try { running = await api("/api/jobs/current"); } catch { /* none */ }
+  try { await loadRuns(); }
+  catch (e) { $("runs").innerHTML = `<option>Could not load runs: ${esc(e.message)}</option>`; }
+  if (running) {  // the page was reloaded mid-job: show its progress again
+    if (running.run !== state.run && state.runs.some((r) => r.name === running.run)) {
+      $("runs").value = running.run;
+      await openRun(running.run);
+    }
+    if (running.kind === "create") $("new").hidden = false;
+    const box = $({ create: "create-job", analyze: "analyze-job", kt: "kt-job" }[running.kind]);
+    const job = await runJob(box, async () => running);
+    if (job?.state === "done") await loadRuns(running.run);
+  }
+})();
+</script>
+</body>
+</html>
