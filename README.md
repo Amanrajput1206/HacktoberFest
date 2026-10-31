@@ -13,7 +13,22 @@ Built at **DevF8rge Finals: Hacktoberfest 2026 Hack Day, Bengaluru** (30–31 Oc
 <!-- AVI:START demo -->
 ## Demo
 
-TBD (screenshot, GIF or video link)
+![Handoff showing what psf/requests loses if Kenneth Reitz leaves](docs/images/demo.png)
+
+On [psf/requests](https://github.com/psf/requests), if Kenneth Reitz leaves:
+
+- **13 files** lose their only expert, and file coverage drops from **100% to 65%**.
+- The truck factor drops from **3 to 2**.
+- Almost all of the risk is in `src/requests/`, and Nate Prewitt is the suggested successor.
+- The KT plan makes **94 claims, and 81 of them are verified** against the evidence. Every claim links to the exact line or commit on GitHub.
+
+Try it without a GPU, using the saved results:
+
+```bash
+handoff serve --data-dir examples/requests     # http://127.0.0.1:8000
+```
+
+The generated plan is also in [examples/requests/KT-d1.md](examples/requests/KT-d1.md).
 <!-- AVI:END demo -->
 
 <!-- AMAN:START analysis -->
@@ -72,7 +87,56 @@ handoff serve                                      # web UI on http://127.0.0.1:
 <!-- AVI:START generation -->
 ## How the KT plan is generated
 
-TBD: context packs, local model, map/reduce, citation validator, caching.
+The analysis decides **which** code is at risk. A local open-weight model then explains that code, and a plain-code checker removes every claim it can't back up.
+
+1. **Evidence pack per file.** For each at-risk file in the top folders, Handoff collects, with line numbers:
+   - the code outline (signatures and docstrings);
+   - the departing developer's commit messages;
+   - their own `TODO` / `FIXME` / `HACK` comments (from `git blame`);
+   - their fix and revert commits;
+   - related tests;
+   - the files that import it.
+
+   Each pack is capped at about 6k tokens.
+2. **Notes per file (map).** The model returns fixed JSON:
+   - purpose;
+   - entry points, invariants and gotchas, **each with a citation** (`path:line` or `commit:sha`);
+   - open questions for the maintainer.
+
+   It is told to use only the evidence and to ask a question instead of guessing.
+3. **Citation check.** Plain Python drops any claim whose citation was not in that file's evidence pack. An entry point must also name something that appears on the line it cites. The kept / total count is shown as "claims verified".
+4. **Summary per folder (reduce).** The model writes a short summary, the most important questions and the handoff tasks from the checked notes. It can't add new cited claims at this step.
+5. **Render.** Code, not the model, assembles `KT-<dev>.md` and `kt.json` from the checked claims. Each citation becomes a link to that line or commit on GitHub.
+6. **Cache.** Raw model output is cached per file, keyed by (HEAD commit, developer, model, prompt version). Re-runs are instant, and the demo works offline. The checker re-runs on every load.
+
+**Model.** `qwen2.5-coder:7b` runs through [Ollama](https://ollama.com) in JSON mode, with an 8k context and temperature 0.2, entirely on a laptop GPU (RTX 5060, 8 GB). The code never leaves the machine.
+
+We measured both candidate models on the same evidence:
+
+| Model | Claims verified (requests) | Time for the full plan |
+|---|---|---|
+| `qwen2.5-coder:7b` (default) | **86%** (81 / 94) | ~2.5 min |
+| `gemma3:4b` | 63% | faster |
+
+Gemma often cited the wrong line number, so the checker dropped more of its claims.
+
+**What "verified" means.** A verified claim points to a line or commit the model was really shown. That stops it from inventing locations. It doesn't prove the sentence describes that line correctly, so a human should still read the plan. Every claim is one click from its source.
+
+### Handoff Studio: run any repo from the browser
+
+```bash
+python -m handoff.studio      # http://127.0.0.1:8001 (needs Ollama)
+```
+
+In the Studio you can:
+
+- paste a GitHub URL or a local path, and it clones and analyses the repo;
+- pick who leaves from the top authors;
+- generate the plan with a live progress bar;
+- limit the run to the top 5 or 10 files per folder, and stop and resume it (finished files stay cached);
+- delete runs.
+
+Developers are marked active or inactive (committed in the last 12 months). Runs are kept in `~/handoff-runs/`, outside the repo. `handoff serve` stays a read-only view of saved results.
 <!-- AVI:END generation -->
 
 <!-- AMAN:START footer -->
