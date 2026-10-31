@@ -23,6 +23,12 @@
   main { max-width: 1080px; margin: 0 auto; padding: 24px 16px 64px; }
   header h1 { margin: 0; font-size: 26px; letter-spacing: -0.01em; }
   header p { margin: 4px 0 0; color: var(--muted); }
+  [hidden] { display: none !important; }
+  header .top { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; justify-content: space-between; }
+  header label { color: var(--muted); font-size: 14px; display: inline-flex; gap: 8px; align-items: center; }
+  header select { font: inherit; font-size: 14px; padding: 6px 10px; border-radius: 8px; border: 1px solid var(--line);
+    background: var(--panel); color: var(--text); max-width: 100%; }
+  header .note { font-size: 13px; }
   code, .mono { font-family: var(--mono); font-size: 0.92em; }
   a { color: var(--accent); }
   section { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 20px; margin-top: 20px; }
@@ -83,8 +89,13 @@
 <body>
 <main>
   <header>
-    <h1>Handoff</h1>
+    <div class="top">
+      <h1>Handoff</h1>
+      <label id="demo-picker" hidden>Repo <select id="demo"></select></label>
+    </div>
     <p id="repo">Loading analysis…</p>
+    <p id="hosted-note" class="note" hidden>Saved results from our demo runs. Live generation runs locally with a
+      local model (Ollama): see the <a href="https://github.com/Amanrajput1206/HacktoberFest#readme" target="_blank" rel="noopener">README</a>.</p>
   </header>
 
   <section id="impact" hidden>
@@ -186,10 +197,10 @@ function renderModules(a, devs) {
         <tbody>${files}</tbody></table></td></tr>`;
   }).join("");
   $("module-rows").innerHTML = rows || `<tr><td colspan="5" class="muted">No at-risk modules.</td></tr>`;
-  $("module-rows").addEventListener("click", (e) => {
+  $("module-rows").onclick = (e) => {
     const tr = e.target.closest("tr.module");
     if (tr) { const row = $(`files-${tr.dataset.i}`); row.hidden = !row.hidden; }
-  });
+  };
   $("modules").hidden = false;
 }
 
@@ -232,20 +243,56 @@ function renderKt(kt) {
     [...$("kt-tabs").children].forEach((b, j) => b.setAttribute("aria-selected", String(i === j)));
   };
   $("kt-tabs").innerHTML = views.map((v, i) => `<button role="tab" data-i="${i}">${esc(v.label)}</button>`).join("");
-  $("kt-tabs").addEventListener("click", (e) => { const b = e.target.closest("button"); if (b) show(+b.dataset.i); });
+  $("kt-tabs").onclick = (e) => { const b = e.target.closest("button"); if (b) show(+b.dataset.i); };
   show(0);
 }
 
+async function getJSON(url) {
+  const r = await fetch(url);
+  if (!r.ok) throw new Error((await r.json().catch(() => ({}))).detail || `${r.status} ${r.statusText}`);
+  return r.json();
+}
+
+// Two ways to get data: `handoff serve` (one run behind /api/...) or a static host such as Vercel
+// (examples/index.json lists saved runs, each a folder with analysis.json and kt.json).
 async function main() {
-  let a;
+  let demos = null;
+  try { const r = await fetch("/examples/index.json"); if (r.ok) demos = await r.json(); } catch { /* API mode */ }
+  if (demos?.length) return staticMode(demos);
   try {
-    const r = await fetch("/api/analysis");
-    if (!r.ok) throw new Error((await r.json()).detail || r.statusText);
-    a = await r.json();
+    const a = await getJSON("/api/analysis");
+    await showRun(a, () => getJSON(`/api/kt/${encodeURIComponent(a.departure.dev)}`));
   } catch (e) {
     $("repo").innerHTML = `<span class="error">Could not load analysis: ${esc(e.message)}</span>`;
-    return;
   }
+}
+
+async function staticMode(demos) {
+  const pick = new URLSearchParams(location.search).get("repo");
+  const current = demos.find((d) => d.id === pick) || demos[0];
+  $("demo").innerHTML = demos.map((d) => `<option value="${esc(d.id)}">${esc(d.label)}</option>`).join("");
+  $("demo").value = current.id;
+  $("demo-picker").hidden = false;
+  $("hosted-note").hidden = false;
+  const load = async (demo) => {
+    const base = "/" + demo.dir.replace(/^\/+|\/+$/g, "");
+    try {
+      await showRun(await getJSON(`${base}/analysis.json`), () => getJSON(`${base}/kt.json`));
+    } catch (e) {
+      $("repo").innerHTML = `<span class="error">Could not load ${esc(demo.label)}: ${esc(e.message)}</span>`;
+    }
+  };
+  $("demo").onchange = () => {
+    const demo = demos.find((d) => d.id === $("demo").value);
+    history.replaceState(null, "", `?repo=${encodeURIComponent(demo.id)}`);
+    load(demo);
+  };
+  await load(current);
+}
+
+async function showRun(a, loadKt) {
+  ["impact", "modules", "heatmap", "kt-section"].forEach((id) => { $(id).hidden = true; });
+  ["kt-meta", "kt-tabs", "kt"].forEach((id) => { $(id).innerHTML = ""; });
   const devs = Object.fromEntries(a.developers.map((d) => [d.id, d]));
   $("repo").innerHTML = `<a href="https://github.com/${esc(a.repo)}" target="_blank" rel="noopener">${esc(a.repo)}</a>
       at <code>${esc(a.head.slice(0, 8))}</code> · ${a.developers.length} developers · truck factor ${a.truck_factor.value}`;
@@ -258,8 +305,9 @@ async function main() {
   renderHeatmap(a, devs);
 
   $("kt-section").hidden = false;
-  const r = await fetch(`/api/kt/${encodeURIComponent(a.departure.dev)}`);
-  if (r.ok) renderKt(await r.json());
+  let kt = null;
+  try { kt = await loadKt(); } catch { /* not generated yet */ }
+  if (kt && kt.dev === a.departure.dev) renderKt(kt);
   else $("kt-meta").innerHTML = `Not generated yet. Run <code>handoff kt &lt;repo&gt; --who ${esc(a.departure.dev)}</code>.`;
 }
 main();

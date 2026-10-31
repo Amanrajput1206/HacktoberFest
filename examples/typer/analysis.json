@@ -1,0 +1,1621 @@
+{
+  "repo": "fastapi/typer",
+  "head": "a5882dedf0bc7a46cd861fdfca020f88519e0f21",
+  "head_date": "2026-10-15T15:21:59+00:00",
+  "generated_at": "2026-10-31T03:21:03+00:00",
+  "developers": [
+    {
+      "id": "d1",
+      "names": [
+        "Sebasti\u00e1n Ram\u00edrez"
+      ],
+      "emails": [
+        "tiangolo@gmail.com"
+      ],
+      "commits": 220,
+      "files_authored": 369,
+      "last_commit": "2026-10-06T17:15:49+00:00"
+    },
+    {
+      "id": "d2",
+      "names": [
+        "Sofie Van Landeghem"
+      ],
+      "emails": [
+        "svlandeg@users.noreply.github.com"
+      ],
+      "commits": 50,
+      "files_authored": 57,
+      "last_commit": "2026-08-28T10:14:59+00:00"
+    },
+    {
+      "id": "d3",
+      "names": [
+        "Patrick Arminio"
+      ],
+      "emails": [
+        "patrick.arminio@gmail.com"
+      ],
+      "commits": 5,
+      "files_authored": 15,
+      "last_commit": "2026-06-03T07:09:29+00:00"
+    },
+    {
+      "id": "d4",
+      "names": [
+        "Motov Yurii",
+        "Yurii Motov"
+      ],
+      "emails": [
+        "109919500+yuriimotov@users.noreply.github.com"
+      ],
+      "commits": 5,
+      "files_authored": 35,
+      "last_commit": "2026-09-08T11:04:13+00:00"
+    },
+    {
+      "id": "d5",
+      "names": [
+        "Brian Kohan"
+      ],
+      "emails": [
+        "bckohan@gmail.com"
+      ],
+      "commits": 2,
+      "files_authored": 1,
+      "last_commit": "2026-02-13T10:02:41+00:00"
+    },
+    {
+      "id": "d6",
+      "names": [
+        "Garrett Smith"
+      ],
+      "emails": [
+        "garrett@placeon.earth"
+      ],
+      "commits": 2,
+      "files_authored": 0,
+      "last_commit": "2025-12-19T15:00:05+00:00"
+    },
+    {
+      "id": "d7",
+      "names": [
+        "Iv\u00e1n Todorovich"
+      ],
+      "emails": [
+        "ivan.todorovich@gmail.com"
+      ],
+      "commits": 2,
+      "files_authored": 1,
+      "last_commit": "2024-08-28T23:32:10+00:00"
+    },
+    {
+      "id": "d8",
+      "names": [
+        "Nathan McDougall"
+      ],
+      "emails": [
+        "nathan.j.mcdougall@gmail.com",
+        "nmcdougall@tonkintaylor.co.nz"
+      ],
+      "commits": 2,
+      "files_authored": 1,
+      "last_commit": "2025-12-19T14:41:25+00:00"
+    },
+    {
+      "id": "d9",
+      "names": [
+        "Philipp Stahlberg"
+      ],
+      "emails": [
+        "131917964+phalberg@users.noreply.github.com"
+      ],
+      "commits": 2,
+      "files_authored": 0,
+      "last_commit": "2026-08-03T19:51:00+00:00"
+    },
+    {
+      "id": "d10",
+      "names": [
+        "Aditya Raj"
+      ],
+      "emails": [
+        "147165909+adityaraj8969@users.noreply.github.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2026-05-19T11:45:32+00:00"
+    },
+    {
+      "id": "d11",
+      "names": [
+        "Alejandra"
+      ],
+      "emails": [
+        "90076947+alejsdev@users.noreply.github.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2026-01-16T11:24:30+00:00"
+    },
+    {
+      "id": "d12",
+      "names": [
+        "Alex Jurkiewicz"
+      ],
+      "emails": [
+        "alex@jurkiewi.cz"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2024-08-17T01:34:24+00:00"
+    },
+    {
+      "id": "d13",
+      "names": [
+        "Alexandre Sieira"
+      ],
+      "emails": [
+        "alexandre.sieira@gmail.com"
+      ],
+      "commits": 1,
+      "files_authored": 3,
+      "last_commit": "2024-03-23T16:31:16+00:00"
+    },
+    {
+      "id": "d14",
+      "names": [
+        "Alvaro Valdebenito"
+      ],
+      "emails": [
+        "avaldebe@gmail.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2024-03-23T13:56:20+00:00"
+    },
+    {
+      "id": "d15",
+      "names": [
+        "Aryaz Eghbali"
+      ],
+      "emails": [
+        "64126826+aryaze@users.noreply.github.com"
+      ],
+      "commits": 1,
+      "files_authored": 1,
+      "last_commit": "2024-11-07T17:24:38+00:00"
+    },
+    {
+      "id": "d16",
+      "names": [
+        "Asthestarsfalll"
+      ],
+      "emails": [
+        "72954905+asthestarsfalll@users.noreply.github.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2024-04-07T04:45:03+00:00"
+    },
+    {
+      "id": "d17",
+      "names": [
+        "Benjy Wiener"
+      ],
+      "emails": [
+        "info@benjywiener.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2026-02-10T17:14:40+00:00"
+    },
+    {
+      "id": "d18",
+      "names": [
+        "Chris Burr"
+      ],
+      "emails": [
+        "chrisburr@users.noreply.github.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2024-08-24T20:10:55+00:00"
+    },
+    {
+      "id": "d19",
+      "names": [
+        "Colin Nolan"
+      ],
+      "emails": [
+        "colin-nolan@users.noreply.github.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2025-11-25T12:46:01+00:00"
+    },
+    {
+      "id": "d20",
+      "names": [
+        "Danilo Horta"
+      ],
+      "emails": [
+        "danilo.horta@pm.me"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2025-02-27T18:46:26+00:00"
+    },
+    {
+      "id": "d21",
+      "names": [
+        "David Stuebe"
+      ],
+      "emails": [
+        "84335963+emfdavid@users.noreply.github.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2025-08-30T12:32:29+00:00"
+    },
+    {
+      "id": "d22",
+      "names": [
+        "Dima Goncharenko"
+      ],
+      "emails": [
+        "dimargfd@gmail.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2025-09-20T08:42:49+00:00"
+    },
+    {
+      "id": "d23",
+      "names": [
+        "Foo Mun Leong"
+      ],
+      "emails": [
+        "foo-mun.leong@keysight.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2026-06-17T08:59:07+00:00"
+    },
+    {
+      "id": "d24",
+      "names": [
+        "Gabriel Arjones"
+      ],
+      "emails": [
+        "arjones@arjones.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2025-09-05T18:06:42+00:00"
+    },
+    {
+      "id": "d25",
+      "names": [
+        "Irvin Ho"
+      ],
+      "emails": [
+        "8572372+hellowhistler@users.noreply.github.com"
+      ],
+      "commits": 1,
+      "files_authored": 1,
+      "last_commit": "2022-07-02T17:26:03+00:00"
+    },
+    {
+      "id": "d26",
+      "names": [
+        "JAYATI SHRIVASTAVA"
+      ],
+      "emails": [
+        "gaurijove@gmail.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2020-08-16T14:39:14+00:00"
+    },
+    {
+      "id": "d27",
+      "names": [
+        "John Purviance"
+      ],
+      "emails": [
+        "jsgpurviance@gmail.com"
+      ],
+      "commits": 1,
+      "files_authored": 4,
+      "last_commit": "2023-05-01T10:03:26+00:00"
+    },
+    {
+      "id": "d28",
+      "names": [
+        "Jonas L. B."
+      ],
+      "emails": [
+        "drixi.b@gmail.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2024-08-17T02:22:43+00:00"
+    },
+    {
+      "id": "d29",
+      "names": [
+        "Kazantcev Andrey"
+      ],
+      "emails": [
+        "heckad@yandex.ru"
+      ],
+      "commits": 1,
+      "files_authored": 1,
+      "last_commit": "2024-03-23T17:01:25+00:00"
+    },
+    {
+      "id": "d30",
+      "names": [
+        "Kevin Kirsche"
+      ],
+      "emails": [
+        "swaps.jury0u@icloud.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2024-12-04T17:33:32+00:00"
+    },
+    {
+      "id": "d31",
+      "names": [
+        "Kinuax"
+      ],
+      "emails": [
+        "kinuax@users.noreply.github.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2025-09-20T09:06:25+00:00"
+    },
+    {
+      "id": "d32",
+      "names": [
+        "Leron Gray"
+      ],
+      "emails": [
+        "daddycocoaman@gmail.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2022-07-02T16:36:55+00:00"
+    },
+    {
+      "id": "d33",
+      "names": [
+        "Mahimai Raja J"
+      ],
+      "emails": [
+        "mahimairaja3@gmail.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2026-02-10T16:52:52+00:00"
+    },
+    {
+      "id": "d34",
+      "names": [
+        "Martina Oefelein"
+      ],
+      "emails": [
+        "oefe@users.noreply.github.com"
+      ],
+      "commits": 1,
+      "files_authored": 2,
+      "last_commit": "2025-08-30T11:12:30+00:00"
+    },
+    {
+      "id": "d35",
+      "names": [
+        "Matt Crane"
+      ],
+      "emails": [
+        "mcrane@snapbug.geek.nz"
+      ],
+      "commits": 1,
+      "files_authored": 2,
+      "last_commit": "2024-11-07T17:09:14+00:00"
+    },
+    {
+      "id": "d36",
+      "names": [
+        "Matthew Messinger"
+      ],
+      "emails": [
+        "mattmess1221@gmail.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2025-08-30T12:11:45+00:00"
+    },
+    {
+      "id": "d37",
+      "names": [
+        "Matthias Bach"
+      ],
+      "emails": [
+        "marix@marix.org"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2022-11-07T17:53:34+00:00"
+    },
+    {
+      "id": "d38",
+      "names": [
+        "Mat\u011bj Ra\u010dinsk\u00fd"
+      ],
+      "emails": [
+        "racinsky.matej@seznam.cz"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2024-08-24T20:36:12+00:00"
+    },
+    {
+      "id": "d39",
+      "names": [
+        "Mohamed Elmujtaba Elwasila"
+      ],
+      "emails": [
+        "96664060+mohamed-elwasila@users.noreply.github.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2026-05-19T12:44:48+00:00"
+    },
+    {
+      "id": "d40",
+      "names": [
+        "Nick"
+      ],
+      "emails": [
+        "me@nickdmartin.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2024-08-24T20:09:20+00:00"
+    },
+    {
+      "id": "d41",
+      "names": [
+        "Patrick Lannigan"
+      ],
+      "emails": [
+        "p.lannigan@gmail.com"
+      ],
+      "commits": 1,
+      "files_authored": 2,
+      "last_commit": "2024-03-23T16:01:46+00:00"
+    },
+    {
+      "id": "d42",
+      "names": [
+        "Paulo Costa"
+      ],
+      "emails": [
+        "me@paulo.costa.nom.br"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2023-07-31T15:13:05+00:00"
+    },
+    {
+      "id": "d43",
+      "names": [
+        "Rick Porter"
+      ],
+      "emails": [
+        "99488405+rickwporter@users.noreply.github.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2025-12-19T13:56:07+00:00"
+    },
+    {
+      "id": "d44",
+      "names": [
+        "Rupsi Kaushik"
+      ],
+      "emails": [
+        "rkaus053@uottawa.ca"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2020-08-16T12:01:19+00:00"
+    },
+    {
+      "id": "d45",
+      "names": [
+        "Savannah Ostrowski"
+      ],
+      "emails": [
+        "savannah@python.org"
+      ],
+      "commits": 1,
+      "files_authored": 3,
+      "last_commit": "2025-10-20T17:00:48+00:00"
+    },
+    {
+      "id": "d46",
+      "names": [
+        "Sorin Sbarnea"
+      ],
+      "emails": [
+        "sorin.sbarnea@gmail.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2024-04-08T19:10:11+00:00"
+    },
+    {
+      "id": "d47",
+      "names": [
+        "Swaati Raveendra"
+      ],
+      "emails": [
+        "85189166+swaatir@users.noreply.github.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2026-02-16T08:50:36+00:00"
+    },
+    {
+      "id": "d48",
+      "names": [
+        "Teymour Aldridge"
+      ],
+      "emails": [
+        "42674621+teymour-aldridge@users.noreply.github.com"
+      ],
+      "commits": 1,
+      "files_authored": 2,
+      "last_commit": "2020-06-23T11:29:45+00:00"
+    },
+    {
+      "id": "d49",
+      "names": [
+        "TheTechromancer"
+      ],
+      "emails": [
+        "20261699+thetechromancer@users.noreply.github.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2025-02-27T19:13:08+00:00"
+    },
+    {
+      "id": "d50",
+      "names": [
+        "Thibaut Voirand"
+      ],
+      "emails": [
+        "thibautvoirand@gmail.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2024-12-04T17:32:02+00:00"
+    },
+    {
+      "id": "d51",
+      "names": [
+        "Valentin Calomme"
+      ],
+      "emails": [
+        "info@valentincalomme.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2020-03-19T06:45:45+00:00"
+    },
+    {
+      "id": "d52",
+      "names": [
+        "Zachary Blackwood"
+      ],
+      "emails": [
+        "4040678+blackary@users.noreply.github.com"
+      ],
+      "commits": 1,
+      "files_authored": 3,
+      "last_commit": "2025-09-20T07:51:38+00:00"
+    },
+    {
+      "id": "d53",
+      "names": [
+        "arjenzorgdoc"
+      ],
+      "emails": [
+        "arjen@zorgdoc.nl"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2025-09-20T07:27:26+00:00"
+    },
+    {
+      "id": "d54",
+      "names": [
+        "gkeuccsr"
+      ],
+      "emails": [
+        "166070166+gkeuccsr@users.noreply.github.com"
+      ],
+      "commits": 1,
+      "files_authored": 1,
+      "last_commit": "2025-02-27T18:44:44+00:00"
+    },
+    {
+      "id": "d55",
+      "names": [
+        "goraje"
+      ],
+      "emails": [
+        "45512761+goraje@users.noreply.github.com"
+      ],
+      "commits": 1,
+      "files_authored": 3,
+      "last_commit": "2025-02-27T19:09:37+00:00"
+    },
+    {
+      "id": "d56",
+      "names": [
+        "jmills"
+      ],
+      "emails": [
+        "runofthemill@users.noreply.github.com"
+      ],
+      "commits": 1,
+      "files_authored": 2,
+      "last_commit": "2023-05-01T11:05:30+00:00"
+    },
+    {
+      "id": "d57",
+      "names": [
+        "m9810223"
+      ],
+      "emails": [
+        "39259397+m9810223@users.noreply.github.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2024-03-23T15:09:05+00:00"
+    },
+    {
+      "id": "d58",
+      "names": [
+        "mjod"
+      ],
+      "emails": [
+        "62674781+mjodmj@users.noreply.github.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2024-03-23T17:04:48+00:00"
+    },
+    {
+      "id": "d59",
+      "names": [
+        "patricksurry"
+      ],
+      "emails": [
+        "patrick.surry@gmail.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2024-08-24T20:44:57+00:00"
+    },
+    {
+      "id": "d60",
+      "names": [
+        "theowisear"
+      ],
+      "emails": [
+        "127741468+theowisear@users.noreply.github.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2024-03-23T17:17:14+00:00"
+    },
+    {
+      "id": "d61",
+      "names": [
+        "yassu"
+      ],
+      "emails": [
+        "yassu0320.dev@gmail.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2022-11-05T14:41:02+00:00"
+    }
+  ],
+  "truck_factor": {
+    "value": 1,
+    "removed": [
+      "d1"
+    ],
+    "coverage": 0.7755
+  },
+  "departure": {
+    "dev": "d1",
+    "at_risk_files": 369,
+    "orphaned_files": 362,
+    "coverage_before": 0.7755,
+    "coverage_after": 0.2152,
+    "truck_factor_after": 0
+  },
+  "modules": [
+    {
+      "path": "typer/",
+      "risk": 2.367,
+      "orphaned_files": 11,
+      "at_risk_files": 15,
+      "successor": {
+        "dev": "d2",
+        "doa_sum": 7.575
+      },
+      "files": [
+        {
+          "path": "typer/__init__.py",
+          "loc": 30,
+          "fan_in": 330,
+          "orphaned": true,
+          "importance": 0.607,
+          "authors": [
+            "d1"
+          ],
+          "doa_n": {
+            "d1": 1.0,
+            "d2": 0.105,
+            "d26": 0.097,
+            "d3": 0.097
+          }
+        },
+        {
+          "path": "typer/main.py",
+          "loc": 1811,
+          "fan_in": 7,
+          "orphaned": true,
+          "importance": 0.432,
+          "authors": [
+            "d1"
+          ],
+          "doa_n": {
+            "d1": 1.0,
+            "d2": 0.476,
+            "d3": 0.327,
+            "d48": 0.263,
+            "d26": 0.263,
+            "d32": 0.263,
+            "d25": 0.263,
+            "d61": 0.263,
+            "d27": 0.263,
+            "d42": 0.263,
+            "d14": 0.263,
+            "d60": 0.263,
+            "d16": 0.263,
+            "d5": 0.263,
+            "d28": 0.263,
+            "d18": 0.263,
+            "d38": 0.263,
+            "d7": 0.263,
+            "d15": 0.263,
+            "d20": 0.263,
+            "d34": 0.263,
+            "d21": 0.263,
+            "d24": 0.263,
+            "d8": 0.263,
+            "d52": 0.263,
+            "d22": 0.263,
+            "d45": 0.263,
+            "d19": 0.263,
+            "d6": 0.263
+          }
+        },
+        {
+          "path": "typer/params.py",
+          "loc": 1623,
+          "fan_in": 2,
+          "orphaned": true,
+          "importance": 0.377,
+          "authors": [
+            "d1"
+          ],
+          "doa_n": {
+            "d1": 1.0,
+            "d2": 0.637,
+            "d26": 0.493,
+            "d27": 0.493,
+            "d57": 0.493,
+            "d41": 0.493
+          }
+        },
+        {
+          "path": "typer/testing.py",
+          "loc": 283,
+          "fan_in": 176,
+          "orphaned": true,
+          "importance": 0.292,
+          "authors": [
+            "d1"
+          ],
+          "doa_n": {
+            "d1": 1.0,
+            "d2": 0.548,
+            "d53": 0.511
+          }
+        },
+        {
+          "path": "typer/core.py",
+          "loc": 1051,
+          "fan_in": 17,
+          "orphaned": false,
+          "importance": 0.261,
+          "authors": [
+            "d1",
+            "d2"
+          ],
+          "doa_n": {
+            "d2": 1.0,
+            "d1": 0.968,
+            "d8": 0.542,
+            "d26": 0.505,
+            "d42": 0.505,
+            "d13": 0.505,
+            "d58": 0.505,
+            "d3": 0.505,
+            "d20": 0.505,
+            "d34": 0.505,
+            "d24": 0.505,
+            "d45": 0.505,
+            "d5": 0.505
+          }
+        },
+        {
+          "path": "typer/rich_utils.py",
+          "loc": 684,
+          "fan_in": 6,
+          "orphaned": false,
+          "importance": 0.174,
+          "authors": [
+            "d1",
+            "d2"
+          ],
+          "doa_n": {
+            "d2": 1.0,
+            "d1": 0.793,
+            "d58": 0.548,
+            "d46": 0.548,
+            "d20": 0.548,
+            "d55": 0.548,
+            "d49": 0.548,
+            "d6": 0.548,
+            "d36": 0.548,
+            "d24": 0.548,
+            "d33": 0.548,
+            "d17": 0.548,
+            "d4": 0.548
+          }
+        },
+        {
+          "path": "typer/models.py",
+          "loc": 650,
+          "fan_in": 9,
+          "orphaned": true,
+          "importance": 0.17,
+          "authors": [
+            "d1"
+          ],
+          "doa_n": {
+            "d1": 1.0,
+            "d2": 0.515,
+            "d26": 0.399,
+            "d27": 0.399,
+            "d41": 0.399
+          }
+        },
+        {
+          "path": "typer/cli.py",
+          "loc": 280,
+          "fan_in": 2,
+          "orphaned": false,
+          "importance": 0.088,
+          "authors": [
+            "d1",
+            "d2"
+          ],
+          "doa_n": {
+            "d1": 1.0,
+            "d2": 0.758,
+            "d34": 0.585,
+            "d8": 0.585
+          }
+        },
+        {
+          "path": "typer/_completion_shared.py",
+          "loc": 225,
+          "fan_in": 5,
+          "orphaned": false,
+          "importance": 0.072,
+          "authors": [
+            "d1",
+            "d2"
+          ],
+          "doa_n": {
+            "d1": 1.0,
+            "d2": 0.758,
+            "d12": 0.585,
+            "d8": 0.585
+          }
+        },
+        {
+          "path": "typer/_completion_classes.py",
+          "loc": 190,
+          "fan_in": 2,
+          "orphaned": true,
+          "importance": 0.06,
+          "authors": [
+            "d1"
+          ],
+          "doa_n": {
+            "d1": 1.0,
+            "d2": 0.6,
+            "d59": 0.56,
+            "d35": 0.56,
+            "d55": 0.56,
+            "d8": 0.56
+          }
+        },
+        {
+          "path": "typer/utils.py",
+          "loc": 164,
+          "fan_in": 4,
+          "orphaned": true,
+          "importance": 0.049,
+          "authors": [
+            "d1"
+          ],
+          "doa_n": {
+            "d1": 1.0,
+            "d7": 0.694,
+            "d26": 0.646,
+            "d29": 0.646,
+            "d20": 0.646,
+            "d5": 0.646
+          }
+        },
+        {
+          "path": "typer/completion.py",
+          "loc": 123,
+          "fan_in": 8,
+          "orphaned": true,
+          "importance": 0.045,
+          "authors": [
+            "d1"
+          ],
+          "doa_n": {
+            "d1": 1.0,
+            "d2": 0.486,
+            "d42": 0.399,
+            "d55": 0.399,
+            "d8": 0.399
+          }
+        },
+        {
+          "path": "typer/_types.py",
+          "loc": 95,
+          "fan_in": 2,
+          "orphaned": true,
+          "importance": 0.031,
+          "authors": [
+            "d1"
+          ],
+          "doa_n": {
+            "d1": 1.0,
+            "d2": 0.69
+          }
+        },
+        {
+          "path": "typer/colors.py",
+          "loc": 18,
+          "fan_in": 1,
+          "orphaned": true,
+          "importance": 0.005,
+          "authors": [
+            "d1"
+          ],
+          "doa_n": {
+            "d1": 1.0
+          }
+        },
+        {
+          "path": "typer/__main__.py",
+          "loc": 2,
+          "fan_in": 0,
+          "orphaned": true,
+          "importance": 0.0,
+          "authors": [
+            "d1"
+          ],
+          "doa_n": {
+            "d1": 1.0
+          }
+        }
+      ]
+    },
+    {
+      "path": "tests/",
+      "risk": 0.27,
+      "orphaned_files": 6,
+      "at_risk_files": 7,
+      "successor": {
+        "dev": "d2",
+        "doa_sum": 1.432
+      },
+      "files": [
+        {
+          "path": "tests/test_others.py",
+          "loc": 369,
+          "fan_in": 0,
+          "orphaned": true,
+          "importance": 0.098,
+          "authors": [
+            "d1"
+          ],
+          "doa_n": {
+            "d1": 1.0,
+            "d2": 0.623,
+            "d32": 0.456,
+            "d25": 0.456,
+            "d27": 0.456,
+            "d5": 0.456,
+            "d22": 0.456,
+            "d8": 0.456,
+            "d6": 0.456
+          }
+        },
+        {
+          "path": "tests/test_prepare_release.py",
+          "loc": 198,
+          "fan_in": 0,
+          "orphaned": true,
+          "importance": 0.06,
+          "authors": [
+            "d1"
+          ],
+          "doa_n": {
+            "d1": 1.0
+          }
+        },
+        {
+          "path": "tests/test_ambiguous_params.py",
+          "loc": 186,
+          "fan_in": 0,
+          "orphaned": true,
+          "importance": 0.049,
+          "authors": [
+            "d1"
+          ],
+          "doa_n": {
+            "d1": 1.0
+          }
+        },
+        {
+          "path": "tests/test_terminal_control_characters.py",
+          "loc": 93,
+          "fan_in": 0,
+          "orphaned": true,
+          "importance": 0.029,
+          "authors": [
+            "d1"
+          ],
+          "doa_n": {
+            "d1": 1.0
+          }
+        },
+        {
+          "path": "tests/test_types.py",
+          "loc": 118,
+          "fan_in": 0,
+          "orphaned": false,
+          "importance": 0.026,
+          "authors": [
+            "d1",
+            "d2"
+          ],
+          "doa_n": {
+            "d1": 1.0,
+            "d2": 0.809
+          }
+        },
+        {
+          "path": "tests/test_tracebacks.py",
+          "loc": 93,
+          "fan_in": 0,
+          "orphaned": true,
+          "importance": 0.021,
+          "authors": [
+            "d1"
+          ],
+          "doa_n": {
+            "d1": 1.0,
+            "d19": 0.614,
+            "d4": 0.614
+          }
+        },
+        {
+          "path": "tests/__init__.py",
+          "loc": 0,
+          "fan_in": 1,
+          "orphaned": true,
+          "importance": 0.001,
+          "authors": [
+            "d1"
+          ],
+          "doa_n": {
+            "d1": 1.0
+          }
+        }
+      ]
+    },
+    {
+      "path": "tests/test_cli/",
+      "risk": 0.21,
+      "orphaned_files": 16,
+      "at_risk_files": 16,
+      "successor": {
+        "dev": "d2",
+        "doa_sum": 1.495
+      },
+      "files": [
+        {
+          "path": "tests/test_cli/test_doc.py",
+          "loc": 182,
+          "fan_in": 0,
+          "orphaned": true,
+          "importance": 0.04,
+          "authors": [
+            "d1"
+          ],
+          "doa_n": {
+            "d1": 1.0,
+            "d2": 0.749
+          }
+        },
+        {
+          "path": "tests/test_cli/test_help.py",
+          "loc": 144,
+          "fan_in": 0,
+          "orphaned": true,
+          "importance": 0.032,
+          "authors": [
+            "d1"
+          ],
+          "doa_n": {
+            "d1": 1.0,
+            "d2": 0.747
+          }
+        },
+        {
+          "path": "tests/test_cli/test_sub.py",
+          "loc": 125,
+          "fan_in": 0,
+          "orphaned": true,
+          "importance": 0.028,
+          "authors": [
+            "d1"
+          ],
+          "doa_n": {
+            "d1": 1.0
+          }
+        },
+        {
+          "path": "tests/test_cli/test_multi_app.py",
+          "loc": 111,
+          "fan_in": 0,
+          "orphaned": true,
+          "importance": 0.025,
+          "authors": [
+            "d1"
+          ],
+          "doa_n": {
+            "d1": 1.0
+          }
+        },
+        {
+          "path": "tests/test_cli/test_multi_func.py",
+          "loc": 96,
+          "fan_in": 0,
+          "orphaned": true,
+          "importance": 0.021,
+          "authors": [
+            "d1"
+          ],
+          "doa_n": {
+            "d1": 1.0
+          }
+        },
+        {
+          "path": "tests/test_cli/test_multi_app_cli.py",
+          "loc": 92,
+          "fan_in": 0,
+          "orphaned": true,
+          "importance": 0.02,
+          "authors": [
+            "d1"
+          ],
+          "doa_n": {
+            "d1": 1.0
+          }
+        },
+        {
+          "path": "tests/test_cli/test_multi_app_sub.py",
+          "loc": 42,
+          "fan_in": 0,
+          "orphaned": true,
+          "importance": 0.009,
+          "authors": [
+            "d1"
+          ],
+          "doa_n": {
+            "d1": 1.0
+          }
+        },
+        {
+          "path": "tests/test_cli/test_app_other_name.py",
+          "loc": 37,
+          "fan_in": 0,
+          "orphaned": true,
+          "importance": 0.008,
+          "authors": [
+            "d1"
+          ],
+          "doa_n": {
+            "d1": 1.0
+          }
+        },
+        {
+          "path": "tests/test_cli/test_sub_help.py",
+          "loc": 22,
+          "fan_in": 0,
+          "orphaned": true,
+          "importance": 0.005,
+          "authors": [
+            "d1"
+          ],
+          "doa_n": {
+            "d1": 1.0
+          }
+        },
+        {
+          "path": "tests/test_cli/test_func_other_name.py",
+          "loc": 20,
+          "fan_in": 0,
+          "orphaned": true,
+          "importance": 0.004,
+          "authors": [
+            "d1"
+          ],
+          "doa_n": {
+            "d1": 1.0
+          }
+        },
+        {
+          "path": "tests/test_cli/test_empty_script.py",
+          "loc": 18,
+          "fan_in": 0,
+          "orphaned": true,
+          "importance": 0.004,
+          "authors": [
+            "d1"
+          ],
+          "doa_n": {
+            "d1": 1.0
+          }
+        },
+        {
+          "path": "tests/test_cli/test_not_python.py",
+          "loc": 18,
+          "fan_in": 0,
+          "orphaned": true,
+          "importance": 0.004,
+          "authors": [
+            "d1"
+          ],
+          "doa_n": {
+            "d1": 1.0
+          }
+        },
+        {
+          "path": "tests/test_cli/test_completion_run.py",
+          "loc": 17,
+          "fan_in": 0,
+          "orphaned": true,
+          "importance": 0.004,
+          "authors": [
+            "d1"
+          ],
+          "doa_n": {
+            "d1": 1.0
+          }
+        },
+        {
+          "path": "tests/test_cli/test_sub_completion.py",
+          "loc": 17,
+          "fan_in": 0,
+          "orphaned": true,
+          "importance": 0.004,
+          "authors": [
+            "d1"
+          ],
+          "doa_n": {
+            "d1": 1.0
+          }
+        },
+        {
+          "path": "tests/test_cli/test_version.py",
+          "loc": 9,
+          "fan_in": 0,
+          "orphaned": true,
+          "importance": 0.002,
+          "authors": [
+            "d1"
+          ],
+          "doa_n": {
+            "d1": 1.0
+          }
+        },
+        {
+          "path": "tests/test_cli/__init__.py",
+          "loc": 0,
+          "fan_in": 0,
+          "orphaned": true,
+          "importance": 0.0,
+          "authors": [
+            "d1"
+          ],
+          "doa_n": {
+            "d1": 1.0
+          }
+        }
+      ]
+    },
+    {
+      "path": "scripts/",
+      "risk": 0.193,
+      "orphaned_files": 9,
+      "at_risk_files": 9,
+      "successor": {
+        "dev": "d2",
+        "doa_sum": 1.028
+      },
+      "files": [
+        {
+          "path": "scripts/docs.py",
+          "loc": 326,
+          "fan_in": 0,
+          "orphaned": true,
+          "importance": 0.104,
+          "authors": [
+            "d1"
+          ],
+          "doa_n": {
+            "d1": 1.0
+          }
+        },
+        {
+          "path": "scripts/prepare_release.py",
+          "loc": 179,
+          "fan_in": 1,
+          "orphaned": true,
+          "importance": 0.057,
+          "authors": [
+            "d1"
+          ],
+          "doa_n": {
+            "d1": 1.0
+          }
+        },
+        {
+          "path": "scripts/deploy_docs_status.py",
+          "loc": 110,
+          "fan_in": 0,
+          "orphaned": true,
+          "importance": 0.024,
+          "authors": [
+            "d1"
+          ],
+          "doa_n": {
+            "d1": 1.0
+          }
+        },
+        {
+          "path": "scripts/test.sh",
+          "loc": 11,
+          "fan_in": 0,
+          "orphaned": true,
+          "importance": 0.002,
+          "authors": [
+            "d1"
+          ],
+          "doa_n": {
+            "d1": 1.0,
+            "d2": 0.451,
+            "d43": 0.451
+          }
+        },
+        {
+          "path": "scripts/lint.sh",
+          "loc": 7,
+          "fan_in": 0,
+          "orphaned": true,
+          "importance": 0.002,
+          "authors": [
+            "d1"
+          ],
+          "doa_n": {
+            "d1": 1.0,
+            "d2": 0.578
+          }
+        },
+        {
+          "path": "scripts/test-files.sh",
+          "loc": 6,
+          "fan_in": 0,
+          "orphaned": true,
+          "importance": 0.001,
+          "authors": [
+            "d1"
+          ],
+          "doa_n": {
+            "d1": 1.0
+          }
+        },
+        {
+          "path": "scripts/format.sh",
+          "loc": 5,
+          "fan_in": 0,
+          "orphaned": true,
+          "importance": 0.001,
+          "authors": [
+            "d1"
+          ],
+          "doa_n": {
+            "d1": 1.0
+          }
+        },
+        {
+          "path": "scripts/test-cov-html.sh",
+          "loc": 4,
+          "fan_in": 0,
+          "orphaned": true,
+          "importance": 0.001,
+          "authors": [
+            "d1"
+          ],
+          "doa_n": {
+            "d1": 1.0
+          }
+        },
+        {
+          "path": "scripts/get-pwsh-activate.sh",
+          "loc": 1,
+          "fan_in": 0,
+          "orphaned": true,
+          "importance": 0.0,
+          "authors": [
+            "d1"
+          ],
+          "doa_n": {
+            "d1": 1.0
+          }
+        }
+      ]
+    },
+    {
+      "path": "tests/test_completion/",
+      "risk": 0.157,
+      "orphaned_files": 6,
+      "at_risk_files": 6,
+      "successor": {
+        "dev": "d2",
+        "doa_sum": 1.786
+      },
+      "files": [
+        {
+          "path": "tests/test_completion/test_completion.py",
+          "loc": 165,
+          "fan_in": 0,
+          "orphaned": true,
+          "importance": 0.036,
+          "authors": [
+            "d1"
+          ],
+          "doa_n": {
+            "d1": 1.0,
+            "d2": 0.613
+          }
+        },
+        {
+          "path": "tests/test_completion/test_completion_complete.py",
+          "loc": 164,
+          "fan_in": 0,
+          "orphaned": true,
+          "importance": 0.036,
+          "authors": [
+            "d1"
+          ],
+          "doa_n": {
+            "d1": 1.0,
+            "d2": 0.69,
+            "d55": 0.69
+          }
+        },
+        {
+          "path": "tests/test_completion/test_completion_install.py",
+          "loc": 158,
+          "fan_in": 0,
+          "orphaned": true,
+          "importance": 0.035,
+          "authors": [
+            "d1"
+          ],
+          "doa_n": {
+            "d1": 1.0,
+            "d2": 0.483
+          }
+        },
+        {
+          "path": "tests/test_completion/test_completion_show.py",
+          "loc": 131,
+          "fan_in": 0,
+          "orphaned": true,
+          "importance": 0.029,
+          "authors": [
+            "d1"
+          ],
+          "doa_n": {
+            "d1": 1.0,
+            "d8": 0.55
+          }
+        },
+        {
+          "path": "tests/test_completion/test_completion_complete_no_help.py",
+          "loc": 54,
+          "fan_in": 0,
+          "orphaned": true,
+          "importance": 0.012,
+          "authors": [
+            "d1"
+          ],
+          "doa_n": {
+            "d1": 1.0
+          }
+        },
+        {
+          "path": "tests/test_completion/__init__.py",
+          "loc": 0,
+          "fan_in": 7,
+          "orphaned": true,
+          "importance": 0.008,
+          "authors": [
+            "d1"
+          ],
+          "doa_n": {
+            "d1": 1.0
+          }
+        }
+      ]
+    }
+  ]
+}

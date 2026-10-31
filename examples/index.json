@@ -1,0 +1,5 @@
+[
+  { "id": "requests", "label": "psf/requests · Kenneth Reitz leaves", "dir": "examples/requests" },
+  { "id": "click", "label": "pallets/click · Armin Ronacher leaves", "dir": "examples/click" },
+  { "id": "typer", "label": "fastapi/typer · Sebastián Ramírez leaves", "dir": "examples/typer" }
+]

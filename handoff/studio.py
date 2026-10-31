@@ -205,7 +205,9 @@ def create_studio(runs_dir: Path = DEFAULT_RUNS_DIR, demo_dirs: dict[str, Path] 
             repo = local or path / "repo"
             if url and not (repo / ".git").exists():
                 job.say(f"Cloning {url} (full history, so this can take a minute)…")
-                out = subprocess.run(["git", "clone", "-q", url, str(repo)], capture_output=True, timeout=1800)
+                # core.longpaths: Windows otherwise refuses repos with paths over 260 characters.
+                out = subprocess.run(["git", "-c", "core.longpaths=true", "clone", "-q", url, str(repo)],
+                                     capture_output=True, timeout=1800)
                 if out.returncode:
                     raise RuntimeError(out.stderr.decode("utf-8", errors="replace").strip())
             (path / "run.json").write_text(json.dumps(

@@ -55,13 +55,45 @@ On [psf/requests](https://github.com/psf/requests) (515 developers), if **Kennet
 
 Almost all of the risk is in `src/requests/`, and **Nate Prewitt** is the suggested successor. Every claim in the plan links to the exact line or commit on GitHub.
 
-Try it without a GPU, using the saved results:
+The generated plan is also in [examples/requests/KT-d1.md](examples/requests/KT-d1.md).
+
+### Three ways to run it
+
+| | What you get | Needs |
+|---|---|---|
+| **1. Hosted demo (Vercel)** | Saved results for several sample repos, with a **Repo** picker to switch between them | A browser |
+| **2. Saved results, locally** | The same page on your machine | Python |
+| **3. Live generation, locally** | Analyse **any** repo and generate a new KT plan | Python + [Ollama](https://ollama.com) |
+
+**1. Hosted.** The Vercel deployment is a **static site**: [web/index.html](web/index.html) plus the saved runs listed in [examples/index.json](examples/index.json). It serves results only and never runs a model.
+
+**2. Saved results, locally.** Either of these works:
 
 ```bash
-handoff serve --data-dir examples/requests     # http://127.0.0.1:8000
+python -m http.server 8000      # all sample repos with the picker: http://localhost:8000/web/index.html
+handoff serve --data-dir examples/requests     # one run through the API: http://127.0.0.1:8000
 ```
 
-The generated plan is also in [examples/requests/KT-d1.md](examples/requests/KT-d1.md).
+**3. Live generation, locally.**
+
+```bash
+ollama pull qwen2.5-coder:7b
+python -m handoff.studio        # http://127.0.0.1:8001: paste a GitHub URL, pick who leaves, Generate KT
+# or, from the terminal:
+handoff analyze path/to/repo --who "Jane Doe" --out analysis.json
+handoff kt path/to/repo --who d1 --analysis analysis.json --out-dir .
+```
+
+**Why generation isn't hosted:**
+
+- Handoff runs an open-weight model **on your own GPU**, so the repository's code never leaves your machine.
+- Vercel has no GPU, and its serverless functions are short-lived.
+
+So the hosted site shows saved results, and anyone can generate their own plans locally. A plan for a mid-sized repo takes about 2–6 minutes on a laptop GPU. To add a sample repo to the hosted demo:
+
+1. Generate it locally.
+2. Copy its `analysis.json`, `kt.json` and `KT-<dev>.md` into `examples/<name>/`.
+3. Add an entry to `examples/index.json`.
 <!-- AVI:END demo -->
 
 <!-- AMAN:START analysis -->

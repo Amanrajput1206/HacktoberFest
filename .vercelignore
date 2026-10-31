@@ -1,0 +1,14 @@
+# The hosted demo is static: web/index.html plus the saved runs in examples/.
+# Everything that only matters for running Handoff locally stays out of the deployment.
+.venv/
+venv/
+handoff/
+tests/
+docs/*.pptx
+docs/explanations/
+examples/*/cache/
+*.egg-info/
+.pytest_cache/
+__pycache__/
+pyproject.toml
+CLAUDE.md
