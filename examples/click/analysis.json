@@ -1,0 +1,4946 @@
+{
+  "repo": "pallets/click",
+  "head": "2247b35ea1c47c727d7a06e51fa280e12a863ff6",
+  "head_date": "2026-10-04T22:19:53+00:00",
+  "generated_at": "2026-10-31T03:14:26+00:00",
+  "developers": [
+    {
+      "id": "d1",
+      "names": [
+        "Armin Ronacher"
+      ],
+      "emails": [
+        "armin.ronacher@active-4.com"
+      ],
+      "commits": 339,
+      "files_authored": 42,
+      "last_commit": "2018-04-11T06:08:41+00:00"
+    },
+    {
+      "id": "d2",
+      "names": [
+        "David Lord"
+      ],
+      "emails": [
+        "davidism@gmail.com"
+      ],
+      "commits": 186,
+      "files_authored": 29,
+      "last_commit": "2026-05-23T04:40:47+00:00"
+    },
+    {
+      "id": "d3",
+      "names": [
+        "Kevin Deldycke"
+      ],
+      "emails": [
+        "kdeldycke@users.noreply.github.com",
+        "kevin@deldycke.com"
+      ],
+      "commits": 141,
+      "files_authored": 12,
+      "last_commit": "2026-09-11T13:18:27+00:00"
+    },
+    {
+      "id": "d4",
+      "names": [
+        "Markus Unterwaditzer"
+      ],
+      "emails": [
+        "markus@unterwaditzer.net"
+      ],
+      "commits": 36,
+      "files_authored": 0,
+      "last_commit": "2017-02-27T15:34:09+00:00"
+    },
+    {
+      "id": "d5",
+      "names": [
+        "Stephen Rosen"
+      ],
+      "emails": [
+        "sirosen@globus.org",
+        "sirosen@uchicago.edu"
+      ],
+      "commits": 18,
+      "files_authored": 0,
+      "last_commit": "2025-11-19T21:06:11+00:00"
+    },
+    {
+      "id": "d6",
+      "names": [
+        "Edward G",
+        "unknown"
+      ],
+      "emails": [
+        "edward.g2013@gmail.com"
+      ],
+      "commits": 14,
+      "files_authored": 14,
+      "last_commit": "2026-07-08T05:52:43+00:00"
+    },
+    {
+      "id": "d7",
+      "names": [
+        "Andreas Backx"
+      ],
+      "emails": [
+        "andreas@backx.org",
+        "andreasbackx@users.noreply.github.com"
+      ],
+      "commits": 13,
+      "files_authored": 0,
+      "last_commit": "2026-07-16T05:23:28+00:00"
+    },
+    {
+      "id": "d8",
+      "names": [
+        "Julen Ruiz Aizpuru"
+      ],
+      "emails": [
+        "julenx@gmail.com"
+      ],
+      "commits": 11,
+      "files_authored": 0,
+      "last_commit": "2014-05-29T19:25:56+00:00"
+    },
+    {
+      "id": "d9",
+      "names": [
+        "jorenham"
+      ],
+      "emails": [
+        "jhammudoglu@gmail.com"
+      ],
+      "commits": 10,
+      "files_authored": 0,
+      "last_commit": "2026-05-18T16:29:46+00:00"
+    },
+    {
+      "id": "d10",
+      "names": [
+        "Gianluca Gippetto"
+      ],
+      "emails": [
+        "gianluca.gippetto@gmail.com"
+      ],
+      "commits": 8,
+      "files_authored": 0,
+      "last_commit": "2023-07-03T23:21:42+00:00"
+    },
+    {
+      "id": "d11",
+      "names": [
+        "Saif807380",
+        "Saif Kazi"
+      ],
+      "emails": [
+        "50794619+saif807380@users.noreply.github.com",
+        "saif1204kazi@gmail.com"
+      ],
+      "commits": 8,
+      "files_authored": 0,
+      "last_commit": "2021-04-09T12:31:08+00:00"
+    },
+    {
+      "id": "d12",
+      "names": [
+        "Amy",
+        "Amy Lei"
+      ],
+      "emails": [
+        "leiamy12@gmail.com"
+      ],
+      "commits": 7,
+      "files_authored": 1,
+      "last_commit": "2020-11-25T18:24:53+00:00"
+    },
+    {
+      "id": "d13",
+      "names": [
+        "Joshua Storck"
+      ],
+      "emails": [
+        "joshua.storck@twosigma.com"
+      ],
+      "commits": 7,
+      "files_authored": 0,
+      "last_commit": "2019-06-03T14:50:30+00:00"
+    },
+    {
+      "id": "d14",
+      "names": [
+        "Nicholas Wiles"
+      ],
+      "emails": [
+        "nwiles@google.com"
+      ],
+      "commits": 6,
+      "files_authored": 0,
+      "last_commit": "2017-10-12T15:18:48+00:00"
+    },
+    {
+      "id": "d15",
+      "names": [
+        "Segev Finer"
+      ],
+      "emails": [
+        "segev208@gmail.com"
+      ],
+      "commits": 6,
+      "files_authored": 0,
+      "last_commit": "2018-10-14T16:38:11+00:00"
+    },
+    {
+      "id": "d16",
+      "names": [
+        "cAtaman",
+        "chima"
+      ],
+      "emails": [
+        "chimaataman@gmail.com"
+      ],
+      "commits": 6,
+      "files_authored": 0,
+      "last_commit": "2021-08-12T19:15:57+00:00"
+    },
+    {
+      "id": "d17",
+      "names": [
+        "John T. Wodder II"
+      ],
+      "emails": [
+        "git@varonathe.org",
+        "jwodder@users.noreply.github.com"
+      ],
+      "commits": 5,
+      "files_authored": 0,
+      "last_commit": "2024-11-30T19:23:12+00:00"
+    },
+    {
+      "id": "d18",
+      "names": [
+        "Jon Dufresne"
+      ],
+      "emails": [
+        "jon.dufresne@gmail.com"
+      ],
+      "commits": 5,
+      "files_authored": 0,
+      "last_commit": "2020-12-22T23:01:06+00:00"
+    },
+    {
+      "id": "d19",
+      "names": [
+        "Kevin Yap"
+      ],
+      "emails": [
+        "me@kevinyap.ca"
+      ],
+      "commits": 5,
+      "files_authored": 0,
+      "last_commit": "2014-06-15T02:50:56+00:00"
+    },
+    {
+      "id": "d20",
+      "names": [
+        "Ofek Lev"
+      ],
+      "emails": [
+        "ofekmeister@gmail.com"
+      ],
+      "commits": 5,
+      "files_authored": 0,
+      "last_commit": "2025-07-31T20:27:38+00:00"
+    },
+    {
+      "id": "d21",
+      "names": [
+        "Eddie Girling",
+        "Rowlando13"
+      ],
+      "emails": [
+        "67291205+rowlando13@users.noreply.github.com"
+      ],
+      "commits": 4,
+      "files_authored": 12,
+      "last_commit": "2026-09-06T01:22:18+00:00"
+    },
+    {
+      "id": "d22",
+      "names": [
+        "Ryan Siemens"
+      ],
+      "emails": [
+        "ryanjsiemens@gmail.com"
+      ],
+      "commits": 4,
+      "files_authored": 0,
+      "last_commit": "2016-04-15T04:32:43+00:00"
+    },
+    {
+      "id": "d23",
+      "names": [
+        "Simon Jagoe"
+      ],
+      "emails": [
+        "simon@simonjagoe.com"
+      ],
+      "commits": 4,
+      "files_authored": 0,
+      "last_commit": "2015-04-02T19:08:21+00:00"
+    },
+    {
+      "id": "d24",
+      "names": [
+        "S\u0142awek Ehlert"
+      ],
+      "emails": [
+        "slafs@op.pl"
+      ],
+      "commits": 4,
+      "files_authored": 0,
+      "last_commit": "2015-01-29T14:34:25+00:00"
+    },
+    {
+      "id": "d25",
+      "names": [
+        "Adam Dangoor"
+      ],
+      "emails": [
+        "adamdangoor@gmail.com"
+      ],
+      "commits": 3,
+      "files_authored": 0,
+      "last_commit": "2025-09-19T15:02:40+00:00"
+    },
+    {
+      "id": "d26",
+      "names": [
+        "BALaka-18"
+      ],
+      "emails": [
+        "balaka2605@gmail.com"
+      ],
+      "commits": 3,
+      "files_authored": 0,
+      "last_commit": "2021-03-29T16:24:26+00:00"
+    },
+    {
+      "id": "d27",
+      "names": [
+        "Eric L Frederich"
+      ],
+      "emails": [
+        "eric.frederich@gmail.com"
+      ],
+      "commits": 3,
+      "files_authored": 0,
+      "last_commit": "2017-05-22T12:59:42+00:00"
+    },
+    {
+      "id": "d28",
+      "names": [
+        "Gene Wood"
+      ],
+      "emails": [
+        "gene_wood@cementhorizon.com"
+      ],
+      "commits": 3,
+      "files_authored": 0,
+      "last_commit": "2025-09-25T18:11:19+00:00"
+    },
+    {
+      "id": "d29",
+      "names": [
+        "Jay Crotts"
+      ],
+      "emails": [
+        "crotts.jay@gmail.com"
+      ],
+      "commits": 3,
+      "files_authored": 0,
+      "last_commit": "2021-08-13T03:29:19+00:00"
+    },
+    {
+      "id": "d30",
+      "names": [
+        "Jimmy Zeng"
+      ],
+      "emails": [
+        "jzengg@gmail.com"
+      ],
+      "commits": 3,
+      "files_authored": 0,
+      "last_commit": "2019-05-06T18:46:09+00:00"
+    },
+    {
+      "id": "d31",
+      "names": [
+        "KP"
+      ],
+      "emails": [
+        "kporangehat@gmail.com"
+      ],
+      "commits": 3,
+      "files_authored": 0,
+      "last_commit": "2019-05-06T16:57:22+00:00"
+    },
+    {
+      "id": "d32",
+      "names": [
+        "Krzysztof Kotlenga"
+      ],
+      "emails": [
+        "k.kotlenga@sims.pl"
+      ],
+      "commits": 3,
+      "files_authored": 0,
+      "last_commit": "2022-10-05T12:00:25+00:00"
+    },
+    {
+      "id": "d33",
+      "names": [
+        "Kyle Altendorf"
+      ],
+      "emails": [
+        "sda@fstab.net"
+      ],
+      "commits": 3,
+      "files_authored": 0,
+      "last_commit": "2023-05-08T15:03:33+00:00"
+    },
+    {
+      "id": "d34",
+      "names": [
+        "Martijn Pieters"
+      ],
+      "emails": [
+        "mj@zopatista.com"
+      ],
+      "commits": 3,
+      "files_authored": 0,
+      "last_commit": "2022-11-09T17:09:59+00:00"
+    },
+    {
+      "id": "d35",
+      "names": [
+        "Michele Bianchi"
+      ],
+      "emails": [
+        "jazzinghen@gmail.com"
+      ],
+      "commits": 3,
+      "files_authored": 0,
+      "last_commit": "2025-09-12T04:25:44+00:00"
+    },
+    {
+      "id": "d36",
+      "names": [
+        "Robert Grant"
+      ],
+      "emails": [
+        "rhgrant10@gmail.com"
+      ],
+      "commits": 3,
+      "files_authored": 0,
+      "last_commit": "2018-05-15T21:34:01+00:00"
+    },
+    {
+      "id": "d37",
+      "names": [
+        "Ronny Pfannschmidt"
+      ],
+      "emails": [
+        "opensource@ronnypfannschmidt.de",
+        "ronny.pfannschmidt@redhat.com"
+      ],
+      "commits": 3,
+      "files_authored": 0,
+      "last_commit": "2018-12-20T07:10:48+00:00"
+    },
+    {
+      "id": "d38",
+      "names": [
+        "Tim Gates"
+      ],
+      "emails": [
+        "tim.gates@iress.com"
+      ],
+      "commits": 3,
+      "files_authored": 0,
+      "last_commit": "2019-08-25T21:32:30+00:00"
+    },
+    {
+      "id": "d39",
+      "names": [
+        "Zachery Bir"
+      ],
+      "emails": [
+        "zbir@zacbir.net"
+      ],
+      "commits": 3,
+      "files_authored": 0,
+      "last_commit": "2018-05-15T17:50:00+00:00"
+    },
+    {
+      "id": "d40",
+      "names": [
+        "Amjith Ramanujam"
+      ],
+      "emails": [
+        "amjith.r@gmail.com"
+      ],
+      "commits": 2,
+      "files_authored": 0,
+      "last_commit": "2015-06-02T23:49:03+00:00"
+    },
+    {
+      "id": "d41",
+      "names": [
+        "Andreas Maier"
+      ],
+      "emails": [
+        "andreas.r.maier@gmx.de"
+      ],
+      "commits": 2,
+      "files_authored": 0,
+      "last_commit": "2020-06-28T20:12:57+00:00"
+    },
+    {
+      "id": "d42",
+      "names": [
+        "Angus L'Herrou"
+      ],
+      "emails": [
+        "piraka@brandeis.edu"
+      ],
+      "commits": 2,
+      "files_authored": 1,
+      "last_commit": "2021-10-13T21:48:37+00:00"
+    },
+    {
+      "id": "d43",
+      "names": [
+        "Antoine Bertin"
+      ],
+      "emails": [
+        "ant.bertin@gmail.com"
+      ],
+      "commits": 2,
+      "files_authored": 0,
+      "last_commit": "2015-07-12T17:49:26+00:00"
+    },
+    {
+      "id": "d44",
+      "names": [
+        "Benjamin Akhras"
+      ],
+      "emails": [
+        "b@akhras.at"
+      ],
+      "commits": 2,
+      "files_authored": 0,
+      "last_commit": "2021-02-15T20:48:08+00:00"
+    },
+    {
+      "id": "d45",
+      "names": [
+        "IamCathal",
+        "Cathal"
+      ],
+      "emails": [
+        "cathalsocallaghan@gmail.com"
+      ],
+      "commits": 2,
+      "files_authored": 0,
+      "last_commit": "2020-07-06T15:47:51+00:00"
+    },
+    {
+      "id": "d46",
+      "names": [
+        "Chris Pappalardo"
+      ],
+      "emails": [
+        "cpappala@gmail.com",
+        "cpappalardo@alvarezandmarsal.com"
+      ],
+      "commits": 2,
+      "files_authored": 0,
+      "last_commit": "2026-05-19T19:37:31+00:00"
+    },
+    {
+      "id": "d47",
+      "names": [
+        "Christian Clauss"
+      ],
+      "emails": [
+        "cclauss@me.com"
+      ],
+      "commits": 2,
+      "files_authored": 0,
+      "last_commit": "2019-10-28T11:27:29+00:00"
+    },
+    {
+      "id": "d48",
+      "names": [
+        "Christopher Palmer"
+      ],
+      "emails": [
+        "thecav@gmail.com"
+      ],
+      "commits": 2,
+      "files_authored": 0,
+      "last_commit": "2019-05-31T16:52:25+00:00"
+    },
+    {
+      "id": "d49",
+      "names": [
+        "Cl\u00e9ment Robert"
+      ],
+      "emails": [
+        "cr52@protonmail.com"
+      ],
+      "commits": 2,
+      "files_authored": 0,
+      "last_commit": "2025-07-04T10:16:27+00:00"
+    },
+    {
+      "id": "d50",
+      "names": [
+        "Cooper Lees"
+      ],
+      "emails": [
+        "me@cooperlees.com"
+      ],
+      "commits": 2,
+      "files_authored": 0,
+      "last_commit": "2018-01-04T21:28:09+00:00"
+    },
+    {
+      "id": "d51",
+      "names": [
+        "Deepyaman Datta"
+      ],
+      "emails": [
+        "deepyaman.datta@utexas.edu"
+      ],
+      "commits": 2,
+      "files_authored": 0,
+      "last_commit": "2021-06-06T18:26:43+00:00"
+    },
+    {
+      "id": "d52",
+      "names": [
+        "George Y. Kussumoto"
+      ],
+      "emails": [
+        "georgeyk.dev@gmail.com"
+      ],
+      "commits": 2,
+      "files_authored": 0,
+      "last_commit": "2017-10-11T02:44:07+00:00"
+    },
+    {
+      "id": "d53",
+      "names": [
+        "Giel van Schijndel"
+      ],
+      "emails": [
+        "giel.vanschijndel@tomtom.com"
+      ],
+      "commits": 2,
+      "files_authored": 0,
+      "last_commit": "2020-03-02T09:23:38+00:00"
+    },
+    {
+      "id": "d54",
+      "names": [
+        "I"
+      ],
+      "emails": [
+        "nhwiles@gmail.com"
+      ],
+      "commits": 2,
+      "files_authored": 0,
+      "last_commit": "2016-09-21T04:51:04+00:00"
+    },
+    {
+      "id": "d55",
+      "names": [
+        "Jan Christoph Bischko"
+      ],
+      "emails": [
+        "jbischko@barracuda.com"
+      ],
+      "commits": 2,
+      "files_authored": 0,
+      "last_commit": "2018-05-15T10:43:15+00:00"
+    },
+    {
+      "id": "d56",
+      "names": [
+        "Javier Domingo Cansino"
+      ],
+      "emails": [
+        "javierdo1@gmail.com"
+      ],
+      "commits": 2,
+      "files_authored": 0,
+      "last_commit": "2020-08-09T01:30:55+00:00"
+    },
+    {
+      "id": "d57",
+      "names": [
+        "Joe Jevnik"
+      ],
+      "emails": [
+        "joe@quantopian.com"
+      ],
+      "commits": 2,
+      "files_authored": 0,
+      "last_commit": "2016-03-09T19:59:44+00:00"
+    },
+    {
+      "id": "d58",
+      "names": [
+        "Jonxslays"
+      ],
+      "emails": [
+        "51417989+jonxslays@users.noreply.github.com"
+      ],
+      "commits": 2,
+      "files_authored": 0,
+      "last_commit": "2022-04-22T12:06:51+00:00"
+    },
+    {
+      "id": "d59",
+      "names": [
+        "JosiahDub"
+      ],
+      "emails": [
+        "josiahwhite@gmail.com"
+      ],
+      "commits": 2,
+      "files_authored": 0,
+      "last_commit": "2018-05-15T14:48:13+00:00"
+    },
+    {
+      "id": "d60",
+      "names": [
+        "Kevin Wurster"
+      ],
+      "emails": [
+        "kevin@skytruth.org",
+        "wursterk@gmail.com"
+      ],
+      "commits": 2,
+      "files_authored": 0,
+      "last_commit": "2015-05-19T00:22:10+00:00"
+    },
+    {
+      "id": "d61",
+      "names": [
+        "Mark Thomas"
+      ],
+      "emails": [
+        "markbt@efaref.net"
+      ],
+      "commits": 2,
+      "files_authored": 0,
+      "last_commit": "2015-06-13T19:31:37+00:00"
+    },
+    {
+      "id": "d62",
+      "names": [
+        "Matthias Urlichs"
+      ],
+      "emails": [
+        "matthias@urlichs.de"
+      ],
+      "commits": 2,
+      "files_authored": 0,
+      "last_commit": "2018-12-21T16:54:20+00:00"
+    },
+    {
+      "id": "d63",
+      "names": [
+        "Mwiza Simbeye"
+      ],
+      "emails": [
+        "mwiza@agripredict.com"
+      ],
+      "commits": 2,
+      "files_authored": 0,
+      "last_commit": "2020-06-18T12:44:48+00:00"
+    },
+    {
+      "id": "d64",
+      "names": [
+        "Nick Cross"
+      ],
+      "emails": [
+        "ncross@redhat.com"
+      ],
+      "commits": 2,
+      "files_authored": 0,
+      "last_commit": "2019-07-03T20:21:25+00:00"
+    },
+    {
+      "id": "d65",
+      "names": [
+        "Oleksandr Shulgin"
+      ],
+      "emails": [
+        "oleksandr.shulgin@zalando.de"
+      ],
+      "commits": 2,
+      "files_authored": 0,
+      "last_commit": "2015-10-30T16:30:57+00:00"
+    },
+    {
+      "id": "d66",
+      "names": [
+        "Panagiotis Ktistakis"
+      ],
+      "emails": [
+        "panktist@gmail.com"
+      ],
+      "commits": 2,
+      "files_authored": 0,
+      "last_commit": "2017-06-13T10:31:24+00:00"
+    },
+    {
+      "id": "d67",
+      "names": [
+        "Paul Moore"
+      ],
+      "emails": [
+        "p.f.moore@gmail.com"
+      ],
+      "commits": 2,
+      "files_authored": 0,
+      "last_commit": "2014-04-26T11:30:10+00:00"
+    },
+    {
+      "id": "d68",
+      "names": [
+        "Peter Landoll"
+      ],
+      "emails": [
+        "pwlandoll@gmail.com"
+      ],
+      "commits": 2,
+      "files_authored": 0,
+      "last_commit": "2019-03-15T00:30:37+00:00"
+    },
+    {
+      "id": "d69",
+      "names": [
+        "Rotem Yaari"
+      ],
+      "emails": [
+        "vmalloc@gmail.com"
+      ],
+      "commits": 2,
+      "files_authored": 0,
+      "last_commit": "2014-06-14T07:14:55+00:00"
+    },
+    {
+      "id": "d70",
+      "names": [
+        "Russ Webber"
+      ],
+      "emails": [
+        "russ@rw.id.au"
+      ],
+      "commits": 2,
+      "files_authored": 0,
+      "last_commit": "2018-11-20T10:04:08+00:00"
+    },
+    {
+      "id": "d71",
+      "names": [
+        "SWu"
+      ],
+      "emails": [
+        "swu@users.noreply.github.com"
+      ],
+      "commits": 2,
+      "files_authored": 0,
+      "last_commit": "2018-04-18T02:32:42+00:00"
+    },
+    {
+      "id": "d72",
+      "names": [
+        "saipraneeth",
+        "Saipraneeth"
+      ],
+      "emails": [
+        "2506664+msaipraneeth@users.noreply.github.com"
+      ],
+      "commits": 2,
+      "files_authored": 0,
+      "last_commit": "2024-12-04T07:14:17+00:00"
+    },
+    {
+      "id": "d73",
+      "names": [
+        "Sam Schott"
+      ],
+      "emails": [
+        "ss2151@cam.ac.uk"
+      ],
+      "commits": 2,
+      "files_authored": 1,
+      "last_commit": "2021-05-23T19:55:54+00:00"
+    },
+    {
+      "id": "d74",
+      "names": [
+        "srafi1",
+        "Shakil Rafi"
+      ],
+      "emails": [
+        "shakilrafi0@gmail.com"
+      ],
+      "commits": 2,
+      "files_authored": 0,
+      "last_commit": "2020-11-01T02:33:19+00:00"
+    },
+    {
+      "id": "d75",
+      "names": [
+        "Sitiyou"
+      ],
+      "emails": [
+        "sitiyou7@gmail.com"
+      ],
+      "commits": 2,
+      "files_authored": 0,
+      "last_commit": "2026-05-23T07:05:16+00:00"
+    },
+    {
+      "id": "d76",
+      "names": [
+        "Steffen Neubauer"
+      ],
+      "emails": [
+        "s.neubauer@syseleven.de",
+        "stefreak@gmail.com"
+      ],
+      "commits": 2,
+      "files_authored": 0,
+      "last_commit": "2024-11-09T00:22:58+00:00"
+    },
+    {
+      "id": "d77",
+      "names": [
+        "TDaglis"
+      ],
+      "emails": [
+        "ath.daglis@gmail.com"
+      ],
+      "commits": 2,
+      "files_authored": 0,
+      "last_commit": "2016-09-05T17:53:39+00:00"
+    },
+    {
+      "id": "d78",
+      "names": [
+        "Ulrich Petri"
+      ],
+      "emails": [
+        "ulo@ulo.pe"
+      ],
+      "commits": 2,
+      "files_authored": 0,
+      "last_commit": "2014-11-17T16:26:18+00:00"
+    },
+    {
+      "id": "d79",
+      "names": [
+        "Vizonex"
+      ],
+      "emails": [
+        "vizonexbusiness@gmail.com"
+      ],
+      "commits": 2,
+      "files_authored": 0,
+      "last_commit": "2026-06-23T03:35:59+00:00"
+    },
+    {
+      "id": "d80",
+      "names": [
+        "Yourun-Proger"
+      ],
+      "emails": [
+        "shkrobov.yura@mail.ru"
+      ],
+      "commits": 2,
+      "files_authored": 0,
+      "last_commit": "2022-02-07T14:42:49+00:00"
+    },
+    {
+      "id": "d81",
+      "names": [
+        "Yuri Shevtsov"
+      ],
+      "emails": [
+        "yuri.shevtsov@mobiledefense.com"
+      ],
+      "commits": 2,
+      "files_authored": 0,
+      "last_commit": "2026-05-19T23:43:26+00:00"
+    },
+    {
+      "id": "d82",
+      "names": [
+        "Zhihua Lai"
+      ],
+      "emails": [
+        "zhihualai@microsoft.com"
+      ],
+      "commits": 2,
+      "files_authored": 0,
+      "last_commit": "2026-06-26T10:36:56+00:00"
+    },
+    {
+      "id": "d83",
+      "names": [
+        "aaronsarna"
+      ],
+      "emails": [
+        "6665406+aaronsarna@users.noreply.github.com"
+      ],
+      "commits": 2,
+      "files_authored": 0,
+      "last_commit": "2020-01-30T21:11:14+00:00"
+    },
+    {
+      "id": "d84",
+      "names": [
+        "axu2"
+      ],
+      "emails": [
+        "ax2@princeton.edu"
+      ],
+      "commits": 2,
+      "files_authored": 0,
+      "last_commit": "2017-08-24T18:49:03+00:00"
+    },
+    {
+      "id": "d85",
+      "names": [
+        "dzcode",
+        "Dan Ziring"
+      ],
+      "emails": [
+        "9089037+dzcode@users.noreply.github.com"
+      ],
+      "commits": 2,
+      "files_authored": 0,
+      "last_commit": "2024-10-26T15:12:23+00:00"
+    },
+    {
+      "id": "d86",
+      "names": [
+        "her0e1c1"
+      ],
+      "emails": [
+        "her0e1c1@gmail.com"
+      ],
+      "commits": 2,
+      "files_authored": 0,
+      "last_commit": "2016-02-03T02:18:18+00:00"
+    },
+    {
+      "id": "d87",
+      "names": [
+        "icreatedanaccount"
+      ],
+      "emails": [
+        "pierluc.boudreau@gmail.com"
+      ],
+      "commits": 2,
+      "files_authored": 0,
+      "last_commit": "2019-05-09T01:15:25+00:00"
+    },
+    {
+      "id": "d88",
+      "names": [
+        "kyu243"
+      ],
+      "emails": [
+        "kieranyangyu@gmail.com"
+      ],
+      "commits": 2,
+      "files_authored": 0,
+      "last_commit": "2025-05-20T18:09:35+00:00"
+    },
+    {
+      "id": "d89",
+      "names": [
+        "matejcik"
+      ],
+      "emails": [
+        "ja@matejcik.cz"
+      ],
+      "commits": 2,
+      "files_authored": 0,
+      "last_commit": "2022-03-11T09:28:42+00:00"
+    },
+    {
+      "id": "d90",
+      "names": [
+        "ovezovs"
+      ],
+      "emails": [
+        "shageldi.ovezov@gmail.com"
+      ],
+      "commits": 2,
+      "files_authored": 0,
+      "last_commit": "2020-06-30T20:40:33+00:00"
+    },
+    {
+      "id": "d91",
+      "names": [
+        "sloria"
+      ],
+      "emails": [
+        "sloria1@gmail.com"
+      ],
+      "commits": 2,
+      "files_authored": 0,
+      "last_commit": "2014-06-08T15:39:51+00:00"
+    },
+    {
+      "id": "d92",
+      "names": [
+        "trl75"
+      ],
+      "emails": [
+        "trl75@pitt.edu"
+      ],
+      "commits": 2,
+      "files_authored": 0,
+      "last_commit": "2024-05-22T20:56:03+00:00"
+    },
+    {
+      "id": "d93",
+      "names": [
+        "180909"
+      ],
+      "emails": [
+        "734461790@qq.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2021-10-11T15:08:22+00:00"
+    },
+    {
+      "id": "d94",
+      "names": [
+        "Adam Karpierz"
+      ],
+      "emails": [
+        "karpierz@users.noreply.github.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2026-04-29T23:25:38+00:00"
+    },
+    {
+      "id": "d95",
+      "names": [
+        "Adrian Garcia Badaracco"
+      ],
+      "emails": [
+        "1755071+adriangb@users.noreply.github.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2022-03-17T00:27:15+00:00"
+    },
+    {
+      "id": "d96",
+      "names": [
+        "Adrien Pensart"
+      ],
+      "emails": [
+        "adrien.pensart@corp.ovh.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2021-05-04T17:28:39+00:00"
+    },
+    {
+      "id": "d97",
+      "names": [
+        "Ahmed Et-tanany"
+      ],
+      "emails": [
+        "ahmed.ettanany@gmail.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2018-05-10T16:23:21+00:00"
+    },
+    {
+      "id": "d98",
+      "names": [
+        "Alan Velasco"
+      ],
+      "emails": [
+        "alanvelasco.a@gmail.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2020-04-20T17:55:09+00:00"
+    },
+    {
+      "id": "d99",
+      "names": [
+        "Albert Tugushev"
+      ],
+      "emails": [
+        "albert@tugushev.ru"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2022-10-17T18:48:07+00:00"
+    },
+    {
+      "id": "d100",
+      "names": [
+        "Alex Ball"
+      ],
+      "emails": [
+        "alex-ball@users.noreply.github.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2021-10-10T15:42:07+00:00"
+    },
+    {
+      "id": "d101",
+      "names": [
+        "Alexander Regueiro"
+      ],
+      "emails": [
+        "alexreg@gmail.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2023-05-08T04:01:21+00:00"
+    },
+    {
+      "id": "d102",
+      "names": [
+        "Alexander Seiler"
+      ],
+      "emails": [
+        "seileralex@gmail.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2023-05-07T15:51:18+00:00"
+    },
+    {
+      "id": "d103",
+      "names": [
+        "Alexander Shadchin"
+      ],
+      "emails": [
+        "shadchin@yandex-team.ru"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2022-03-31T19:53:15+00:00"
+    },
+    {
+      "id": "d104",
+      "names": [
+        "Anders Kaseorg"
+      ],
+      "emails": [
+        "andersk@mit.edu"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2019-09-19T04:59:29+00:00"
+    },
+    {
+      "id": "d105",
+      "names": [
+        "Animesh Tripathi"
+      ],
+      "emails": [
+        "animesh@animeshs-macbook-air.local"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2025-10-07T15:22:09+00:00"
+    },
+    {
+      "id": "d106",
+      "names": [
+        "Anthony Sottile"
+      ],
+      "emails": [
+        "asottile@umich.edu"
+      ],
+      "commits": 1,
+      "files_authored": 1,
+      "last_commit": "2024-11-08T23:57:43+00:00"
+    },
+    {
+      "id": "d107",
+      "names": [
+        "Antoine Lambert"
+      ],
+      "emails": [
+        "anlambert@softwareheritage.org"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2025-05-22T20:14:23+00:00"
+    },
+    {
+      "id": "d108",
+      "names": [
+        "Asham"
+      ],
+      "emails": [
+        "minaasha@amazon.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2016-08-19T14:16:11+00:00"
+    },
+    {
+      "id": "d109",
+      "names": [
+        "Ashwin Madavan"
+      ],
+      "emails": [
+        "ashwin.madavan@gmail.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2021-12-28T06:31:13+00:00"
+    },
+    {
+      "id": "d110",
+      "names": [
+        "Ben Falk"
+      ],
+      "emails": [
+        "bfalk@stsci.edu"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2026-05-18T17:14:33+00:00"
+    },
+    {
+      "id": "d111",
+      "names": [
+        "Blazej Michalik"
+      ],
+      "emails": [
+        "6691643+mrmino@users.noreply.github.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2023-05-09T19:10:59+00:00"
+    },
+    {
+      "id": "d112",
+      "names": [
+        "Brandon Milton"
+      ],
+      "emails": [
+        "brandon.milton21@gmail.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2018-03-31T11:24:26+00:00"
+    },
+    {
+      "id": "d113",
+      "names": [
+        "Brian Bruggeman"
+      ],
+      "emails": [
+        "brian.m.bruggeman@gmail.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2018-07-13T15:57:47+00:00"
+    },
+    {
+      "id": "d114",
+      "names": [
+        "Brian Grohe"
+      ],
+      "emails": [
+        "grohe43@gmail.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2022-05-02T19:38:10+00:00"
+    },
+    {
+      "id": "d115",
+      "names": [
+        "Cesare De Cal"
+      ],
+      "emails": [
+        "hi@cesare.io"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2020-06-19T16:06:26+00:00"
+    },
+    {
+      "id": "d116",
+      "names": [
+        "Chestnut"
+      ],
+      "emails": [
+        "chestnutprog@outlook.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2024-04-26T08:02:26+00:00"
+    },
+    {
+      "id": "d117",
+      "names": [
+        "Chris Kamradt"
+      ],
+      "emails": [
+        "ckin2001+github@gmail.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2015-05-06T02:54:04+00:00"
+    },
+    {
+      "id": "d118",
+      "names": [
+        "Chris Rose"
+      ],
+      "emails": [
+        "offby1@offby1.net"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2014-05-02T22:29:33+00:00"
+    },
+    {
+      "id": "d119",
+      "names": [
+        "Claudio Bandera"
+      ],
+      "emails": [
+        "claudio.bandera@kit.edu"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2015-09-20T17:07:19+00:00"
+    },
+    {
+      "id": "d120",
+      "names": [
+        "Colin Watson"
+      ],
+      "emails": [
+        "cjwatson@debian.org"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2026-07-01T09:16:42+00:00"
+    },
+    {
+      "id": "d121",
+      "names": [
+        "Craig de Stigter"
+      ],
+      "emails": [
+        "craig@destigter.nz"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2026-04-29T23:33:43+00:00"
+    },
+    {
+      "id": "d122",
+      "names": [
+        "Dan Sully"
+      ],
+      "emails": [
+        "dsully@linkedin.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2018-05-14T19:17:48+00:00"
+    },
+    {
+      "id": "d123",
+      "names": [
+        "Dan Yeaw"
+      ],
+      "emails": [
+        "dan@yeaw.me"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2019-09-13T01:12:34+00:00"
+    },
+    {
+      "id": "d124",
+      "names": [
+        "Daniel Hahler"
+      ],
+      "emails": [
+        "git@thequod.de"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2018-04-06T15:50:44+00:00"
+    },
+    {
+      "id": "d125",
+      "names": [
+        "Danila Hanchar"
+      ],
+      "emails": [
+        "d_hanchar@wargaming.net"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2018-05-18T03:46:37+00:00"
+    },
+    {
+      "id": "d126",
+      "names": [
+        "Danny Sepler"
+      ],
+      "emails": [
+        "dannysepler@gmail.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2021-07-05T16:33:40+00:00"
+    },
+    {
+      "id": "d127",
+      "names": [
+        "Dave Carlson"
+      ],
+      "emails": [
+        "thecubic@thecubic.net"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2018-05-14T20:43:30+00:00"
+    },
+    {
+      "id": "d128",
+      "names": [
+        "David Euresti"
+      ],
+      "emails": [
+        "david@euresti.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2021-12-17T20:03:41+00:00"
+    },
+    {
+      "id": "d129",
+      "names": [
+        "Daw-Ran Liou"
+      ],
+      "emails": [
+        "dawran6@gmail.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2018-05-15T08:46:39+00:00"
+    },
+    {
+      "id": "d130",
+      "names": [
+        "Denis Carriere"
+      ],
+      "emails": [
+        "carriere.denis@gmail.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2016-03-17T01:38:30+00:00"
+    },
+    {
+      "id": "d131",
+      "names": [
+        "Diaga"
+      ],
+      "emails": [
+        "diagaaos@gmail.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2020-11-23T11:25:12+00:00"
+    },
+    {
+      "id": "d132",
+      "names": [
+        "Doug Harris"
+      ],
+      "emails": [
+        "dharris@truthinitiative.org"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2018-05-14T20:12:45+00:00"
+    },
+    {
+      "id": "d133",
+      "names": [
+        "Ed Rogers"
+      ],
+      "emails": [
+        "edrogers@users.noreply.github.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2024-11-03T14:11:58+00:00"
+    },
+    {
+      "id": "d134",
+      "names": [
+        "Eli Boyarski"
+      ],
+      "emails": [
+        "eli.boyarski@gmail.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2017-07-12T12:13:54+00:00"
+    },
+    {
+      "id": "d135",
+      "names": [
+        "Eric Platon"
+      ],
+      "emails": [
+        "__ic@tutamail.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2026-05-08T04:42:08+00:00"
+    },
+    {
+      "id": "d136",
+      "names": [
+        "Eric Williamson"
+      ],
+      "emails": [
+        "ewilliamson@patreon.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2022-12-15T19:45:13+00:00"
+    },
+    {
+      "id": "d137",
+      "names": [
+        "Fabio Menegazzo"
+      ],
+      "emails": [
+        "fabio.menegazzo@axado.com.br"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2016-09-28T17:57:56+00:00"
+    },
+    {
+      "id": "d138",
+      "names": [
+        "Felix Bayer"
+      ],
+      "emails": [
+        "buckket@cock.li"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2016-03-30T11:21:57+00:00"
+    },
+    {
+      "id": "d139",
+      "names": [
+        "Felix Nord\u00e9n"
+      ],
+      "emails": [
+        "felixnorden@gmail.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2020-10-17T10:17:10+00:00"
+    },
+    {
+      "id": "d140",
+      "names": [
+        "Firelight Flagboy"
+      ],
+      "emails": [
+        "firelight.flagboy@gmail.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2025-07-03T09:39:39+00:00"
+    },
+    {
+      "id": "d141",
+      "names": [
+        "Fletcher Davis"
+      ],
+      "emails": [
+        "fletcher.t.davis@gmail.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2018-05-15T13:48:00+00:00"
+    },
+    {
+      "id": "d142",
+      "names": [
+        "Florian Friesdorf"
+      ],
+      "emails": [
+        "flo@chaoflow.net"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2014-06-09T14:53:23+00:00"
+    },
+    {
+      "id": "d143",
+      "names": [
+        "Florian Margaine"
+      ],
+      "emails": [
+        "ralt@users.noreply.github.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2018-03-31T11:24:47+00:00"
+    },
+    {
+      "id": "d144",
+      "names": [
+        "FooBarQuaxx"
+      ],
+      "emails": [
+        "mabidi6@gmail.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2016-11-07T11:32:21+00:00"
+    },
+    {
+      "id": "d145",
+      "names": [
+        "Fotis Gimian"
+      ],
+      "emails": [
+        "fgimiansoftware@gmail.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2014-05-02T00:07:12+00:00"
+    },
+    {
+      "id": "d146",
+      "names": [
+        "Frank Hoffmann"
+      ],
+      "emails": [
+        "frho@mail.de"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2015-04-16T09:52:12+00:00"
+    },
+    {
+      "id": "d147",
+      "names": [
+        "Frankie Robertson"
+      ],
+      "emails": [
+        "frankie@robertson.name"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2018-09-05T14:16:18+00:00"
+    },
+    {
+      "id": "d148",
+      "names": [
+        "Frazer McLean"
+      ],
+      "emails": [
+        "frazer@frazermclean.co.uk"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2023-04-09T13:32:40+00:00"
+    },
+    {
+      "id": "d149",
+      "names": [
+        "Fredrik Mellstr\u00f6m"
+      ],
+      "emails": [
+        "11281108+harkabeeparolus@users.noreply.github.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2022-08-02T15:48:38+00:00"
+    },
+    {
+      "id": "d150",
+      "names": [
+        "Garrett Smith"
+      ],
+      "emails": [
+        "g@rre.tt"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2017-09-29T14:40:03+00:00"
+    },
+    {
+      "id": "d151",
+      "names": [
+        "Giovanni Pizzi"
+      ],
+      "emails": [
+        "giovanni.pizzi@epfl.ch"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2018-06-20T07:34:30+00:00"
+    },
+    {
+      "id": "d152",
+      "names": [
+        "Gregory Pakosz"
+      ],
+      "emails": [
+        "gregory.pakosz@gmail.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2019-03-21T08:35:46+00:00"
+    },
+    {
+      "id": "d153",
+      "names": [
+        "Grey Li"
+      ],
+      "emails": [
+        "withlihui@gmail.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2021-09-12T09:13:25+00:00"
+    },
+    {
+      "id": "d154",
+      "names": [
+        "H1SWarrior"
+      ],
+      "emails": [
+        "39267185+atausch@users.noreply.github.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2018-05-14T21:47:01+00:00"
+    },
+    {
+      "id": "d155",
+      "names": [
+        "Hans Lehnert"
+      ],
+      "emails": [
+        "hans.lehnert@gmail.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2025-08-09T13:43:46+00:00"
+    },
+    {
+      "id": "d156",
+      "names": [
+        "Henrique Pereira"
+      ],
+      "emails": [
+        "ikkibr@gmail.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2014-04-24T13:21:47+00:00"
+    },
+    {
+      "id": "d157",
+      "names": [
+        "Henry Schreiner"
+      ],
+      "emails": [
+        "henryschreineriii@gmail.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2022-03-30T03:02:52+00:00"
+    },
+    {
+      "id": "d158",
+      "names": [
+        "Hynek Schlawack"
+      ],
+      "emails": [
+        "hs@ox.cx"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2022-09-14T13:09:00+00:00"
+    },
+    {
+      "id": "d159",
+      "names": [
+        "H\u00f3lmar Sigmundsson"
+      ],
+      "emails": [
+        "holmars@gmail.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2014-05-22T07:55:55+00:00"
+    },
+    {
+      "id": "d160",
+      "names": [
+        "Iain-S"
+      ],
+      "emails": [
+        "25081046+iain-s@users.noreply.github.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2026-05-21T09:26:28+00:00"
+    },
+    {
+      "id": "d161",
+      "names": [
+        "Ionel Cristian M\u0103rie\u0219"
+      ],
+      "emails": [
+        "contact@ionelmc.ro"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2015-12-03T16:05:13+00:00"
+    },
+    {
+      "id": "d162",
+      "names": [
+        "Israel Teneda"
+      ],
+      "emails": [
+        "israteneda@gmail.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2022-02-19T15:56:24+00:00"
+    },
+    {
+      "id": "d163",
+      "names": [
+        "Ivan Kapelyukhin"
+      ],
+      "emails": [
+        "ikapelyukhin@opensuse.org"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2021-07-13T19:49:39+00:00"
+    },
+    {
+      "id": "d164",
+      "names": [
+        "Iwan Aucamp"
+      ],
+      "emails": [
+        "aucampia@gmail.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2021-01-31T23:43:14+00:00"
+    },
+    {
+      "id": "d165",
+      "names": [
+        "Jad El Kik"
+      ],
+      "emails": [
+        "64258942+ls-jad-elkik@users.noreply.github.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2021-10-25T18:41:49+00:00"
+    },
+    {
+      "id": "d166",
+      "names": [
+        "James Daley"
+      ],
+      "emails": [
+        "jamesdaley2011@gmail.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2019-05-06T19:00:36+00:00"
+    },
+    {
+      "id": "d167",
+      "names": [
+        "James Webber"
+      ],
+      "emails": [
+        "jamestwebber@users.noreply.github.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2018-08-29T22:43:12+00:00"
+    },
+    {
+      "id": "d168",
+      "names": [
+        "Jan Kowalleck"
+      ],
+      "emails": [
+        "jan.kowalleck@gmail.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2020-08-08T05:37:21+00:00"
+    },
+    {
+      "id": "d169",
+      "names": [
+        "Jan Losinski"
+      ],
+      "emails": [
+        "losinskij@gmail.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2021-06-01T14:25:50+00:00"
+    },
+    {
+      "id": "d170",
+      "names": [
+        "Jasper Spaans"
+      ],
+      "emails": [
+        "jasper@startmail.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2021-09-06T10:00:33+00:00"
+    },
+    {
+      "id": "d171",
+      "names": [
+        "Jazzcort"
+      ],
+      "emails": [
+        "jason101011113@gmail.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2026-05-18T19:46:02+00:00"
+    },
+    {
+      "id": "d172",
+      "names": [
+        "Jean-Louis Fuchs"
+      ],
+      "emails": [
+        "safe.pen2857@rhizoome.ch"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2025-05-25T21:16:10+00:00"
+    },
+    {
+      "id": "d173",
+      "names": [
+        "Jethro Cao"
+      ],
+      "emails": [
+        "jethrocao@gmail.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2020-03-11T05:58:08+00:00"
+    },
+    {
+      "id": "d174",
+      "names": [
+        "Joachim Jablon"
+      ],
+      "emails": [
+        "ewjoachim@gmail.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2020-05-09T22:53:26+00:00"
+    },
+    {
+      "id": "d175",
+      "names": [
+        "Joe Ledger"
+      ],
+      "emails": [
+        "joewledger@gmail.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2019-05-06T16:13:29+00:00"
+    },
+    {
+      "id": "d176",
+      "names": [
+        "Joel Eager"
+      ],
+      "emails": [
+        "git@joeleager.me"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2019-07-13T02:08:08+00:00"
+    },
+    {
+      "id": "d177",
+      "names": [
+        "John Reese"
+      ],
+      "emails": [
+        "john@noswap.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2022-04-05T19:57:19+00:00"
+    },
+    {
+      "id": "d178",
+      "names": [
+        "Jon Banafato"
+      ],
+      "emails": [
+        "jon@jonafato.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2015-12-02T16:26:30+00:00"
+    },
+    {
+      "id": "d179",
+      "names": [
+        "Jonas Tingeborn"
+      ],
+      "emails": [
+        "tinjon@gmail.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2016-12-22T19:44:08+00:00"
+    },
+    {
+      "id": "d180",
+      "names": [
+        "Joongi Kim"
+      ],
+      "emails": [
+        "joongi@lablup.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2020-05-29T09:40:16+00:00"
+    },
+    {
+      "id": "d181",
+      "names": [
+        "Josh Cannon"
+      ],
+      "emails": [
+        "3956745+thejcannon@users.noreply.github.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2026-04-09T09:29:08+00:00"
+    },
+    {
+      "id": "d182",
+      "names": [
+        "Joshua Bronson"
+      ],
+      "emails": [
+        "jab@users.noreply.github.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2020-04-01T23:50:55+00:00"
+    },
+    {
+      "id": "d183",
+      "names": [
+        "Julian Berman"
+      ],
+      "emails": [
+        "julian@grayvines.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2018-12-26T13:25:55+00:00"
+    },
+    {
+      "id": "d184",
+      "names": [
+        "Kai Chen"
+      ],
+      "emails": [
+        "kaichen120@gmail.com"
+      ],
+      "commits": 1,
+      "files_authored": 1,
+      "last_commit": "2020-08-04T22:54:25+00:00"
+    },
+    {
+      "id": "d185",
+      "names": [
+        "Karthikeyan Singaravelan"
+      ],
+      "emails": [
+        "tir.karthi@gmail.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2019-12-19T12:41:05+00:00"
+    },
+    {
+      "id": "d186",
+      "names": [
+        "Keerthana Panyam"
+      ],
+      "emails": [
+        "panyam.k@northeastern.edu"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2026-05-18T20:59:38+00:00"
+    },
+    {
+      "id": "d187",
+      "names": [
+        "Kiss Gy\u00f6rgy"
+      ],
+      "emails": [
+        "kissgyorgy@me.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2014-08-26T13:48:18+00:00"
+    },
+    {
+      "id": "d188",
+      "names": [
+        "KotlinIsland"
+      ],
+      "emails": [
+        "65446343+kotlinisland@users.noreply.github.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2024-11-03T12:21:04+00:00"
+    },
+    {
+      "id": "d189",
+      "names": [
+        "Kriszti\u00e1n L\u00f6ki"
+      ],
+      "emails": [
+        "33157532+krisztianloki@users.noreply.github.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2024-10-26T13:43:32+00:00"
+    },
+    {
+      "id": "d190",
+      "names": [
+        "Krock Kode"
+      ],
+      "emails": [
+        "khperkins@gmail.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2014-05-31T08:27:41+00:00"
+    },
+    {
+      "id": "d191",
+      "names": [
+        "Kurt McKee"
+      ],
+      "emails": [
+        "contactme@kurtmckee.org"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2023-03-20T22:19:14+00:00"
+    },
+    {
+      "id": "d192",
+      "names": [
+        "Kwanghee Choi"
+      ],
+      "emails": [
+        "juice500ml@gmail.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2018-03-27T09:08:10+00:00"
+    },
+    {
+      "id": "d193",
+      "names": [
+        "Leo Singer"
+      ],
+      "emails": [
+        "leo.p.singer@nasa.gov"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2024-12-22T20:25:57+00:00"
+    },
+    {
+      "id": "d194",
+      "names": [
+        "Lingchao Xin"
+      ],
+      "emails": [
+        "douglarek@gmail.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2014-04-25T09:13:13+00:00"
+    },
+    {
+      "id": "d195",
+      "names": [
+        "Liu Xiteng"
+      ],
+      "emails": [
+        "liuxiteng72@gmail.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2023-03-03T02:03:52+00:00"
+    },
+    {
+      "id": "d196",
+      "names": [
+        "LokiHokie"
+      ],
+      "emails": [
+        "wpifer3@gatech.edu"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2018-05-14T19:30:26+00:00"
+    },
+    {
+      "id": "d197",
+      "names": [
+        "MIS-Alex"
+      ],
+      "emails": [
+        "56587100+mis-alex@users.noreply.github.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2021-01-14T16:00:00+00:00"
+    },
+    {
+      "id": "d198",
+      "names": [
+        "Marc Schmitzer"
+      ],
+      "emails": [
+        "marc@solute.de"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2021-05-18T08:42:59+00:00"
+    },
+    {
+      "id": "d199",
+      "names": [
+        "Marc Tamsky"
+      ],
+      "emails": [
+        "tamsky@users.noreply.github.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2020-02-06T19:35:14+00:00"
+    },
+    {
+      "id": "d200",
+      "names": [
+        "Marcel Telka"
+      ],
+      "emails": [
+        "marcel@telka.sk"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2025-10-27T17:18:22+00:00"
+    },
+    {
+      "id": "d201",
+      "names": [
+        "Marco Ricci"
+      ],
+      "emails": [
+        "the-13th-letter@users.noreply.github.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2025-07-21T19:35:04+00:00"
+    },
+    {
+      "id": "d202",
+      "names": [
+        "Matt Haggard"
+      ],
+      "emails": [
+        "haggardii@gmail.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2017-01-04T17:12:22+00:00"
+    },
+    {
+      "id": "d203",
+      "names": [
+        "Matt Robenolt"
+      ],
+      "emails": [
+        "matt@ydekproductions.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2016-01-05T22:23:57+00:00"
+    },
+    {
+      "id": "d204",
+      "names": [
+        "Matthew Martin"
+      ],
+      "emails": [
+        "phy1729@gmail.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2022-01-06T03:16:43+00:00"
+    },
+    {
+      "id": "d205",
+      "names": [
+        "Min ho Kim"
+      ],
+      "emails": [
+        "minho42@gmail.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2019-07-06T15:04:53+00:00"
+    },
+    {
+      "id": "d206",
+      "names": [
+        "Ming Zhang"
+      ],
+      "emails": [
+        "ming.zhang@twosigma.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2019-05-31T15:04:04+00:00"
+    },
+    {
+      "id": "d207",
+      "names": [
+        "Moshe Zada"
+      ],
+      "emails": [
+        "moshe.zada@forter.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2018-10-19T09:00:35+00:00"
+    },
+    {
+      "id": "d208",
+      "names": [
+        "Narbonne"
+      ],
+      "emails": [
+        "christophe31@gmail.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2014-05-07T07:18:28+00:00"
+    },
+    {
+      "id": "d209",
+      "names": [
+        "Narendra N"
+      ],
+      "emails": [
+        "narendra.klu9@gmail.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2020-01-17T12:32:12+00:00"
+    },
+    {
+      "id": "d210",
+      "names": [
+        "Nathaniel Compton"
+      ],
+      "emails": [
+        "nathaniel.compton@revelsystems.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2019-05-06T15:43:26+00:00"
+    },
+    {
+      "id": "d211",
+      "names": [
+        "Nick Muoh"
+      ],
+      "emails": [
+        "nickspirit3+github@gmail.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2022-05-03T18:40:58+00:00"
+    },
+    {
+      "id": "d212",
+      "names": [
+        "Nicky Sielicki"
+      ],
+      "emails": [
+        "sielicki@yandex.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2021-06-17T21:27:00+00:00"
+    },
+    {
+      "id": "d213",
+      "names": [
+        "Nicolas F"
+      ],
+      "emails": [
+        "ovdev@fratti.ch"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2018-10-10T13:38:04+00:00"
+    },
+    {
+      "id": "d214",
+      "names": [
+        "Nicolas Simonds"
+      ],
+      "emails": [
+        "nic@submedia.net"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2019-04-02T18:48:22+00:00"
+    },
+    {
+      "id": "d215",
+      "names": [
+        "Nils Hjelte"
+      ],
+      "emails": [
+        "nils.hjelte@gmail.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2024-11-09T21:57:12+00:00"
+    },
+    {
+      "id": "d216",
+      "names": [
+        "Olivia Kinnear"
+      ],
+      "emails": [
+        "51250849+superatomic@users.noreply.github.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2023-07-29T22:14:02+00:00"
+    },
+    {
+      "id": "d217",
+      "names": [
+        "Omer Katz"
+      ],
+      "emails": [
+        "omer.drow@gmail.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2021-06-28T15:20:27+00:00"
+    },
+    {
+      "id": "d218",
+      "names": [
+        "Oscar Bonilla"
+      ],
+      "emails": [
+        "obonilla@linkedin.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2016-08-03T17:53:39+00:00"
+    },
+    {
+      "id": "d219",
+      "names": [
+        "Patrick Hayes"
+      ],
+      "emails": [
+        "403100+pfhayes@users.noreply.github.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2024-11-02T23:11:55+00:00"
+    },
+    {
+      "id": "d220",
+      "names": [
+        "Patrick Lannigan"
+      ],
+      "emails": [
+        "p.lannigan@gmail.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2025-06-07T17:19:35+00:00"
+    },
+    {
+      "id": "d221",
+      "names": [
+        "Patrick M\u00e9zard"
+      ],
+      "emails": [
+        "patrick@mezard.eu"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2016-08-29T15:06:44+00:00"
+    },
+    {
+      "id": "d222",
+      "names": [
+        "Patryk B\u0119za"
+      ],
+      "emails": [
+        "patryk@wildland.io"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2021-06-22T13:47:50+00:00"
+    },
+    {
+      "id": "d223",
+      "names": [
+        "Paul Kilgo"
+      ],
+      "emails": [
+        "paulkilgo@gmail.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2019-06-20T17:56:58+00:00"
+    },
+    {
+      "id": "d224",
+      "names": [
+        "Paul Spangler"
+      ],
+      "emails": [
+        "paul.spangler@ni.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2021-08-09T18:27:39+00:00"
+    },
+    {
+      "id": "d225",
+      "names": [
+        "Peacock"
+      ],
+      "emails": [
+        "me@p3ac0ck.net"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2024-11-29T00:31:31+00:00"
+    },
+    {
+      "id": "d226",
+      "names": [
+        "Peter A. Jonsson"
+      ],
+      "emails": [
+        "jonsson.peter.a@gmail.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2025-11-12T22:36:53+00:00"
+    },
+    {
+      "id": "d227",
+      "names": [
+        "Peter Dragun"
+      ],
+      "emails": [
+        "peter.dragun@espressif.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2023-07-19T07:06:03+00:00"
+    },
+    {
+      "id": "d228",
+      "names": [
+        "Philipp A."
+      ],
+      "emails": [
+        "flying-sheep@web.de"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2015-08-27T08:34:21+00:00"
+    },
+    {
+      "id": "d229",
+      "names": [
+        "Philippe Ombredanne"
+      ],
+      "emails": [
+        "pombredanne@gmail.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2017-05-24T14:50:54+00:00"
+    },
+    {
+      "id": "d230",
+      "names": [
+        "Pietro Albini"
+      ],
+      "emails": [
+        "pietro@pietroalbini.io"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2015-08-17T09:11:38+00:00"
+    },
+    {
+      "id": "d231",
+      "names": [
+        "RC2215"
+      ],
+      "emails": [
+        "88962047+rc2215@users.noreply.github.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2026-04-29T23:53:14+00:00"
+    },
+    {
+      "id": "d232",
+      "names": [
+        "Ray Lehtiniemi"
+      ],
+      "emails": [
+        "rayl@mail.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2014-10-07T04:30:59+00:00"
+    },
+    {
+      "id": "d233",
+      "names": [
+        "Razzi"
+      ],
+      "emails": [
+        "razzi53@gmail.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2014-05-01T07:48:15+00:00"
+    },
+    {
+      "id": "d234",
+      "names": [
+        "ReneS"
+      ],
+      "emails": [
+        "148054878+renesoltes@users.noreply.github.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2026-04-29T23:37:31+00:00"
+    },
+    {
+      "id": "d235",
+      "names": [
+        "Ricardo B\u00e1nffy"
+      ],
+      "emails": [
+        "rbanffy@gmail.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2021-03-23T21:31:02+00:00"
+    },
+    {
+      "id": "d236",
+      "names": [
+        "Riccardo Belli"
+      ],
+      "emails": [
+        "61554895+belliriccardo@users.noreply.github.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2022-05-13T07:49:22+00:00"
+    },
+    {
+      "id": "d237",
+      "names": [
+        "Robert Graham"
+      ],
+      "emails": [
+        "rpgraham84@gmail.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2018-05-15T19:25:08+00:00"
+    },
+    {
+      "id": "d238",
+      "names": [
+        "Robert Pooley"
+      ],
+      "emails": [
+        "rpooley@uber.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2016-08-10T19:15:01+00:00"
+    },
+    {
+      "id": "d239",
+      "names": [
+        "Roland Walker"
+      ],
+      "emails": [
+        "walker@pobox.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2025-09-04T11:53:40+00:00"
+    },
+    {
+      "id": "d240",
+      "names": [
+        "Rovanion Luckey"
+      ],
+      "emails": [
+        "rovanion.luckey@gmail.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2016-06-13T11:24:56+00:00"
+    },
+    {
+      "id": "d241",
+      "names": [
+        "R\u00e9gis Behmo"
+      ],
+      "emails": [
+        "github@behmo.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2023-05-07T15:52:15+00:00"
+    },
+    {
+      "id": "d242",
+      "names": [
+        "R\u00e9my Greinhofer"
+      ],
+      "emails": [
+        "remy.greinhofer@gmail.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2017-10-14T20:33:15+00:00"
+    },
+    {
+      "id": "d243",
+      "names": [
+        "STEPHEN OTIENO ONYANGO"
+      ],
+      "emails": [
+        "142543761+stevoti@users.noreply.github.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2026-05-08T13:47:47+00:00"
+    },
+    {
+      "id": "d244",
+      "names": [
+        "Sagi Buchbinder-Shadur"
+      ],
+      "emails": [
+        "saroad2@gmail.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2023-05-03T15:16:59+00:00"
+    },
+    {
+      "id": "d245",
+      "names": [
+        "Santiago Basulto"
+      ],
+      "emails": [
+        "santiago.basulto@gmail.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2015-09-09T02:11:26+00:00"
+    },
+    {
+      "id": "d246",
+      "names": [
+        "Seb Aebischer"
+      ],
+      "emails": [
+        "8686939+saebischer@users.noreply.github.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2021-03-06T16:47:26+00:00"
+    },
+    {
+      "id": "d247",
+      "names": [
+        "Sergey Kozlov"
+      ],
+      "emails": [
+        "skozlovf@gmail.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2016-12-04T16:19:02+00:00"
+    },
+    {
+      "id": "d248",
+      "names": [
+        "Sergey Kozub"
+      ],
+      "emails": [
+        "sergey.kozub@p9ft.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2015-02-25T14:51:50+00:00"
+    },
+    {
+      "id": "d249",
+      "names": [
+        "Shantanu"
+      ],
+      "emails": [
+        "12621235+hauntsaninja@users.noreply.github.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2023-08-08T09:20:39+00:00"
+    },
+    {
+      "id": "d250",
+      "names": [
+        "Shayegan Hooshyari"
+      ],
+      "emails": [
+        "sh.hooshyari@gmail.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2021-04-26T10:50:05+00:00"
+    },
+    {
+      "id": "d251",
+      "names": [
+        "Simon Gerber"
+      ],
+      "emails": [
+        "simon.gerber@vshn.ch"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2025-05-12T11:18:11+00:00"
+    },
+    {
+      "id": "d252",
+      "names": [
+        "Stefan Scherfke"
+      ],
+      "emails": [
+        "stefan@sofa-rockers.org"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2018-03-31T18:10:41+00:00"
+    },
+    {
+      "id": "d253",
+      "names": [
+        "Stefanie Molin"
+      ],
+      "emails": [
+        "24376333+stefmolin@users.noreply.github.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2024-05-20T15:57:28+00:00"
+    },
+    {
+      "id": "d254",
+      "names": [
+        "Stephen Finucane"
+      ],
+      "emails": [
+        "stephen@that.guru"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2021-12-08T17:09:27+00:00"
+    },
+    {
+      "id": "d255",
+      "names": [
+        "Steve Graham"
+      ],
+      "emails": [
+        "stgraham2000@gmail.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2020-03-30T18:21:24+00:00"
+    },
+    {
+      "id": "d256",
+      "names": [
+        "Steve Morin"
+      ],
+      "emails": [
+        "steve.morin@gmail.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2014-04-26T07:02:29+00:00"
+    },
+    {
+      "id": "d257",
+      "names": [
+        "Sylvain Fankhauser"
+      ],
+      "emails": [
+        "sylvain.fankhauser@gmail.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2015-02-21T18:56:30+00:00"
+    },
+    {
+      "id": "d258",
+      "names": [
+        "Sylvain Joubert"
+      ],
+      "emails": [
+        "joubert.sy@gmail.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2026-05-15T10:41:22+00:00"
+    },
+    {
+      "id": "d259",
+      "names": [
+        "Taylor Payne"
+      ],
+      "emails": [
+        "tpayne.dev@gmail.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2024-05-20T23:13:30+00:00"
+    },
+    {
+      "id": "d260",
+      "names": [
+        "Tin Tvrtkovi\u0107"
+      ],
+      "emails": [
+        "tinchester@gmail.com"
+      ],
+      "commits": 1,
+      "files_authored": 7,
+      "last_commit": "2023-07-13T14:56:13+00:00"
+    },
+    {
+      "id": "d261",
+      "names": [
+        "Tom Dalton"
+      ],
+      "emails": [
+        "tom.dalton@fanduel.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2019-05-08T14:48:36+00:00"
+    },
+    {
+      "id": "d262",
+      "names": [
+        "Torf"
+      ],
+      "emails": [
+        "mail@torf.cc"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2015-06-19T17:56:24+00:00"
+    },
+    {
+      "id": "d263",
+      "names": [
+        "Tuomas Suutari"
+      ],
+      "emails": [
+        "tuomas@nepnep.net"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2018-03-26T22:20:08+00:00"
+    },
+    {
+      "id": "d264",
+      "names": [
+        "Vincent Jacques"
+      ],
+      "emails": [
+        "vincent@vincent-jacques.net"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2018-05-08T05:42:40+00:00"
+    },
+    {
+      "id": "d265",
+      "names": [
+        "Vincent Philippon"
+      ],
+      "emails": [
+        "vincent.philippon@ubisoft.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2021-05-12T19:31:39+00:00"
+    },
+    {
+      "id": "d266",
+      "names": [
+        "Vishal Sodani"
+      ],
+      "emails": [
+        "vishalsodani@rediffmail.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2015-02-16T04:39:54+00:00"
+    },
+    {
+      "id": "d267",
+      "names": [
+        "WANG WENPEI"
+      ],
+      "emails": [
+        "wangwenpei@nextoa.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2018-02-01T10:15:46+00:00"
+    },
+    {
+      "id": "d268",
+      "names": [
+        "Yash Rathi"
+      ],
+      "emails": [
+        "57002207+yashrathi-git@users.noreply.github.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2024-11-07T22:42:59+00:00"
+    },
+    {
+      "id": "d269",
+      "names": [
+        "Yevgen Antymyrov"
+      ],
+      "emails": [
+        "me@antimirov.net"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2019-02-11T17:53:19+00:00"
+    },
+    {
+      "id": "d270",
+      "names": [
+        "Yorick"
+      ],
+      "emails": [
+        "yorickvanpelt@gmail.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2026-04-29T23:20:22+00:00"
+    },
+    {
+      "id": "d271",
+      "names": [
+        "Yuval Langer"
+      ],
+      "emails": [
+        "yuval.langer@gmail.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2014-11-15T12:31:26+00:00"
+    },
+    {
+      "id": "d272",
+      "names": [
+        "akettmann-e24"
+      ],
+      "emails": [
+        "50422880+akettmann-e24@users.noreply.github.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2023-05-10T02:28:55+00:00"
+    },
+    {
+      "id": "d273",
+      "names": [
+        "alexey"
+      ],
+      "emails": [
+        "alexey@semmle.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2019-05-23T15:59:11+00:00"
+    },
+    {
+      "id": "d274",
+      "names": [
+        "antazoey"
+      ],
+      "emails": [
+        "jules@apeworx.io"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2024-11-03T14:54:02+00:00"
+    },
+    {
+      "id": "d275",
+      "names": [
+        "bdista"
+      ],
+      "emails": [
+        "bdista@users.noreply.github.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2021-04-30T22:48:47+00:00"
+    },
+    {
+      "id": "d276",
+      "names": [
+        "bhuffman-usgs"
+      ],
+      "emails": [
+        "40209416+bhuffman-usgs@users.noreply.github.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2024-11-03T13:12:05+00:00"
+    },
+    {
+      "id": "d277",
+      "names": [
+        "chips-wq"
+      ],
+      "emails": [
+        "77174327+chips-wq@users.noreply.github.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2024-11-03T14:40:46+00:00"
+    },
+    {
+      "id": "d278",
+      "names": [
+        "chusband"
+      ],
+      "emails": [
+        "chusband@gmail.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2019-05-31T16:16:33+00:00"
+    },
+    {
+      "id": "d279",
+      "names": [
+        "cocodrips"
+      ],
+      "emails": [
+        "cocodrips@gmail.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2016-07-25T08:21:58+00:00"
+    },
+    {
+      "id": "d280",
+      "names": [
+        "con-f-use"
+      ],
+      "emails": [
+        "con-f-use@gmx.net"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2015-12-13T12:39:28+00:00"
+    },
+    {
+      "id": "d281",
+      "names": [
+        "danwusbu"
+      ],
+      "emails": [
+        "kiwi.seed.allergy@gmail.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2024-05-20T18:06:56+00:00"
+    },
+    {
+      "id": "d282",
+      "names": [
+        "doiken"
+      ],
+      "emails": [
+        "doiken@users.noreply.github.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2026-03-10T16:28:21+00:00"
+    },
+    {
+      "id": "d283",
+      "names": [
+        "energizah"
+      ],
+      "emails": [
+        "energizah@users.noreply.github.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2019-10-08T23:03:13+00:00"
+    },
+    {
+      "id": "d284",
+      "names": [
+        "enkore"
+      ],
+      "emails": [
+        "public@enkore.de"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2014-05-30T02:02:24+00:00"
+    },
+    {
+      "id": "d285",
+      "names": [
+        "exploide"
+      ],
+      "emails": [
+        "me@exploide.net"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2022-09-07T12:56:52+00:00"
+    },
+    {
+      "id": "d286",
+      "names": [
+        "fdavis"
+      ],
+      "emails": [
+        "fdavis@users.noreply.github.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2024-11-03T19:56:41+00:00"
+    },
+    {
+      "id": "d287",
+      "names": [
+        "invlpg"
+      ],
+      "emails": [
+        "invlpg@gmail.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2014-05-22T14:28:01+00:00"
+    },
+    {
+      "id": "d288",
+      "names": [
+        "jaseg"
+      ],
+      "emails": [
+        "136313+jaseg@users.noreply.github.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2024-10-26T15:38:39+00:00"
+    },
+    {
+      "id": "d289",
+      "names": [
+        "jhwgh1968"
+      ],
+      "emails": [
+        "jhwgh1968@noreply.github.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2017-02-10T05:23:00+00:00"
+    },
+    {
+      "id": "d290",
+      "names": [
+        "jtrakk"
+      ],
+      "emails": [
+        "43392409+jtrakk@users.noreply.github.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2019-07-13T20:15:43+00:00"
+    },
+    {
+      "id": "d291",
+      "names": [
+        "kbanc"
+      ],
+      "emails": [
+        "katherine.bancroft@gmail.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2020-06-25T19:17:55+00:00"
+    },
+    {
+      "id": "d292",
+      "names": [
+        "layday"
+      ],
+      "emails": [
+        "layday@protonmail.com"
+      ],
+      "commits": 1,
+      "files_authored": 1,
+      "last_commit": "2023-07-13T15:42:44+00:00"
+    },
+    {
+      "id": "d293",
+      "names": [
+        "leshna balara"
+      ],
+      "emails": [
+        "leshnabalara2001@gmail.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2021-02-24T20:55:31+00:00"
+    },
+    {
+      "id": "d294",
+      "names": [
+        "lmjohns3"
+      ],
+      "emails": [
+        "lmjohns3@users.noreply.github.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2019-11-21T00:03:34+00:00"
+    },
+    {
+      "id": "d295",
+      "names": [
+        "luw2007"
+      ],
+      "emails": [
+        "luw2007@gmail.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2015-01-31T14:41:27+00:00"
+    },
+    {
+      "id": "d296",
+      "names": [
+        "mattsb42"
+      ],
+      "emails": [
+        "matt.s.b.42@gmail.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2019-06-10T04:27:31+00:00"
+    },
+    {
+      "id": "d297",
+      "names": [
+        "mrmups"
+      ],
+      "emails": [
+        "matt@mups.tech"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2024-11-02T22:45:03+00:00"
+    },
+    {
+      "id": "d298",
+      "names": [
+        "naglis"
+      ],
+      "emails": [
+        "827324+naglis@users.noreply.github.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2024-04-08T07:19:28+00:00"
+    },
+    {
+      "id": "d299",
+      "names": [
+        "naoya_t"
+      ],
+      "emails": [
+        "naoya.tozuka@gmail.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2015-11-08T08:05:45+00:00"
+    },
+    {
+      "id": "d300",
+      "names": [
+        "plumlariat"
+      ],
+      "emails": [
+        "ericjeffcoat85@gmail.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2026-05-19T16:35:41+00:00"
+    },
+    {
+      "id": "d301",
+      "names": [
+        "rarnal"
+      ],
+      "emails": [
+        "arnal.romain@gmail.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2020-05-09T23:31:30+00:00"
+    },
+    {
+      "id": "d302",
+      "names": [
+        "robintully"
+      ],
+      "emails": [
+        "mr.robintully@gmail.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2019-05-06T17:59:56+00:00"
+    },
+    {
+      "id": "d303",
+      "names": [
+        "sekenned"
+      ],
+      "emails": [
+        "stuart.e.kennedy@gmail.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2019-05-06T16:01:43+00:00"
+    },
+    {
+      "id": "d304",
+      "names": [
+        "stxlvt"
+      ],
+      "emails": [
+        "lvt.stx@gmail.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2016-07-14T08:28:04+00:00"
+    },
+    {
+      "id": "d305",
+      "names": [
+        "taran_lu"
+      ],
+      "emails": [
+        "taran@houzz.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2021-08-03T17:18:49+00:00"
+    },
+    {
+      "id": "d306",
+      "names": [
+        "timfeirg"
+      ],
+      "emails": [
+        "kkcocogogo@gmail.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2017-02-22T15:31:11+00:00"
+    },
+    {
+      "id": "d307",
+      "names": [
+        "unparalleled-js"
+      ],
+      "emails": [
+        "yingthi@live.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2021-12-24T00:37:29+00:00"
+    },
+    {
+      "id": "d308",
+      "names": [
+        "yk396"
+      ],
+      "emails": [
+        "yk396@cornell.edu"
+      ],
+      "commits": 1,
+      "files_authored": 1,
+      "last_commit": "2020-07-03T17:45:22+00:00"
+    },
+    {
+      "id": "d309",
+      "names": [
+        "yurihs"
+      ],
+      "emails": [
+        "yurisalvador@hotmail.com"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2019-12-14T15:33:35+00:00"
+    },
+    {
+      "id": "d310",
+      "names": [
+        "\u00c9loi Rivard"
+      ],
+      "emails": [
+        "eloi.rivard@nubla.fr"
+      ],
+      "commits": 1,
+      "files_authored": 0,
+      "last_commit": "2024-12-19T16:54:32+00:00"
+    }
+  ],
+  "truck_factor": {
+    "value": 3,
+    "removed": [
+      "d1",
+      "d2",
+      "d6"
+    ],
+    "coverage": 1.0
+  },
+  "departure": {
+    "dev": "d1",
+    "at_risk_files": 42,
+    "orphaned_files": 18,
+    "coverage_before": 1.0,
+    "coverage_after": 0.8043,
+    "truck_factor_after": 2
+  },
+  "modules": [
+    {
+      "path": "src/click/",
+      "risk": 1.679,
+      "orphaned_files": 6,
+      "at_risk_files": 15,
+      "successor": {
+        "dev": "d2",
+        "doa_sum": 12.287
+      },
+      "files": [
+        {
+          "path": "src/click/core.py",
+          "loc": 3317,
+          "fan_in": 12,
+          "orphaned": true,
+          "importance": 0.46,
+          "authors": [
+            "d1"
+          ],
+          "doa_n": {
+            "d1": 1.0,
+            "d2": 0.584,
+            "d3": 0.534,
+            "d5": 0.145,
+            "d13": 0.102,
+            "d14": 0.095,
+            "d11": 0.095,
+            "d7": 0.095,
+            "d12": 0.088,
+            "d10": 0.088,
+            "d8": 0.08,
+            "d19": 0.08,
+            "d30": 0.08,
+            "d32": 0.08,
+            "d34": 0.08,
+            "d67": 0.073,
+            "d65": 0.073,
+            "d50": 0.073,
+            "d33": 0.073,
+            "d45": 0.073,
+            "d90": 0.073,
+            "d56": 0.073,
+            "d42": 0.073,
+            "d6": 0.073,
+            "d21": 0.073,
+            "d81": 0.073,
+            "d156": 0.066,
+            "d194": 0.066,
+            "d256": 0.066,
+            "d78": 0.066,
+            "d266": 0.066,
+            "d248": 0.066,
+            "d43": 0.066,
+            "d119": 0.066,
+            "d203": 0.066,
+            "d22": 0.066,
+            "d57": 0.066,
+            "d240": 0.066,
+            "d218": 0.066,
+            "d238": 0.066,
+            "d144": 0.066,
+            "d202": 0.066,
+            "d27": 0.066,
+            "d242": 0.066,
+            "d124": 0.066,
+            "d264": 0.066,
+            "d132": 0.066,
+            "d55": 0.066,
+            "d141": 0.066,
+            "d39": 0.066,
+            "d36": 0.066,
+            "d147": 0.066,
+            "d62": 0.066,
+            "d269": 0.066,
+            "d68": 0.066,
+            "d152": 0.066,
+            "d31": 0.066,
+            "d29": 0.066,
+            "d48": 0.066,
+            "d296": 0.066,
+            "d290": 0.066,
+            "d283": 0.066,
+            "d98": 0.066,
+            "d174": 0.066,
+            "d301": 0.066,
+            "d180": 0.066,
+            "d63": 0.066,
+            "d291": 0.066,
+            "d308": 0.066,
+            "d168": 0.066,
+            "d44": 0.066,
+            "d164": 0.066,
+            "d26": 0.066,
+            "d96": 0.066,
+            "d20": 0.066,
+            "d222": 0.066,
+            "d217": 0.066,
+            "d126": 0.066,
+            "d16": 0.066,
+            "d163": 0.066,
+            "d305": 0.066,
+            "d224": 0.066,
+            "d93": 0.066,
+            "d254": 0.066,
+            "d157": 0.066,
+            "d177": 0.066,
+            "d114": 0.066,
+            "d85": 0.066,
+            "d211": 0.066,
+            "d99": 0.066,
+            "d136": 0.066,
+            "d191": 0.066,
+            "d102": 0.066,
+            "d241": 0.066,
+            "d111": 0.066,
+            "d253": 0.066,
+            "d46": 0.066,
+            "d288": 0.066,
+            "d219": 0.066,
+            "d188": 0.066,
+            "d133": 0.066,
+            "d277": 0.066,
+            "d286": 0.066,
+            "d225": 0.066,
+            "d193": 0.066,
+            "d88": 0.066,
+            "d220": 0.066,
+            "d35": 0.066,
+            "d25": 0.066,
+            "d105": 0.066,
+            "d181": 0.066,
+            "d231": 0.066,
+            "d135": 0.066,
+            "d258": 0.066,
+            "d9": 0.066
+          }
+        },
+        {
+          "path": "src/click/__init__.py",
+          "loc": 127,
+          "fan_in": 66,
+          "orphaned": true,
+          "importance": 0.415,
+          "authors": [
+            "d1"
+          ],
+          "doa_n": {
+            "d1": 1.0,
+            "d2": 0.712,
+            "d4": 0.331,
+            "d3": 0.179,
+            "d13": 0.167,
+            "d54": 0.154,
+            "d12": 0.154,
+            "d21": 0.154,
+            "d19": 0.141,
+            "d245": 0.141,
+            "d130": 0.141,
+            "d263": 0.141,
+            "d55": 0.141,
+            "d114": 0.141,
+            "d7": 0.141,
+            "d121": 0.141,
+            "d231": 0.141
+          }
+        },
+        {
+          "path": "src/click/types.py",
+          "loc": 1146,
+          "fan_in": 5,
+          "orphaned": false,
+          "importance": 0.164,
+          "authors": [
+            "d1",
+            "d2"
+          ],
+          "doa_n": {
+            "d2": 1.0,
+            "d1": 0.887,
+            "d3": 0.398,
+            "d8": 0.295,
+            "d19": 0.295,
+            "d16": 0.295,
+            "d7": 0.295,
+            "d5": 0.274,
+            "d4": 0.253,
+            "d34": 0.253,
+            "d9": 0.253,
+            "d142": 0.233,
+            "d271": 0.233,
+            "d146": 0.233,
+            "d43": 0.233,
+            "d245": 0.233,
+            "d130": 0.233,
+            "d138": 0.233,
+            "d247": 0.233,
+            "d229": 0.233,
+            "d84": 0.233,
+            "d252": 0.233,
+            "d71": 0.233,
+            "d129": 0.233,
+            "d55": 0.233,
+            "d214": 0.233,
+            "d302": 0.233,
+            "d33": 0.233,
+            "d53": 0.233,
+            "d41": 0.233,
+            "d308": 0.233,
+            "d17": 0.233,
+            "d12": 0.233,
+            "d56": 0.233,
+            "d139": 0.233,
+            "d164": 0.233,
+            "d26": 0.233,
+            "d212": 0.233,
+            "d165": 0.233,
+            "d204": 0.233,
+            "d103": 0.233,
+            "d114": 0.233,
+            "d85": 0.233,
+            "d158": 0.233,
+            "d148": 0.233,
+            "d259": 0.233,
+            "d297": 0.233,
+            "d274": 0.233,
+            "d6": 0.233,
+            "d135": 0.233,
+            "d243": 0.233,
+            "d186": 0.233,
+            "d21": 0.233
+          }
+        },
+        {
+          "path": "src/click/_compat.py",
+          "loc": 472,
+          "fan_in": 17,
+          "orphaned": true,
+          "importance": 0.158,
+          "authors": [
+            "d1"
+          ],
+          "doa_n": {
+            "d1": 1.0,
+            "d2": 0.668,
+            "d4": 0.262,
+            "d3": 0.245,
+            "d18": 0.228,
+            "d37": 0.211,
+            "d15": 0.211,
+            "d50": 0.211,
+            "d39": 0.211,
+            "d83": 0.211,
+            "d34": 0.211,
+            "d7": 0.211,
+            "d287": 0.194,
+            "d19": 0.194,
+            "d279": 0.194,
+            "d77": 0.194,
+            "d192": 0.194,
+            "d112": 0.194,
+            "d143": 0.194,
+            "d62": 0.194,
+            "d55": 0.194,
+            "d303": 0.194,
+            "d175": 0.194,
+            "d87": 0.194,
+            "d273": 0.194,
+            "d205": 0.194,
+            "d123": 0.194,
+            "d104": 0.194,
+            "d17": 0.194,
+            "d164": 0.194,
+            "d293": 0.194,
+            "d114": 0.194,
+            "d85": 0.194,
+            "d148": 0.194,
+            "d121": 0.194,
+            "d171": 0.194
+          }
+        },
+        {
+          "path": "src/click/utils.py",
+          "loc": 534,
+          "fan_in": 12,
+          "orphaned": false,
+          "importance": 0.135,
+          "authors": [
+            "d1",
+            "d2"
+          ],
+          "doa_n": {
+            "d1": 1.0,
+            "d2": 0.786,
+            "d3": 0.339,
+            "d19": 0.299,
+            "d4": 0.299,
+            "d34": 0.279,
+            "d21": 0.258,
+            "d8": 0.238,
+            "d117": 0.238,
+            "d60": 0.238,
+            "d22": 0.238,
+            "d97": 0.238,
+            "d55": 0.238,
+            "d147": 0.238,
+            "d291": 0.238,
+            "d74": 0.238,
+            "d11": 0.238,
+            "d10": 0.238,
+            "d80": 0.238,
+            "d95": 0.238,
+            "d114": 0.238,
+            "d85": 0.238,
+            "d149": 0.238,
+            "d148": 0.238,
+            "d272": 0.238,
+            "d298": 0.238,
+            "d281": 0.238,
+            "d189": 0.238,
+            "d135": 0.238,
+            "d9": 0.238,
+            "d160": 0.238
+          }
+        },
+        {
+          "path": "src/click/_termui_impl.py",
+          "loc": 807,
+          "fan_in": 4,
+          "orphaned": false,
+          "importance": 0.118,
+          "authors": [
+            "d1",
+            "d2"
+          ],
+          "doa_n": {
+            "d1": 1.0,
+            "d2": 0.853,
+            "d3": 0.541,
+            "d4": 0.319,
+            "d17": 0.319,
+            "d7": 0.319,
+            "d19": 0.274,
+            "d40": 0.274,
+            "d77": 0.274,
+            "d76": 0.274,
+            "d70": 0.274,
+            "d29": 0.274,
+            "d34": 0.274,
+            "d284": 0.252,
+            "d257": 0.252,
+            "d228": 0.252,
+            "d299": 0.252,
+            "d280": 0.252,
+            "d37": 0.252,
+            "d108": 0.252,
+            "d179": 0.252,
+            "d52": 0.252,
+            "d55": 0.252,
+            "d59": 0.252,
+            "d237": 0.252,
+            "d31": 0.252,
+            "d151": 0.252,
+            "d89": 0.252,
+            "d213": 0.252,
+            "d5": 0.252,
+            "d273": 0.252,
+            "d48": 0.252,
+            "d176": 0.252,
+            "d182": 0.252,
+            "d74": 0.252,
+            "d18": 0.252,
+            "d197": 0.252,
+            "d114": 0.252,
+            "d85": 0.252,
+            "d276": 0.252,
+            "d268": 0.252,
+            "d172": 0.252,
+            "d20": 0.252,
+            "d239": 0.252,
+            "d94": 0.252,
+            "d121": 0.252,
+            "d135": 0.252,
+            "d300": 0.252,
+            "d46": 0.252,
+            "d21": 0.252
+          }
+        },
+        {
+          "path": "src/click/termui.py",
+          "loc": 842,
+          "fan_in": 3,
+          "orphaned": true,
+          "importance": 0.116,
+          "authors": [
+            "d1"
+          ],
+          "doa_n": {
+            "d1": 1.0,
+            "d2": 0.655,
+            "d3": 0.408,
+            "d8": 0.232,
+            "d19": 0.232,
+            "d11": 0.232,
+            "d7": 0.232,
+            "d28": 0.232,
+            "d4": 0.215,
+            "d118": 0.197,
+            "d187": 0.197,
+            "d295": 0.197,
+            "d86": 0.197,
+            "d240": 0.197,
+            "d304": 0.197,
+            "d66": 0.197,
+            "d76": 0.197,
+            "d154": 0.197,
+            "d55": 0.197,
+            "d125": 0.197,
+            "d89": 0.197,
+            "d213": 0.197,
+            "d15": 0.197,
+            "d210": 0.197,
+            "d87": 0.197,
+            "d48": 0.197,
+            "d176": 0.197,
+            "d294": 0.197,
+            "d309": 0.197,
+            "d255": 0.197,
+            "d115": 0.197,
+            "d74": 0.197,
+            "d18": 0.197,
+            "d164": 0.197,
+            "d26": 0.197,
+            "d235": 0.197,
+            "d170": 0.197,
+            "d80": 0.197,
+            "d100": 0.197,
+            "d93": 0.197,
+            "d42": 0.197,
+            "d307": 0.197,
+            "d58": 0.197,
+            "d114": 0.197,
+            "d236": 0.197,
+            "d276": 0.197,
+            "d268": 0.197,
+            "d106": 0.197,
+            "d282": 0.197,
+            "d181": 0.197,
+            "d270": 0.197,
+            "d121": 0.197,
+            "d135": 0.197,
+            "d21": 0.197
+          }
+        },
+        {
+          "path": "src/click/testing.py",
+          "loc": 656,
+          "fan_in": 4,
+          "orphaned": false,
+          "importance": 0.101,
+          "authors": [
+            "d1",
+            "d2"
+          ],
+          "doa_n": {
+            "d2": 1.0,
+            "d1": 0.792,
+            "d3": 0.616,
+            "d19": 0.457,
+            "d4": 0.457,
+            "d92": 0.425,
+            "d9": 0.425,
+            "d262": 0.393,
+            "d221": 0.393,
+            "d137": 0.393,
+            "d306": 0.393,
+            "d127": 0.393,
+            "d31": 0.393,
+            "d55": 0.393,
+            "d167": 0.393,
+            "d183": 0.393,
+            "d261": 0.393,
+            "d25": 0.393,
+            "d173": 0.393,
+            "d131": 0.393,
+            "d11": 0.393,
+            "d246": 0.393,
+            "d114": 0.393,
+            "d85": 0.393,
+            "d34": 0.393,
+            "d310": 0.393,
+            "d5": 0.393,
+            "d88": 0.393,
+            "d107": 0.393,
+            "d49": 0.393,
+            "d21": 0.393,
+            "d6": 0.393,
+            "d20": 0.393,
+            "d226": 0.393
+          }
+        },
+        {
+          "path": "src/click/parser.py",
+          "loc": 447,
+          "fan_in": 6,
+          "orphaned": true,
+          "importance": 0.089,
+          "authors": [
+            "d1"
+          ],
+          "doa_n": {
+            "d1": 1.0,
+            "d2": 0.683,
+            "d19": 0.291,
+            "d12": 0.291,
+            "d51": 0.291,
+            "d3": 0.291,
+            "d145": 0.27,
+            "d69": 0.27,
+            "d178": 0.27,
+            "d150": 0.27,
+            "d209": 0.27,
+            "d73": 0.27,
+            "d198": 0.27,
+            "d114": 0.27,
+            "d85": 0.27,
+            "d102": 0.27,
+            "d231": 0.27,
+            "d7": 0.27,
+            "d135": 0.27
+          }
+        },
+        {
+          "path": "src/click/exceptions.py",
+          "loc": 287,
+          "fan_in": 9,
+          "orphaned": false,
+          "importance": 0.088,
+          "authors": [
+            "d1",
+            "d2"
+          ],
+          "doa_n": {
+            "d1": 1.0,
+            "d2": 0.889,
+            "d6": 0.501,
+            "d5": 0.469,
+            "d19": 0.436,
+            "d91": 0.436,
+            "d22": 0.436,
+            "d85": 0.436,
+            "d7": 0.436,
+            "d3": 0.436,
+            "d60": 0.404,
+            "d178": 0.404,
+            "d57": 0.404,
+            "d55": 0.404,
+            "d166": 0.404,
+            "d56": 0.404,
+            "d11": 0.404,
+            "d114": 0.404,
+            "d34": 0.404,
+            "d148": 0.404,
+            "d286": 0.404,
+            "d140": 0.404,
+            "d21": 0.404,
+            "d231": 0.404,
+            "d9": 0.404
+          }
+        },
+        {
+          "path": "src/click/decorators.py",
+          "loc": 483,
+          "fan_in": 3,
+          "orphaned": false,
+          "importance": 0.075,
+          "authors": [
+            "d1",
+            "d2"
+          ],
+          "doa_n": {
+            "d2": 1.0,
+            "d1": 0.865,
+            "d3": 0.364,
+            "d24": 0.34,
+            "d10": 0.34,
+            "d6": 0.34,
+            "d19": 0.316,
+            "d50": 0.316,
+            "d34": 0.316,
+            "d233": 0.291,
+            "d8": 0.291,
+            "d190": 0.291,
+            "d4": 0.291,
+            "d232": 0.291,
+            "d230": 0.291,
+            "d289": 0.291,
+            "d27": 0.291,
+            "d122": 0.291,
+            "d55": 0.291,
+            "d199": 0.291,
+            "d63": 0.291,
+            "d11": 0.291,
+            "d265": 0.291,
+            "d42": 0.291,
+            "d16": 0.291,
+            "d128": 0.291,
+            "d89": 0.291,
+            "d157": 0.291,
+            "d58": 0.291,
+            "d114": 0.291,
+            "d111": 0.291,
+            "d260": 0.291,
+            "d292": 0.291,
+            "d135": 0.291
+          }
+        },
+        {
+          "path": "src/click/formatting.py",
+          "loc": 264,
+          "fan_in": 3,
+          "orphaned": true,
+          "importance": 0.049,
+          "authors": [
+            "d1"
+          ],
+          "doa_n": {
+            "d1": 1.0,
+            "d2": 0.666,
+            "d23": 0.398,
+            "d3": 0.398,
+            "d61": 0.371,
+            "d8": 0.344,
+            "d19": 0.344,
+            "d68": 0.344,
+            "d18": 0.344,
+            "d164": 0.344,
+            "d10": 0.344,
+            "d114": 0.344,
+            "d20": 0.344,
+            "d135": 0.344,
+            "d9": 0.344
+          }
+        },
+        {
+          "path": "src/click/globals.py",
+          "loc": 45,
+          "fan_in": 6,
+          "orphaned": false,
+          "importance": 0.042,
+          "authors": [
+            "d1",
+            "d2"
+          ],
+          "doa_n": {
+            "d2": 1.0,
+            "d1": 0.898,
+            "d134": 0.597,
+            "d55": 0.597,
+            "d207": 0.597,
+            "d42": 0.597,
+            "d114": 0.597
+          }
+        },
+        {
+          "path": "src/click/_winconsole.py",
+          "loc": 236,
+          "fan_in": 1,
+          "orphaned": false,
+          "importance": 0.034,
+          "authors": [
+            "d1",
+            "d2"
+          ],
+          "doa_n": {
+            "d1": 1.0,
+            "d2": 0.952,
+            "d15": 0.621,
+            "d161": 0.476,
+            "d4": 0.476,
+            "d55": 0.476,
+            "d113": 0.476,
+            "d223": 0.476,
+            "d205": 0.476,
+            "d38": 0.476,
+            "d41": 0.476,
+            "d56": 0.476,
+            "d164": 0.476,
+            "d114": 0.476,
+            "d7": 0.476,
+            "d25": 0.476,
+            "d135": 0.476,
+            "d3": 0.476
+          }
+        },
+        {
+          "path": "src/click/_textwrap.py",
+          "loc": 154,
+          "fan_in": 2,
+          "orphaned": false,
+          "importance": 0.03,
+          "authors": [
+            "d1",
+            "d2"
+          ],
+          "doa_n": {
+            "d1": 1.0,
+            "d2": 0.839,
+            "d114": 0.645,
+            "d3": 0.645
+          }
+        }
+      ]
+    },
+    {
+      "path": "tests/",
+      "risk": 0.66,
+      "orphaned_files": 6,
+      "at_risk_files": 13,
+      "successor": {
+        "dev": "d2",
+        "doa_sum": 10.114
+      },
+      "files": [
+        {
+          "path": "tests/test_options.py",
+          "loc": 3429,
+          "fan_in": 0,
+          "orphaned": false,
+          "importance": 0.4,
+          "authors": [
+            "d1",
+            "d3"
+          ],
+          "doa_n": {
+            "d3": 1.0,
+            "d1": 0.758,
+            "d2": 0.661,
+            "d5": 0.302,
+            "d24": 0.26,
+            "d27": 0.26,
+            "d44": 0.26,
+            "d11": 0.26,
+            "d10": 0.26,
+            "d4": 0.239,
+            "d69": 0.239,
+            "d78": 0.239,
+            "d146": 0.239,
+            "d202": 0.239,
+            "d18": 0.239,
+            "d122": 0.239,
+            "d132": 0.239,
+            "d129": 0.239,
+            "d55": 0.239,
+            "d152": 0.239,
+            "d31": 0.239,
+            "d30": 0.239,
+            "d166": 0.239,
+            "d29": 0.239,
+            "d33": 0.239,
+            "d290": 0.239,
+            "d209": 0.239,
+            "d174": 0.239,
+            "d45": 0.239,
+            "d63": 0.239,
+            "d41": 0.239,
+            "d90": 0.239,
+            "d12": 0.239,
+            "d222": 0.239,
+            "d126": 0.239,
+            "d16": 0.239,
+            "d163": 0.239,
+            "d32": 0.239,
+            "d177": 0.239,
+            "d253": 0.239,
+            "d297": 0.239,
+            "d188": 0.239,
+            "d133": 0.239,
+            "d225": 0.239,
+            "d88": 0.239,
+            "d220": 0.239,
+            "d21": 0.239,
+            "d6": 0.239,
+            "d105": 0.239,
+            "d181": 0.239,
+            "d231": 0.239,
+            "d81": 0.239
+          }
+        },
+        {
+          "path": "tests/test_arguments.py",
+          "loc": 986,
+          "fan_in": 0,
+          "orphaned": true,
+          "importance": 0.115,
+          "authors": [
+            "d1"
+          ],
+          "doa_n": {
+            "d1": 1.0,
+            "d3": 0.689,
+            "d2": 0.634,
+            "d36": 0.391,
+            "d5": 0.364,
+            "d12": 0.364,
+            "d117": 0.337,
+            "d4": 0.337,
+            "d55": 0.337,
+            "d166": 0.337,
+            "d53": 0.337,
+            "d11": 0.337,
+            "d275": 0.337,
+            "d198": 0.337,
+            "d10": 0.337,
+            "d244": 0.337,
+            "d133": 0.337,
+            "d277": 0.337,
+            "d225": 0.337,
+            "d81": 0.337
+          }
+        },
+        {
+          "path": "tests/test_basic.py",
+          "loc": 777,
+          "fan_in": 0,
+          "orphaned": false,
+          "importance": 0.091,
+          "authors": [
+            "d1",
+            "d3"
+          ],
+          "doa_n": {
+            "d1": 1.0,
+            "d3": 0.774,
+            "d2": 0.744,
+            "d30": 0.411,
+            "d245": 0.381,
+            "d203": 0.381,
+            "d130": 0.381,
+            "d84": 0.381,
+            "d71": 0.381,
+            "d55": 0.381,
+            "d5": 0.381,
+            "d214": 0.381,
+            "d302": 0.381,
+            "d283": 0.381,
+            "d185": 0.381,
+            "d17": 0.381,
+            "d74": 0.381,
+            "d7": 0.381,
+            "d120": 0.381,
+            "d21": 0.381
+          }
+        },
+        {
+          "path": "tests/test_testing.py",
+          "loc": 646,
+          "fan_in": 0,
+          "orphaned": false,
+          "importance": 0.075,
+          "authors": [
+            "d1",
+            "d2"
+          ],
+          "doa_n": {
+            "d1": 1.0,
+            "d2": 0.943,
+            "d3": 0.778,
+            "d21": 0.613,
+            "d4": 0.572,
+            "d262": 0.531,
+            "d57": 0.531,
+            "d221": 0.531,
+            "d137": 0.531,
+            "d127": 0.531,
+            "d31": 0.531,
+            "d55": 0.531,
+            "d183": 0.531,
+            "d261": 0.531,
+            "d173": 0.531,
+            "d131": 0.531,
+            "d246": 0.531,
+            "d92": 0.531,
+            "d85": 0.531,
+            "d310": 0.531,
+            "d5": 0.531,
+            "d49": 0.531,
+            "d6": 0.531,
+            "d46": 0.531
+          }
+        },
+        {
+          "path": "tests/test_context.py",
+          "loc": 603,
+          "fan_in": 0,
+          "orphaned": true,
+          "importance": 0.07,
+          "authors": [
+            "d1"
+          ],
+          "doa_n": {
+            "d1": 1.0,
+            "d2": 0.679,
+            "d13": 0.64,
+            "d57": 0.562,
+            "d5": 0.562,
+            "d3": 0.562,
+            "d35": 0.562,
+            "d230": 0.523,
+            "d62": 0.523,
+            "d47": 0.523,
+            "d98": 0.523,
+            "d180": 0.523,
+            "d224": 0.523
+          }
+        },
+        {
+          "path": "tests/test_commands.py",
+          "loc": 566,
+          "fan_in": 0,
+          "orphaned": true,
+          "importance": 0.066,
+          "authors": [
+            "d1"
+          ],
+          "doa_n": {
+            "d1": 1.0,
+            "d2": 0.7,
+            "d3": 0.54,
+            "d65": 0.413,
+            "d144": 0.413,
+            "d242": 0.413,
+            "d55": 0.413,
+            "d141": 0.413,
+            "d5": 0.413,
+            "d90": 0.413,
+            "d56": 0.413,
+            "d26": 0.413,
+            "d11": 0.413,
+            "d224": 0.413,
+            "d254": 0.413,
+            "d162": 0.413,
+            "d32": 0.413,
+            "d99": 0.413,
+            "d286": 0.413,
+            "d225": 0.413,
+            "d231": 0.413
+          }
+        },
+        {
+          "path": "tests/test_formatting.py",
+          "loc": 545,
+          "fan_in": 0,
+          "orphaned": true,
+          "importance": 0.064,
+          "authors": [
+            "d1"
+          ],
+          "doa_n": {
+            "d1": 1.0,
+            "d2": 0.848,
+            "d3": 0.756,
+            "d23": 0.71,
+            "d61": 0.664,
+            "d22": 0.664,
+            "d238": 0.618,
+            "d5": 0.618,
+            "d196": 0.618,
+            "d55": 0.618,
+            "d59": 0.618,
+            "d68": 0.618,
+            "d269": 0.618,
+            "d301": 0.618,
+            "d11": 0.618,
+            "d10": 0.618,
+            "d16": 0.618,
+            "d32": 0.618,
+            "d7": 0.618
+          }
+        },
+        {
+          "path": "tests/test_defaults.py",
+          "loc": 455,
+          "fan_in": 0,
+          "orphaned": false,
+          "importance": 0.053,
+          "authors": [
+            "d1",
+            "d2",
+            "d3"
+          ],
+          "doa_n": {
+            "d2": 1.0,
+            "d3": 0.95,
+            "d1": 0.948,
+            "d46": 0.66,
+            "d5": 0.66,
+            "d81": 0.66
+          }
+        },
+        {
+          "path": "tests/test_compat.py",
+          "loc": 237,
+          "fan_in": 0,
+          "orphaned": false,
+          "importance": 0.028,
+          "authors": [
+            "d1",
+            "d2"
+          ],
+          "doa_n": {
+            "d1": 1.0,
+            "d2": 0.825,
+            "d64": 0.648,
+            "d3": 0.648,
+            "d14": 0.604,
+            "d55": 0.604,
+            "d37": 0.604,
+            "d184": 0.604,
+            "d293": 0.604
+          }
+        },
+        {
+          "path": "tests/test_chain.py",
+          "loc": 187,
+          "fan_in": 0,
+          "orphaned": false,
+          "importance": 0.022,
+          "authors": [
+            "d1",
+            "d2"
+          ],
+          "doa_n": {
+            "d1": 1.0,
+            "d2": 0.775,
+            "d45": 0.511,
+            "d250": 0.511,
+            "d88": 0.511,
+            "d107": 0.511
+          }
+        },
+        {
+          "path": "tests/test_imports.py",
+          "loc": 70,
+          "fan_in": 0,
+          "orphaned": false,
+          "importance": 0.008,
+          "authors": [
+            "d1",
+            "d2"
+          ],
+          "doa_n": {
+            "d1": 1.0,
+            "d2": 0.874,
+            "d17": 0.561,
+            "d3": 0.561,
+            "d7": 0.561,
+            "d245": 0.522,
+            "d218": 0.522,
+            "d18": 0.522,
+            "d55": 0.522,
+            "d98": 0.522,
+            "d164": 0.522,
+            "d11": 0.522,
+            "d114": 0.522,
+            "d20": 0.522
+          }
+        },
+        {
+          "path": "tests/test_normalization.py",
+          "loc": 49,
+          "fan_in": 0,
+          "orphaned": true,
+          "importance": 0.006,
+          "authors": [
+            "d1"
+          ],
+          "doa_n": {
+            "d1": 1.0,
+            "d2": 0.789,
+            "d33": 0.684,
+            "d7": 0.684
+          }
+        },
+        {
+          "path": "tests/conftest.py",
+          "loc": 5,
+          "fan_in": 0,
+          "orphaned": true,
+          "importance": 0.001,
+          "authors": [
+            "d1"
+          ],
+          "doa_n": {
+            "d1": 1.0,
+            "d2": 0.642,
+            "d16": 0.56,
+            "d148": 0.56
+          }
+        }
+      ]
+    },
+    {
+      "path": "examples/repo/",
+      "risk": 0.016,
+      "orphaned_files": 1,
+      "at_risk_files": 1,
+      "successor": {
+        "dev": "d2",
+        "doa_sum": 0.742
+      },
+      "files": [
+        {
+          "path": "examples/repo/repo.py",
+          "loc": 141,
+          "fan_in": 0,
+          "orphaned": true,
+          "importance": 0.016,
+          "authors": [
+            "d1"
+          ],
+          "doa_n": {
+            "d1": 1.0,
+            "d2": 0.742
+          }
+        }
+      ]
+    },
+    {
+      "path": "examples/termui/",
+      "risk": 0.016,
+      "orphaned_files": 1,
+      "at_risk_files": 1,
+      "successor": {
+        "dev": "d2",
+        "doa_sum": 0.649
+      },
+      "files": [
+        {
+          "path": "examples/termui/termui.py",
+          "loc": 140,
+          "fan_in": 0,
+          "orphaned": true,
+          "importance": 0.016,
+          "authors": [
+            "d1"
+          ],
+          "doa_n": {
+            "d1": 1.0,
+            "d2": 0.649
+          }
+        }
+      ]
+    },
+    {
+      "path": "examples/imagepipe/",
+      "risk": 0.014,
+      "orphaned_files": 0,
+      "at_risk_files": 1,
+      "successor": {
+        "dev": "d2",
+        "doa_sum": 1.0
+      },
+      "files": [
+        {
+          "path": "examples/imagepipe/imagepipe.py",
+          "loc": 237,
+          "fan_in": 0,
+          "orphaned": false,
+          "importance": 0.028,
+          "authors": [
+            "d1",
+            "d2"
+          ],
+          "doa_n": {
+            "d2": 1.0,
+            "d1": 0.897,
+            "d47": 0.639
+          }
+        }
+      ]
+    }
+  ]
+}

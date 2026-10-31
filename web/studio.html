@@ -77,6 +77,15 @@
   .dev.inactive { color: var(--muted); }
   .dev.inactive::before { background: transparent; box-shadow: inset 0 0 0 1.5px var(--muted); }
   .legend { display: inline-flex; flex-wrap: wrap; gap: 4px 14px; font-size: 13px; }
+  .heat { border-collapse: separate; border-spacing: 3px; }
+  .heat th, .heat td { border: 0; padding: 6px 8px; }
+  .heat th.dev-col { text-align: center; font-size: 12px; text-transform: none; letter-spacing: 0; white-space: nowrap; }
+  .heat th.dev-col.leaver { color: var(--accent); }
+  .heat td.cell { text-align: center; min-width: 64px; border-radius: 4px; font-size: 12px; font-variant-numeric: tabular-nums; }
+  .heat td.cell.author { box-shadow: inset 0 0 0 2px var(--text); font-weight: 700; }
+  .heat td.file { font-family: var(--mono); font-size: 12.5px; white-space: nowrap; }
+  .heat-scale { display: inline-block; width: 140px; height: 10px; border-radius: 5px; vertical-align: middle;
+    background: linear-gradient(90deg, rgba(234, 88, 12, 0.06), rgba(234, 88, 12, 1)); }
   .scroll { overflow-x: auto; }
   .tabs { display: flex; flex-wrap: wrap; gap: 6px; margin: 14px 0; }
   .tabs button { font-size: 13px; padding: 5px 12px; border-radius: 999px; }
@@ -139,6 +148,14 @@
       <thead><tr><th>Module</th><th class="num">Risk</th><th></th><th class="num">Orphaned / at risk</th><th>Successor</th></tr></thead>
       <tbody id="module-rows"></tbody>
     </table></div>
+  </section>
+
+  <section id="heatmap" hidden>
+    <h2>Who knows what: knowledge heatmap</h2>
+    <p class="muted" style="margin-top:-6px">Each cell is how well a developer knows a file (normalised authorship, 0 to 1).
+      Outlined cells are experts. <span class="heat-scale"></span> low → high</p>
+    <div class="scroll"><table class="heat" id="heat"></table></div>
+    <p class="muted" id="heat-note" style="margin-bottom:0"></p>
   </section>
 
   <section id="kt-section" hidden>
@@ -246,7 +263,7 @@ async function openRun(name) {
   state.run = name;
   $("delete-run").disabled = !name || Boolean(current().readonly);
   $("delete-run").title = current().readonly ? "The demo run can't be deleted" : "Delete this run's clone and results";
-  ["people", "impact", "modules", "kt-section"].forEach((id) => { $(id).hidden = true; });
+  ["people", "impact", "modules", "heatmap", "kt-section"].forEach((id) => { $(id).hidden = true; });
   ["analyze-job", "kt-job"].forEach((id) => { $(id).innerHTML = ""; });
   let a;
   try { a = await api(`/api/runs/${encodeURIComponent(name)}/analysis`); }
@@ -257,6 +274,7 @@ async function openRun(name) {
   if (!a.departure) return;
   renderImpact(a, devs);
   renderModules(a, devs);
+  renderHeatmap(a, devs);
   $("kt-section").hidden = false;
   renderGenerate();
   try { renderKt(await api(`/api/runs/${encodeURIComponent(name)}/kt`)); }
@@ -351,6 +369,33 @@ function renderEstimate() {
   const all = (state.analysis?.modules || []).reduce((sum, m) => sum + m.files.filter((f) => f.loc > 0).length, 0);
   const mins = Math.max(1, Math.round((n * 15) / 60));
   $("estimate").textContent = `≈ ${n} of ${all} files, about ${mins} min (~15 s per file; files already generated come from the cache).`;
+}
+
+// Rows: at-risk files (most important first). Columns: the leaver, then whoever knows these files best.
+function renderHeatmap(a, devs, maxRows = 20, maxCols = 6) {
+  const leaver = a.departure.dev;
+  const files = a.modules.flatMap((m) => m.files).sort((x, y) => y.importance - x.importance);
+  const rows = files.slice(0, maxRows);
+  const total = {};
+  rows.forEach((f) => Object.entries(f.doa_n || {}).forEach(([d, v]) => { total[d] = (total[d] || 0) + v; }));
+  const cols = [leaver, ...Object.keys(total).filter((d) => d !== leaver).sort((x, y) => total[y] - total[x])]
+    .slice(0, maxCols);
+  const isActive = activity(a);
+  const head = cols.map((d) => `<th class="dev-col${d === leaver ? " leaver" : ""}">${devTag(devs[d]?.names[0] ?? d,
+    devs[d]?.last_commit, isActive)}${d === leaver ? "<br>leaving" : ""}</th>`).join("");
+  const body = rows.map((f) => {
+    const cells = cols.map((d) => {
+      const v = Math.max(0, f.doa_n?.[d] ?? 0);
+      const author = f.authors.includes(d);
+      return `<td class="cell${author ? " author" : ""}" title="${esc(devs[d]?.names[0] ?? d)} · ${esc(f.path)}: ${v.toFixed(2)}"
+        style="background: rgba(234, 88, 12, ${(0.06 + 0.94 * v).toFixed(2)}); color: ${v > 0.55 ? "#fff" : "inherit"}">
+        ${v >= 0.05 ? v.toFixed(2) : ""}</td>`;
+    }).join("");
+    return `<tr><td class="file">${esc(f.path)} ${f.orphaned ? '<span class="pill orphan">orphaned</span>' : ""}</td>${cells}</tr>`;
+  }).join("");
+  $("heat").innerHTML = `<thead><tr><th>File</th>${head}</tr></thead><tbody>${body}</tbody>`;
+  $("heat-note").textContent = files.length > rows.length ? `Showing the ${rows.length} most important of ${files.length} at-risk files.` : "";
+  $("heatmap").hidden = false;
 }
 
 function renderKt(kt) {
